@@ -1,0 +1,113 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Bilbo+Swash+Caps&family=Calligraffitti&family=Josefin+Sans&family=Poppins&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+
+#siteName {
+    display: flex;
+    align-items: center;
+}
+
+.navbar{
+    background-color: #F3E7DD;
+}
+
+.navbar a{
+    text-transform: uppercase;
+    color: #464B24;
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 0 3px;
+}
+
+.navbar-nav a:hover{
+    font-weight: bold;
+    color: #966640;
+}
+
+.navbar-brand img{
+    height: 3rem;
+    margin-right: 8px;
+    padding-left: 10px;
+}
+
+.navbar-brand{
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.navbar-toggler{
+    margin-right: 10px;
+}
+
+footer{
+    background-color: #B99B84;
+}
+
+footer a{
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover{
+    color: #464B24;
+}
+
+#newsletter-btn{
+    background-color: #795e4a;
+}
+
+#footer{
+    margin-top: 300px;
+}
+
+/*responsive CSS*/
+@media only screen and (max-width: 300px){
+
+    .navbar-nav{
+        text-align: center;
+    }
+    
+    .navbar-brand{
+        font-size: 1rem;
+        margin: 0;
+    }
+
+    .navbar-toggler{
+        font-size: 1rem;
+    }
+
+}
+
+@media only screen and (min-width: 300px) and (max-width: 768px){
+
+    .navbar-nav{
+        text-align: center;
+    }
+
+    .navbar-brand{
+        font-size: 1rem;
+        margin: 0;
+    }
+
+    .navbar-toggler{
+        font-size: 1rem;
+    }
+    
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px){
+
+    .navbar-nav{
+        text-align: center;
+    }
+
+}
+
