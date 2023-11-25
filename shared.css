@@ -4,7 +4,6 @@
 *{
     margin: 0;
     padding: 0;
-    list-style: none;
     box-sizing: border-box;
 }
 
@@ -47,6 +46,10 @@
     margin-right: 10px;
 }
 
+.section-header{
+    font-family: 'Bilbo Swash Caps', cursive;
+}
+
 footer{
     background-color: #B99B84;
 }
@@ -64,9 +67,6 @@ footer a:hover{
     background-color: #795e4a;
 }
 
-#footer{
-    margin-top: 300px;
-}
 
 /*responsive CSS*/
 @media only screen and (max-width: 300px){

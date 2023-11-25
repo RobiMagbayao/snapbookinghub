@@ -1,0 +1,28 @@
+body{
+    background-color: #FAF4F0;
+}
+
+#home{
+    min-height: 80vh;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.choose-card{
+    background-color: #909672;
+    text-align: center;
+}
+
+.card-img-top{
+    object-fit: cover;
+    height: 200px;
+    padding: 15px;
+}
+
+.button{
+    background-color: #B99B84 !important;
+    border: none;
+}
+
+.package-card{
+    background-color: #E8D6C5;
+}
