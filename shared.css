@@ -1,10 +1,16 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css");
-@import url('https://fonts.googleapis.com/css2?family=Bilbo+Swash+Caps&family=Calligraffitti&family=Josefin+Sans&family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bilbo+Swash+Caps&family=Days+One&family=Fjalla+One&family=Josefin+Sans&family=Limelight&family=Poppins&family=Tangerine:wght@700&display=swap');
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body{
+    background-color: #FAF4F0;
+    overflow-x: hidden; 
+    width: 100vw;
 }
 
 
@@ -46,7 +52,11 @@
     margin-right: 10px;
 }
 
-.section-header{
+.section-header-1{
+    font-family: 'Days One', sans-serif;
+}
+
+.section-header-2{
     font-family: 'Bilbo Swash Caps', cursive;
 }
 
