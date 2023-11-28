@@ -1,0 +1,37 @@
+#faq{
+    margin-top: 130px;
+}
+
+.accordion{
+    --bs-accordion-btn-bg: #dbb293;
+    --bs-accordion-active-bg: rgb(193, 151, 119);
+    --bs-accordion-active-color: white;
+    --bs-accordion-btn-focus-box-shadow: none;
+    --bs-accordion-bg: #f3dccc;
+    --bs-accordion-color: white;
+    --bs-accordion-btn-color: white;
+    --bs-accordion-btn-active-icon: white;
+}
+
+.accordion-body{
+    font-family: 'Josefin Sans', sans-serif;
+    color: black;
+    font-size: 1.1rem;
+    padding-left: 40px;
+}
+
+.accordion-button{
+    font-family: 'Poppins', sans-serif;
+}
+
+.accordion-button:not(.collapsed){
+    box-shadow: none;
+}
+
+.accordion-button:after{
+    color: white;
+}
+
+.accordion-button:before{
+    color: white;
+}

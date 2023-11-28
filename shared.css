@@ -77,6 +77,22 @@ footer a:hover{
     background-color: #795e4a;
 }
 
+.button{
+    background-color: #B99B84 !important;
+    border: none;
+    color: white;
+}
+
+.btns a{
+    text-decoration: none;
+    color: white;
+}
+
+
+.btns a:hover .button {
+    font-weight: bold;
+}
+
 
 /*responsive CSS*/
 @media only screen and (max-width: 300px){
