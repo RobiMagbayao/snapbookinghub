@@ -1,3 +1,28 @@
 #packages{
     margin-top: 130px;
 }
+
+.add-on{
+    height: 250px;
+    width: 250px;
+    object-fit: cover;
+}
+
+.cart2{
+    font-family: 'Antonio', sans-serif;
+}
+
+.cart1, .cart2{
+    background-color: #B99B84;
+    color: white;
+}
+
+.cart1:hover{
+    background-color: #a38772 !important;
+    color: white;
+}
+
+.cart2:hover{
+    background-color: #a38772 !important;
+    color: white;
+}

@@ -1,13 +1,6 @@
-.button{
-    background-color: #B99B84 !important;
-    border: none;
-    color: white;
-}
-
 .poppins{
     font-family: 'Poppins', sans-serif; 
 }
-
 
 .design{
     width: 50px;
@@ -79,13 +72,13 @@ font-family: 'Poppins', sans-serif;
 
 .flip-card-front {
 background: linear-gradient(120deg, rgb(230, 203, 170) 60%, rgb(206, 181, 112) 88%,
-    rgb(213, 182, 79) 40%, rgba(255, 127, 80, 0.603) 48%);
+    rgb(213, 182, 79) 40%, rgba(184, 121, 32, 0.613) 48%);
 color: rgb(129, 97, 26);
 }
 
 .flip-card-back {
-background: linear-gradient(120deg, rgb(230, 203, 170) 60%, rgb(206, 181, 112) 88%,
-    rgb(213, 182, 79) 40%, rgba(255, 127, 80, 0.603) 48%);
+    background: linear-gradient(120deg, rgb(230, 203, 170) 60%, rgb(206, 181, 112) 88%,
+    rgb(213, 182, 79) 40%, rgba(184, 121, 32, 0.613) 48%);
 color: rgb(129, 97, 26);
 transform: rotateY(180deg);
 }
