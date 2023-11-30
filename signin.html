@@ -27,18 +27,24 @@
       
                       <form>
       
-                        <div class="mb-3 pb-1 text-center">
+                        <div class="mb-4 pb-1 text-center">
                           <div class="h1 mb-0 " style="font-family: 'Fjalla One', sans-serif;">SnapBookingHub</div>
                         </div>
       
-                        <div class="form-outline mb-4">
-                          <input type="email" id="loginEmail" class="form-control form-control-lg" />
-                          <label class="form-label" for="loginEmail">Email address</label>
+                        <div class="input-group mb-4">
+                          <span class="input-group-text" id="loginEmail"><i class="bi bi-envelope-at"></i></span>
+                          <div class="form-outline flex-fill mb-0">
+                            <input type="email" id="loginEmail" class="form-control" placeholder="Your Email"/>
+                            <label class="form-label" for="loginEmail" hidden>Your Email</label>
+                          </div>
                         </div>
       
-                        <div class="form-outline mb-4">
-                          <input type="password" id="loginPasswerd" class="form-control form-control-lg" />
-                          <label class="form-label" for="loginPasswerd">Password</label>
+                        <div class="input-group mb-4">
+                          <span class="input-group-text" id="loginPassword"><i class="bi bi-person-lock"></i></span>
+                          <div class="form-outline flex-fill mb-0">
+                            <input type="password" id="loginPassword" class="form-control" placeholder="Password"/>
+                            <label class="form-label" for="loginPassword" hidden>Password</label>
+                          </div>
                         </div>
       
                         <div class="pt-1 mb-4  text-center">

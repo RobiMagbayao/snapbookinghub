@@ -1,5 +1,10 @@
 #packages{
     margin-top: 130px;
+    margin-bottom: 70px;
+}
+
+.subhead{
+    margin-bottom: 70px;
 }
 
 .add-on{
@@ -25,4 +30,10 @@
 .cart2:hover{
     background-color: #a38772 !important;
     color: white;
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+    .package-card {
+        width: 24rem !important;
+    }
 }
