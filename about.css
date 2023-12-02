@@ -8,3 +8,11 @@
     background-image: url(./images/aboutushead.png);
     background-position: center;
 }
+
+.aboutxt {
+    max-width: 100ch;
+}
+
+.mission {
+    background-color: #ffede0;
+}
