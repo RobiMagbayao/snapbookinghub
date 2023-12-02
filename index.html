@@ -43,7 +43,7 @@
                                 <a class="nav-link" href="about.html">About Us</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="signin.html"><i class="bi bi-person-circle"></i> Sign In</a>
+                                <a class="nav-link" href="#signInModal" data-bs-toggle="modal" data-bs-target="#signInModal"><i class="bi bi-person-circle"></i> Sign In</a>
                             </li>
                         </ul>
                     </div>
@@ -945,6 +945,139 @@
 </footer>
 <!--end of footer section-->
 
+<!-- signIn Modal -->
+<div class="modal modal-lg fade text-dark" id="signInModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="signInModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal- body">
+                <div class="card" style="border-radius: 1rem;">
+                  <div class="row g-0">
+                    <div class="col-md-6 col-lg-5 d-none d-md-block">
+                      <img src="images/g2.jpg" alt="login form" class="img-fluid h-100" style="border-radius: 1rem 0 0 1rem; object-fit: cover;" />
+                    </div>
+                    <div class="col-md-6 col-lg-7">
+                      <div class="card-body p-4 p-lg-5 text-black">
+                        <button type="button" class="btn-close position-absolute top-0 end-0 mt-3 me-3" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <form>
+                              
+                          <div class="mb-4 pb-1 text-center">
+                            
+                            <div class="h1 mb-0 " style="font-family: 'Fjalla One', sans-serif;">SnapBookingHub</div>
+                          </div>
+        
+                          <div class="input-group mb-4">
+                            <span class="input-group-text" id="loginEmail"><i class="bi bi-envelope-at"></i></span>
+                            <div class="form-outline flex-fill mb-0">
+                              <input type="email" id="loginEmail" class="form-control" placeholder="Your Email"/>
+                              <label class="form-label" for="loginEmail" hidden>Your Email</label>
+                            </div>
+                          </div>
+        
+                          <div class="input-group mb-4">
+                            <span class="input-group-text" id="loginPassword"><i class="bi bi-person-lock"></i></span>
+                            <div class="form-outline flex-fill mb-0">
+                              <input type="password" id="loginPassword" class="form-control" placeholder="Password"/>
+                              <label class="form-label" for="loginPassword" hidden>Password</label>
+                            </div>
+                          </div>
+        
+                          <div class="pt-1 mb-4  text-center">
+                            <button class="btn btn-dark btn-lg btn-block px-4" type="button">Login</button>
+                          </div>
+        
+                          <a class="small text-muted" href="#!">Forgot password?</a>
+                          <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a href="#signUpModal" data-bs-toggle="modal" data-bs-target="#signUpModal" style="color: #393f81;">Register here</a>
+                          </p>
+                          <a href="#PrivacyPolicy" data-bs-toggle="modal" data-bs-target="#PrivacyPolicy" class="small" style="color: #393f81">Privacy Policy</a>
+                          <a href="#TermsAndConditons" data-bs-toggle="modal" data-bs-target="#TermsAndConditons" class="small" style="color: #393f81">Terms & Conditions</a>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+  </div>
+<!-- end of signIn Modal -->
+
+
+<!-- signUp Modal -->
+<div class="modal modal-lg fade text-dark" id="signUpModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="signUpModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body p-0 m-0">
+                <div class="card" style="border-radius: 1rem;">
+                  <div class="row g-0">
+                    <div class="col-md-6 col-lg-5 d-none d-md-block">
+                      <img src="images/g20.jpg" alt="login form" class="img-fluid h-100" style="border-radius: 1rem 0 0 1rem; object-fit: cover;" />
+                    </div>
+                    <div class="col-md-6 col-lg-7">
+                      <div class="card-body p-4 p-lg-5 text-black">
+                        <button type="button" class="btn-close position-absolute top-0 end-0 mt-3 me-3" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <form>
+      
+                          <div class="mb-3 pb-1 text-center">
+                            <div class="h1 mb-0 " style="font-family: 'Fjalla One', sans-serif;">Register</div>
+                          </div>
+        
+                          <div class="input-group mb-4">
+                            <span class="input-group-text" id="registerName"><i class="bi bi-person-circle"></i></span>
+                            <div class="form-outline flex-fill mb-0">
+                              <input type="text" id="registerName" class="form-control" placeholder="Your Name"/>
+                              <label class="form-label" for="registerName" hidden>Your Name</label>
+                            </div>
+                          </div>
+        
+                          <div class="input-group mb-4">
+                            <span class="input-group-text" id="registerEmail"><i class="bi bi-envelope-at"></i></span>
+                            <div class="form-outline flex-fill mb-0">
+                              <input type="email" id="registerEmail" class="form-control" placeholder="Your Email"/>
+                              <label class="form-label" for="registerEmail" hidden>Your Email</label>
+                            </div>
+                          </div>
+        
+                          <div class="input-group mb-4">
+                            <span class="input-group-text" id="registerPassword"><i class="bi bi-person-lock"></i></span>
+                            <div class="form-outline flex-fill mb-0">
+                              <input type="password" id="registerPassword" class="form-control" placeholder="Password"/>
+                              <label class="form-label" for="registerPassword" hidden>Password</label>
+                            </div>
+                          </div>
+        
+                          <div class="input-group mb-4">
+                            <span class="input-group-text" id="registerPassword2"><i class="bi bi-lock-fill"></i></i></span>
+                            <div class="form-outline flex-fill mb-0">
+                              <input type="password" id="registerPassword2" class="form-control" placeholder="Repeat your password"/>
+                              <label class="form-label" for="registerPassword2" hidden>Repeat your password</label>
+                            </div>
+                          </div>
+        
+                          <div class="form-check mb-5">
+                            <input class="form-check-input me-2" type="checkbox" value="" id="registerCheck" />
+                            <label class="form-check-label" for="registerCheck">
+                              I agree all statements in <a href="#TermsAndConditons" data-bs-toggle="modal" data-bs-target="#TermsAndConditons" style="color: #393f81;">Terms & Conditions</a>
+                            </label>
+                          </div>
+        
+                          <div class="pt-1 mb-4 text-center">
+                            <button class="btn btn-dark btn-lg btn-block" type="button">Register</button>
+                          </div>
+                          
+                          <p class="mt-5 text-center" style="color: #393f81;">Already have an account? <a href="#signInModal" data-bs-toggle="modal" data-bs-target="#signInModal"
+                            style="color: #393f81;">Login here</a></p>
+
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+<!-- end of signUp Modal -->
+
 
 <!-- Private Policy Modal -->
 <div class="modal modal-lg fade text-dark" id="PrivacyPolicy" tabindex="-1" aria-labelledby="PrivacyPolicy" aria-hidden="true">
@@ -1003,9 +1136,6 @@
 </div>
 <!-- end of Private Policy Modal -->
 
-
-
-    
 <!-- Terms & Conditions Modal -->
 <div class="modal modal-lg fade text-dark" id="TermsAndConditons" tabindex="-1" aria-labelledby="TermsAndConditons" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable">
