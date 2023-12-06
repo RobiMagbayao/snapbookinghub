@@ -41,6 +41,9 @@
                                 <a class="nav-link" href="about.html">About Us</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href="contact.html">Contact Us</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="#signInModal" data-bs-toggle="modal" data-bs-target="#signInModal"><i class="bi bi-person-circle"></i> Sign In</a>
                             </li>
                         </ul>
@@ -59,7 +62,7 @@
             <div class="col-10 mx-auto">
                 <div class="display-6 fw-bold text-center">CHOOSE A PACKAGE</div>
             </div>
-            <div class="col-xl-9 col-lg-11 col-md-10 mx-auto">
+            <div class="col-xl-10 col-lg-11 col-md-10 mx-auto">
                 <div class="row">
                     <div class="col-lg-4 mt-md-5 mt-4">
                         <div class="package-card card h-100  mx-auto" style="width: 18rem;">
@@ -67,7 +70,7 @@
                                 <h5 class="card-title text-center h3">Basic</h5>
                                 <h6 class="card-subtitle mb-2 text-muted text-center h5">&#8369;3,000</h6>
                                 <p class="card-text">
-                                    <ul class="features">
+                                    <ul>
                                         <li>Studio Quality Photo Equipment and Lighting</li>
                                         <li>Photo Booth Attendant</li>
                                         <li>Delivery, Set Up & Breakdown</li>
@@ -81,7 +84,7 @@
                                 </p>
                             </div>
                             <div class="btns col-10 mx-auto text-center" >
-                                <a href="packages.html"><div class="button btn rounded-0 mb-3 w-100">SELECT</div></a>
+                                <a href="package-basic.html"><div class="button btn rounded-0 mb-3 w-100">SELECT</div></a>
                             </div>
                         </div>
                     </div>
@@ -91,7 +94,7 @@
                                 <h5 class="card-title text-center h3">Classic</h5>
                                 <h6 class="card-subtitle mb-2 text-muted text-center h5">&#8369;4,000</h6>
                                 <p class="card-text">
-                                <ul class="features">
+                                <ul>
                                     <li>Studio Quality Photo Equipment and Lighting</li>
                                     <li>Photo Booth Attendant</li>
                                     <li>Delivery, Set Up & Breakdown</li>
@@ -102,13 +105,13 @@
                                     <li>Digital Copies of the Gallery</li>
                                     <li>Photo Filters</li>
                                     <li>Unlimited Boomerangs</li>
-                                    <li>Personalized Photo Layout</li>
+                                    <li>Video Message</li>
                                     <li>Customize this package with our add-on options</li>
                                 </ul>
                                 </p>
                             </div>
                             <div class="btns col-10 mx-auto text-center" >
-                                <a href="packages.html"><div class="button btn rounded-0 mb-3 w-100">SELECT</div></a>
+                                <a href="package-classic.html"><div class="button btn rounded-0 mb-3 w-100">SELECT</div></a>
                             </div>
                         </div>
                     </div>
@@ -118,7 +121,7 @@
                                 <h5 class="card-title text-center h3">Premium</h5>
                                 <h6 class="card-subtitle mb-2 text-muted text-center h5">&#8369;5,000</h6>
                                 <p class="card-text">
-                                <ul class="features">
+                                <div>
                                     <li>Studio Quality Photo Equipment and Lighting</li>
                                     <li>Photo Booth Attendant</li>
                                     <li>Delivery, Set Up & Breakdown</li>
@@ -129,15 +132,15 @@
                                     <li>Digital Copies of the Gallery</li>
                                     <li>Photo Filters</li>
                                     <li>Unlimited Boomerangs</li>
-                                    <li>Personalized Photo Layout</li>
-                                    <li>Personalized Online Gallery</li>
+                                    <li>Video Message</li>
+                                    <li>Phone Booth</li>
                                     <li>Personalized Photobook</li>
                                     <li>Customize this package with our add-on options</li>
-                                </ul>
+                                </div>
                             </p>
                             </div>
                             <div class="btns col-10 mx-auto text-center" >
-                                <a href="packages.html"><div class="button btn rounded-0 mb-3 w-100">SELECT</div></a>
+                                <a href="package-premium.html"><div class="button btn rounded-0 mb-3 w-100">SELECT</div></a>
                             </div>
                         </div>
                     </div>
@@ -149,336 +152,183 @@
 <!--end of photobooth package section-->
 
 <!--add-on section-->
-<section class="subhead">
+<section id="ad-ons" class="pt-5">
     <div class="container-fluid">
         <div class="row">
             <div class="col-10 mx-auto">
-                <div class="display-6 fw-bold text-center">CHOOSE ADD-ONS</div>
+                <div class="h2 addOnHeading text-center text-uppercase">Available Ad-Ons</div>
+                <p class="text-center lead">You can personalize your package by incorporating these optional add-ons to tailor your experience</p>
             </div>
-            <div class="col-xl-9 col-lg-11 col-md-10 mx-auto">
+            <div class="col-xl-9 col-lg-11 col-md-11 col-12 mx-auto">
                 <div class="row">
-                    <div class="col-lg-4 col-md-6 col mt-lg-5 mt-md-5 mt-4">
-                        <div class="card h-100 mx-auto text-center p-3" style="width: 18rem;">
-                            <img src="images/add-on1.jpg" class="card-img-top add-on mx-auto" alt="..."></img>
-                            <div class="card-body p-0">
-                                <h5 class="card-title pt-3">Printed Photos</h5>
-                                <h6 class="card-content pb-3">&#8369;2,000</h6>
-                                <div class="d-flex justify-content-center">
-                                    <a href="#" class="btn cart1" style="width: 34px;" onclick="updateQuantity('PrintedPhotos', -1)">-</a>
-                                    <div id="printedPhotosQuantity" style="width: 40px;" class="border-bottom border-top d-flex align-items-center justify-content-center">0</div>
-                                    <a href="#" class="btn cart1" style="width: 34px;" onclick="updateQuantity('PrintedPhotos', 1)">+</a>
-                                </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-6 col mt-md-5 mt-4 mb-4 text-center d-flex justify-content-center">
+                        <div class="adOnCard">
+                            <div class="icon">
+                                <img src="images/add-on1.jpg" alt="" class="card-img-top add-on mx-auto">
                             </div>
+                            <strong class="pt-3"> Printed Photos</strong>
+                            <div class="card__body">
+                                Price Varies
+                            </div>
+                            <span>rsonalize your package by incorpora</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6 col mt-md-5 mt-4 mb-4 text-center d-flex justify-content-center">
+                        <div class="adOnCard">
+                            <div class="icon">
+                                <img src="images/add-on2.png" alt="" class="card-img-top add-on mx-auto">
+                            </div>
+                            <strong class="pt-3"> Photo Filters</strong>
+                            <div class="card__body">
+                                &#8369;500
+                            </div>
+                            <span>rsonalize your package by incorpora</span>
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 col mt-lg-5 mt-md-5 mt-4">
-                        <div class="card h-100 mx-auto text-center p-3" style="width: 18rem;">
-                            <img src="images/add-on2.png" class="card-img-top add-on mx-auto" alt="..."></img>
-                            <div class="card-body p-0">
-                                <h5 class="card-title pt-3">Photo Filters</h5>
-                                <h6 class="card-content pb-3">&#8369;500</h6>
-                                <div class="d-flex justify-content-center">
-                                    <a href="#" class="btn cart1" style="width: 34px;" onclick="updateQuantity('Photo Filters', -1)">-</a>
-                                    <div id="photoFiltersQuantity" style="width: 40px;" class="border-bottom border-top d-flex align-items-center justify-content-center">0</div>
-                                    <a href="#" class="btn cart1" style="width: 34px;" onclick="updateQuantity('Photo Filters', 1)">+</a>
-                                </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6 col mt-md-5 mt-4 mb-4 text-center d-flex justify-content-center">
+                        <div class="adOnCard">
+                            <div class="icon">
+                                <video src="images/add-on3.mp4" class="card-img-top add-on mx-auto" alt="..." autoplay muted loop></video>
                             </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-4 col-md-6 col mt-lg-5 mt-md-5 mt-4">
-                        <div class="card h-100 mx-auto text-center p-3" style="width: 18rem;">
-                            <img src="images/add-on3.jpg" class="card-img-top add-on mx-auto" alt="..."></img>
-                            <div class="card-body p-0">
-                                <h5 class="card-title pt-3">Photo Layout</h5>
-                                <h6 class="card-content pb-3">&#8369;500</h6>
-                                <div class="d-flex justify-content-center">
-                                    <a href="#" class="btn cart1" style="width: 34px;" onclick="updateQuantity('PhotoLayout', -1)">-</a>
-                                    <div id="photoLayoutQuantity" style="width: 40px;" class="border-bottom border-top d-flex align-items-center justify-content-center">0</div>
-                                    <a href="#" class="btn cart1" style="width: 34px;" onclick="updateQuantity('PhotoLayout', 1)">+</a>
-                                </div>
+                            <strong class="pt-3">Video Message</strong>
+                            <div class="card__body">
+                                &#8369;700
                             </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-4 col-md-6 col mt-lg-5 mt-md-5 mt-4">
-                        <div class="card h-100 mx-auto text-center p-3" style="width: 18rem;">
-                            <video src="images/add-on4.mp4" class="card-img-top add-on mx-auto" alt="..." autoplay muted loop></video>
-                            <div class="card-body p-0">
-                                <h5 class="card-title pt-3">Boomerang</h5>
-                                <h6 class="card-content pb-3">&#8369;500</h6>
-                                <div class="d-flex justify-content-center">
-                                    <a href="#" class="btn cart1" style="width: 34px;" onclick="updateQuantity('Boomerang', -1)">-</a>
-                                    <div id="boomerangQuantity" style="width: 40px;" class="border-bottom border-top d-flex align-items-center justify-content-center">0</div>
-                                    <a href="#" class="btn cart1" style="width: 34px;" onclick="updateQuantity('Boomerang', 1)">+</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-4 col-md-6 col mt-lg-5 mt-md-5 mt-4">
-                        <div class="card h-100 mx-auto text-center p-3" style="width: 18rem;">
-                            <img src="images/add-on5.png" class="card-img-top add-on mx-auto" alt="..."></img>
-                            <div class="card-body p-0">
-                                <h5 class="card-title pt-3">Online Gallery</h5>
-                                <h6 class="card-content pb-3">&#8369;700</h6>
-                                <div class="d-flex justify-content-center">
-                                    <a href="#" class="btn cart1" style="width: 34px;" onclick="updateQuantity('OnlineGallery', -1)">-</a>
-                                    <div id="onlineGalleryQuantity" style="width: 40px;" class="border-bottom border-top d-flex align-items-center justify-content-center">0</div>
-                                    <a href="#" class="btn cart1" style="width: 34px;" onclick="updateQuantity('OnlineGallery', 1)">+</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-4 col-md-6 col mt-lg-5 mt-md-5 mt-4">
-                        <div class="card h-100 mx-auto text-center p-3" style="width: 18rem;">
-                            <img src="images/add-on6.jpg" class="card-img-top add-on mx-auto" alt="..."></img>
-                            <div class="card-body p-0">
-                                <h5 class="card-title pt-3">Photobook</h5>
-                                <h6 class="card-content pb-3">&#8369;700</h6>
-                                <div class="d-flex justify-content-center">
-                                    <a href="#" class="btn cart1" style="width: 34px;" onclick="updateQuantity('Photobook', -1)">-</a>
-                                    <div id="PhotobookQuantity" style="width: 40px;" class="border-bottom border-top d-flex align-items-center justify-content-center">0</div>
-                                    <a href="#" class="btn cart1" style="width: 34px;" onclick="updateQuantity('Photobook', 1)">+</a>
-                                </div>
-                            </div>
+                            <span>rsonalize your package by incorpora</span>
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 col mt-lg-5 mt-md-5 mt-4">
-                        <div class="card h-100 mx-auto text-center p-3" style="width: 18rem;">
-                            <img src="images/add-on7.jpg" class="card-img-top add-on mx-auto" alt="..."></img>
-                            <div class="card-body p-0">
-                                <h5 class="card-title pt-3">Birthday Props</h5>
-                                <h6 class="card-content pb-3">&#8369;500</h6>
-                                <div class="d-flex justify-content-center">
-                                    <a href="#" class="btn cart1" style="width: 34px;" onclick="updateQuantity('birthdayProps', -1)">-</a>
-                                    <div id="birthdayPropsQuantity" style="width: 40px;" class="border-bottom border-top d-flex align-items-center justify-content-center">0</div>
-                                    <a href="#" class="btn cart1" style="width: 34px;" onclick="updateQuantity('birthdayProps', 1)">+</a>
-                                </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6 col mt-md-5 mt-4 mb-4 text-center d-flex justify-content-center">
+                        <div class="adOnCard">
+                            <div class="icon">
+                                <video src="images/add-on4.mp4" class="card-img-top add-on mx-auto" alt="..." autoplay muted loop></video>
                             </div>
+                            <strong class="pt-3">Boomerang</strong>
+                            <div class="card__body">
+                                &#8369;500
+                            </div>
+                            <span>rsonalize your package by incorpora</span>
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 col mt-lg-5 mt-md-5 mt-4">
-                        <div class="card h-100 mx-auto text-center p-3" style="width: 18rem;">
-                            <img src="images/add-on8.jpg" class="card-img-top add-on mx-auto" alt="..."></img>
-                            <div class="card-body p-0">
-                                <h5 class="card-title pt-3">Wedding Props</h5>
-                                <h6 class="card-content pb-3">&#8369;500</h6>
-                                <div class="d-flex justify-content-center">
-                                    <a href="#" class="btn cart1" style="width: 34px;" onclick="updateQuantity('WeddingProps', -1)">-</a>
-                                    <div id="weddingPropsQuantity" style="width: 40px;" class="border-bottom border-top d-flex align-items-center justify-content-center">0</div>
-                                    <a href="#" class="btn cart1" style="width: 34px;" onclick="updateQuantity('WeddingProps', 1)">+</a>
-                                </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6 col mt-md-5 mt-4 mb-4 text-center d-flex justify-content-center">
+                        <div class="adOnCard">
+                            <div class="icon">
+                                <img src="images/add-on5.jpg" alt="" class="card-img-top add-on mx-auto">
                             </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-4 col-md-6 col mt-lg-5 mt-md-5 mt-4">
-                        <div class="card h-100 mx-auto text-center p-3" style="width: 18rem;">
-                            <img src="images/add-on9.jpg" class="card-img-top add-on mx-auto" alt="..."></img>
-                            <div class="card-body p-0">
-                                <h5 class="card-title pt-3">Graduation Props</h5>
-                                <h6 class="card-content pb-3">&#8369;500</h6>
-                                <div class="d-flex justify-content-center">
-                                    <a href="#" class="btn cart1" style="width: 34px;" onclick="updateQuantity('GraduationProps', -1)">-</a>
-                                    <div id="graduationPropsQuantity" style="width: 40px;" class="border-bottom border-top d-flex align-items-center justify-content-center">0</div>
-                                    <a href="#" class="btn cart1" style="width: 34px;" onclick="updateQuantity('GraduationProps', 1)">+</a>
-                                </div>
+                            <strong class="pt-3"> Phone Booth</strong>
+                            <div class="card__body">
+                                &#8369;700
                             </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-4 col-md-6 col mt-lg-5 mt-md-5 mt-4">
-                        <div class="card h-100 mx-auto text-center p-3" style="width: 18rem;">
-                            <img src="images/add-on10.jpg" class="card-img-top add-on mx-auto" alt="..."></img>
-                            <div class="card-body p-0">
-                                <h5 class="card-title pt-3">Balloon Backdrop</h5>
-                                <h6 class="card-content pb-3">&#8369;500</h6>
-                                <div class="d-flex justify-content-center">
-                                    <a href="#" class="btn cart1" style="width: 34px;" onclick="updateQuantity('BalloonBackdrop', -1)">-</a>
-                                    <div id="balloonBackdropQuantity" style="width: 40px;" class="border-bottom border-top d-flex align-items-center justify-content-center">0</div>
-                                    <a href="#" class="btn cart1" style="width: 34px;" onclick="updateQuantity('BalloonBackdrop', 1)">+</a>
-                                </div>
-                            </div>
+                            <span>rsonalize your package by incorpora</span>
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 col mt-lg-5 mt-md-5 mt-4">
-                        <div class="card h-100 mx-auto text-center p-3" style="width: 18rem;">
-                            <img src="images/add-on11.jpg" class="card-img-top add-on mx-auto" alt="..."></img>
-                            <div class="card-body p-0">
-                                <h5 class="card-title pt-3">Sparkly Backdrop</h5>
-                                <h6 class="card-content pb-3">&#8369;500</h6>
-                                <div class="d-flex justify-content-center">
-                                    <a href="#" class="btn cart1" style="width: 34px;" onclick="updateQuantity('SparklyBackdrop', -1)">-</a>
-                                    <div id="sparklyBackdropQuantity" style="width: 40px;" class="border-bottom border-top d-flex align-items-center justify-content-center">0</div>
-                                    <a href="#" class="btn cart1" style="width: 34px;" onclick="updateQuantity('SparklyBackdrop', 1)">+</a>
-                                </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6 col mt-md-5 mt-4 mb-4 text-center d-flex justify-content-center">
+                        <div class="adOnCard">
+                            <div class="icon">
+                                <img src="images/add-on6.jpg" alt="" class="card-img-top add-on mx-auto">
                             </div>
+                            <strong class="pt-3"> Photobook</strong>
+                            <div class="card__body">
+                                &#8369;700
+                            </div>
+                            <span>rsonalize your package by incorpora</span>
                         </div>
                     </div>
-                    
-                    <div class="col-lg-4 col-md-6 col mt-lg-5 mt-md-5 mt-4">
-                        <div class="card h-100 mx-auto text-center p-3" style="width: 18rem;">
-                            <img src="images/add-on12.png" class="card-img-top add-on mx-auto" alt="..."></img>
-                            <div class="card-body p-0">
-                                <h5 class="card-title pt-3">Flower Backdrop</h5>
-                                <h6 class="card-content pb-3">&#8369;500</h6>
-                                <div class="d-flex justify-content-center">
-                                    <a href="#" class="btn cart1" style="width: 34px;" onclick="updateQuantity('FlowerBackdrop', -1)">-</a>
-                                    <div id="flowerBackdropQuantity" style="width: 40px;" class="border-bottom border-top d-flex align-items-center justify-content-center">0</div>
-                                    <a href="#" class="btn cart1" style="width: 34px;" onclick="updateQuantity('FlowerBackdrop', 1)">+</a>
-                                </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-6 col mt-md-5 mt-4 mb-4 text-center d-flex justify-content-center">
+                        <div class="adOnCard">
+                            <div class="icon">
+                                <img src="images/add-on7.jpg" alt="" class="card-img-top add-on mx-auto">
                             </div>
+                            <strong class="pt-3">Birthday Props</strong>
+                            <div class="card__body">
+                                &#8369;500
+                            </div>
+                            <span>rsonalize your package by incorpora</span>
                         </div>
                     </div>
-                    
+
+                    <div class="col-lg-4 col-md-4 col-sm-6 col mt-md-5 mt-4 mb-4 text-center d-flex justify-content-center">
+                        <div class="adOnCard">
+                            <div class="icon">
+                                <img src="images/add-on8.jpg" alt="" class="card-img-top add-on mx-auto">
+                            </div>
+                            <strong class="pt-3">Wedding Props</strong>
+                            <div class="card__body">
+                                &#8369;500
+                            </div>
+                            <span>rsonalize your package by incorpora</span>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-6 col mt-md-5 mt-4 mb-4 text-center d-flex justify-content-center">
+                        <div class="adOnCard">
+                            <div class="icon">
+                                <img src="images/add-on9.jpg" alt="" class="card-img-top add-on mx-auto">
+                            </div>
+                            <strong class="pt-3">Graduation Props</strong>
+                            <div class="card__body">
+                                &#8369;500
+                            </div>
+                            <span>rsonalize your package by incorpora</span>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-6 col mt-md-5 mt-4 mb-4 text-center d-flex justify-content-center">
+                        <div class="adOnCard">
+                            <div class="icon">
+                                <img src="images/add-on10.jpg" alt="" class="card-img-top add-on mx-auto">
+                            </div>
+                            <strong class="pt-3">Balloon Backdrop</strong>
+                            <div class="card__body">
+                                &#8369;500
+                            </div>
+                            <span>rsonalize your package by incorpora</span>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-6 col mt-md-5 mt-4 mb-4 text-center d-flex justify-content-center">
+                        <div class="adOnCard">
+                            <div class="icon">
+                                <img src="images/add-on11.jpg" alt="" class="card-img-top add-on mx-auto">
+                            </div>
+                            <strong class="pt-3">Sparkly Backdrop</strong>
+                            <div class="card__body">
+                                &#8369;500
+                            </div>
+                            <span>rsonalize your package by incorpora</span>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-6 col mt-md-5 mt-4 mb-4 text-center d-flex justify-content-center">
+                        <div class="adOnCard">
+                            <div class="icon">
+                                <img src="images/add-on12.png" alt="" class="card-img-top add-on mx-auto">
+                            </div>
+                            <strong class="pt-3">Flower Backdrop</strong>
+                            <div class="card__body">
+                                &#8369;500
+                            </div>
+                            <span>rsonalize your package by incorpora</span>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="package-footer h2 text-center mt-5">Ready to elevate your event? Seal the deal and make memories </div>
+                        <div class="btns col-10 mx-auto text-center mt-1" >
+                            <a href="packages.html#packages"><div class="button btn rounded-0 py-3 px-4 mt-4">BOOK NOW</div></a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 <!--end of add-on section-->
-
-<!--schedule section-->
-<section class="subhead">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-10 mx-auto">
-                <div class="display-6 fw-bold text-center pb-5">EVENT SCHEDULE</div>
-            </div>
-            <div class="col-lg-8 col-md-10 col-11 mx-auto">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-11 mx-auto">
-                        calendar
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-11 mx-auto">
-                        <div class="cs-form">
-                            <input type="time" class="form-control" value="10:05 AM" />
-                          </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--end of schedule section-->
-
-
-<!--location section-->
-<section class="subhead">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-10 mx-auto">
-                <div class="display-6 fw-bold text-center pb-5">EVENT LOCATION</div>
-            </div>
-            <div class="col-lg-6 col-md-8 col-11 mx-auto">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-11 mx-auto">
-                        <label class="form-label visually-hidden" for="province">Province:</label>
-                        <select class="form-select" id="province" name="province" required>
-                            <option disabled value="">Province</option>
-                            <option selected value="cavite">Cavite</option>
-                        </select>
-                        <div class="invalid-feedback">
-                            Please select a valid province.
-                        </div>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-11 mx-auto py-md-0 py-sm-3 pt-3">
-                        <label class="form-label visually-hidden" for="municipality">Municipality:</label>
-                        <select class="form-select" id="municipality" name="municipality" required>
-                            <option selected disabled value="">Choose Municipality</option>
-                            <option value="amadeo">Amadeo</option>
-                            <option value="bacoor">Bacoor</option>
-                            <option value="carmona">Carmona</option>
-                            <option value="signin">Cavite City</option>
-                            <option value="dasmariñas">Dasmarinas</option>
-                            <option value="general_emilio_aguinaldo">General Emilio Aguinaldo</option>
-                            <option value="general_mariano_alvarez">General Mariano Alvarez</option>
-                            <option value="general_tri">General Trias</option>
-                            <option value="imus">Imus</option>
-                            <option value="indang">Indang</option>
-                            <option value="kawit">Kawit</option>
-                            <option value="magallanes">Magallanes</option>
-                            <option value="maragondon">Maragondon</option>
-                            <option value="mendez">Mendez</option>
-                            <option value="naic">Naic</option>
-                            <option value="noveleta">Noveleta</option>
-                            <option value="rosario">Rosario</option>
-                            <option value="silang">Silang</option>
-                            <option value="tagaytay">Tagaytay</option>
-                            <option value="tanza">Tanza</option>
-                            <option value="ternate">Ternate</option>
-                            <option value="trece_martires">Trece Martires</option>
-                        </select>
-                        <div class="invalid-feedback">
-                            Please select a valid province.
-                        </div>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
-                    </div>
-                    <div class="col-lg-12 col-md-12 col-11 mx-auto py-3">
-                        <input type="text" class="w-100 py-1 px-2" placeholder="Enter Event Address">
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-    </div>
-</section>
-<!--end of location section-->
-
-<!--order section-->
-<section class="subhead">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-10 mx-auto">
-                <div class="display-6 fw-bold text-center pb-5">ORDER SUMMARY</div>
-            </div>
-            <div class="col-lg-8 col-md-10 col-11 mx-auto">
-                <div class="row">
-                    <div class="col-12 lead pb-3 mx-auto">
-                        Reserved on 1 January 2024 from 8AM
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-11 mx-auto fw-bold">
-                        Item
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-11 mx-auto fw-bold">
-                        Quantity
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-11 mx-auto fw-bold">
-                        Price
-                    </div>
-                    <div class="col-12 mx-auto">
-                        <hr>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-11 mx-auto"></div>
-                    <div class="col-lg-3 col-md-3 col-11 mx-auto fw-bold">
-                        TOTAL
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-11 mx-auto">
-                        &#8369;
-                    </div>
-                </div>
-                <div class="btns col-12 mx-auto text-center mt-4">
-                    <a href="#"><div class="button btn rounded-0 py-3 px-5 mt-4 mx-auto">BOOK NOW</div></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--end of order section-->
-
 
 
 <!--footer section-->
