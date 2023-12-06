@@ -96,6 +96,14 @@ table {
     }
 }
 
+.time-td {
+    min-width: 85px;
+}
+
+.book-td {
+    min-width: 120px;
+}
+
 .btn-user {
     background-color: #cba281;
     color: white;
