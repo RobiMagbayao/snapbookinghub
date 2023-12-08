@@ -1,7 +1,7 @@
 //Loader
 let preLoader = document.getElementById("loader");
 
-setTimeout(preLoaderHandler, 2500);
+setTimeout(preLoaderHandler, 1000);
 
 function preLoaderHandler() {
     preLoader.style.opacity = "0";

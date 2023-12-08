@@ -80,3 +80,11 @@ iframe {
 .navbar-nav .nav-link.show {
     color: #966640;
 }
+
+.site-color {
+    color: #464b24 !important;
+}
+
+.site-color2 {
+    color: #966640 !important;
+}

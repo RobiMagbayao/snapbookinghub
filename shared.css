@@ -143,3 +143,11 @@ footer a:hover {
 .dmenu a:hover {
     background-color: #f8efe8 !important;
 }
+
+.site-color {
+    color: #464b24 !important;
+}
+
+.site-color2 {
+    color: #966640 !important;
+}
