@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Antonio&family=Bilbo+Swash+Caps&family=Days+One&family=Fjalla+One&family=Josefin+Sans&family=Limelight&family=Poppins&family=Tangerine:wght@700&display=swap");
+
+#loader {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #faf4f0 url("../images/Loader.gif") no-repeat center;
+    z-index: 999;
+    background-size: 100px auto;
+    transition: all 0.8s ease;
+}
+
+*,
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: transparent;
+}
+
+#profile-pages::-webkit-scrollbar,
+#booking-pages::-webkit-scrollbar,
+#help-page::-webkit-scrollbar {
+    display: none;
+}
+
+#profile-pages,
+#booking-pages,
+#help-page {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.user-card {
+    width: 250px;
+}
+
+.site-color {
+    color: #464b24 !important;
+}
+
+.site-color2 {
+    color: #966640 !important;
+}
+
+.card-bg-color {
+    background-color: #fff8f7;
+}
+
+table {
+    min-width: 525px;
+}
+
+.table2 {
+    min-width: 600px;
+}
+
+.table-hover tbody tr:hover td {
+    background-color: #ffefe4 !important;
+}
+
+.img-addon {
+    max-width: 135px;
+    min-height: 135px;
+}
+
+@media (width < 720px) {
+    .img-addon {
+        min-width: 180px;
+        height: 180px;
+    }
+}
+
+@media (width < 510px) {
+    .img-addon {
+        margin-inline: auto;
+        margin-bottom: 2rem;
+        max-width: 260px;
+        height: 260px;
+    }
+}
+
+.addon-hover {
+    position: absolute;
+    top: 400px;
+    border-radius: 0;
+    background-color: #966740bf;
+    transition: all 0.9s ease;
+}
+
+.addon-holder:hover {
+    .addon-hover {
+        top: 0;
+        transition: all 0.5s ease;
+    }
+}
+
+.time-td {
+    min-width: 85px;
+}
+
+.book-td {
+    min-width: 120px;
+}
+
+.btn-user {
+    background-color: #cba281;
+    color: white;
+}
+
+.btn-user:hover {
+    background-color: #d5ae8e;
+    color: white;
+}
+
+.btn-user:active {
+    background-color: #cba281;
+    color: white;
+}
+
+/*Classes to Hide and Show add-on */
+
+.not-added {
+    visibility: hidden;
+    position: absolute;
+}
+
+.added {
+    visibility: visible !important;
+    position: relative !important;
+}

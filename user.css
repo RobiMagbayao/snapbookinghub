@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Antonio&family=Bilbo+Swash+Caps&family=Days+One&family=Fjalla+One&family=Josefin+Sans&family=Limelight&family=Poppins&family=Tangerine:wght@700&display=swap");
+
+*,
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+body,
+header {
+    width: auto;
+}
+
+#siteName {
+    font-family: "Josefin Sans", sans-serif;
+}
+
+#user-page {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.side-menu-list {
+    top: 88px;
+}
+
+.side-menu-list a {
+    text-decoration: none !important;
+    text-transform: uppercase;
+    color: #464b24;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border: 0;
+}
+
+.side-menu-list li:hover {
+    font-weight: bold;
+    color: #966640 !important;
+}
+
+.side-menu-list a:hover {
+    font-weight: bold;
+    color: #966640 !important;
+}
+
+.user-content {
+    box-shadow: inset 5px 0 10px -5px rgba(17, 17, 17, 0.081);
+}
+
+ion-icon {
+    font-size: 2.2rem !important;
+}
+
+.icon {
+    display: flex;
+    padding: 0 !important;
+    background: rgba(255, 255, 255, 0);
+    border: 0;
+    color: #464b24;
+}
+
+.icon:hover {
+    font-weight: bold;
+    color: #966640;
+}
+
+.custom-tooltip {
+    --bs-tooltip-bg: #966640;
+    --bs-tooltip-color: var(--bs-white);
+    --bs-tooltip-opacity: 1;
+}
+
+iframe {
+    width: 100%;
+    min-height: 85vh;
+    background-color: transparent;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show {
+    color: #966640;
+}
+
+.site-color {
+    color: #464b24 !important;
+}
+
+.site-color2 {
+    color: #966640 !important;
+}

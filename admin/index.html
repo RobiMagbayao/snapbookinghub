@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css" />
+        <link rel="shortcut icon" type="image/jpg" href="../images/favicon.png" />
+        <title>Admin Dashboard</title>
+    </head>
+    <body class="container-fluid p-0">
+        <!-- loading animation -->
+        <div id="loader"></div>
+
+        <div id="admin-content" class="container-fluid p-0">
+            <div class="d-flex">
+                <!-- Side menu -->
+                <div id="admin-sidenav" class="collapse collapse-horizontal z-1">
+                    <div class="p-0 m-0">
+                        <div class="admin-side-menu min-vh-100">
+                            <ul class="list-unstyled p-0 navibar">
+                                <!-- Dashboard btn -->
+                                <li class="ps-1">
+                                    <a class="logo-text pt-3 me-4 text-decoration-none d-flex align-items-center" href="../index.html"
+                                        ><img class="logo me-2" src="../images/logo.png" /> SnapBookingHub</a
+                                    >
+                                </li>
+                                <li class="my-0 navs rounded-start-5 mt-4">
+                                    <a
+                                        class="nav-a py-3 d-flex align-items-center"
+                                        onclick="document.getElementById('userframe').src = './iframes_admin/dashboard.html'"
+                                        ><ion-icon class="ps-3 pe-4" name="home-outline"></ion-icon>Dashboard</a
+                                    >
+                                </li>
+
+                                <!-- Users btn -->
+                                <li class="my-0 navs rounded-start-5">
+                                    <a
+                                        class="nav-a py-3 d-flex align-items-center"
+                                        onclick="document.getElementById('userframe').src = './iframes_admin/users.html'"
+                                        ><ion-icon class="ps-3 pe-4" name="people-outline"></ion-icon>Users</a
+                                    >
+                                </li>
+
+                                <!-- Bookings btn -->
+                                <li class="my-0 navs rounded-start-5">
+                                    <a
+                                        class="nav-a py-3 d-flex align-items-center"
+                                        onclick="document.getElementById('userframe').src = './iframes_admin/bookings.html'"
+                                        ><ion-icon class="ps-3 pe-4" name="calendar-outline"></ion-icon>Bookings</a
+                                    >
+                                </li>
+
+                                <!-- Sign out btn -->
+                                <li class="my-0 navs rounded-start-5">
+                                    <a class="nav-a py-3 d-flex align-items-center" href="#"
+                                        ><ion-icon class="ps-3 pe-3" name="log-out-outline"></ion-icon>Sign Out</a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Column -->
+                <div class="container-fluid p-0 z-2">
+                    <!-- Navbar -->
+                    <nav class="topnav col-auto sticky-top d-flex flex-grow-1 align-items-center justify-content-between">
+                        <!-- Sidebar toggle btn -->
+                        <div class="d-flex p-2">
+                            <a class="d-flex align-items-center" href="#admin-sidenav" data-bs-toggle="collapse"
+                                ><ion-icon class="toggler" name="reorder-three-outline"></ion-icon
+                            ></a>
+                        </div>
+
+                        <!-- Search bar  -->
+                        <form class="input-group search px-2" onsubmit="return false">
+                            <button class="btn search-btn rounded-start-4" type="submit"><i class="bi bi-search"></i></button>
+                            <input class="form-control border-0 rounded-end-4" type="text" minlength="3" placeholder="Search..." required />
+                        </form>
+
+                        <!-- Admin avatar -->
+                        <div>
+                            <a class="text-decoration-none mx-3 site-color2 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
+                                ><img class="admin-avatar" src="../avatars/avatar-uni.png" alt="admin-avatar" />
+                            </a>
+                            <ul class="dropdown-menu dmenu dropdown-menu-lg-end align-content-end text-lg-end text-center">
+                                <li class="list-unstyled"><a class="dropdown-item" href="#">Sign out</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+
+                    <!-- Admin iFrame content -->
+                    <div class="col p-0 m-0 user-content">
+                        <div class="d-flex container-fluid flex-column justify-content-center p-2">
+                            <iframe class="" id="userframe" src="./iframes_admin/dashboard.html"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ion icons script -->
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <!-- BS script -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"
+        ></script>
+
+        <!-- Collapse responsiveness -->
+        <script>
+            const sidemenu = document.getElementById("admin-sidenav");
+            const screenWidth = window.matchMedia("( max-width: 1000px )");
+            screenWidth.addListener(collapseResponse);
+
+            function collapseResponse() {
+                if (screenWidth.matches) {
+                    sidemenu.className = "collapse collapse-horizontal";
+                } else {
+                    sidemenu.className = "collapse collapse-horizontal show";
+                }
+            }
+
+            collapseResponse();
+        </script>
+
+        <!-- loader script -->
+        <script>
+            //Loader
+            let preLoader = document.getElementById("loader");
+
+            setTimeout(preLoaderHandler, 1300);
+
+            function preLoaderHandler() {
+                preLoader.style.opacity = "0";
+                preLoader.style.zIndex = "-100";
+                preLoader.style.transition = "all .7s";
+            }
+        </script>
+    </body>
+</html>
