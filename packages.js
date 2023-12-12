@@ -277,6 +277,15 @@ function clearResult() {
 
 
 // Function for order details
+// Function to format time in 12-hour format
+function format12HourTime(timeString) {
+    const [hours, minutes] = timeString.split(":");
+    const formattedHours = (hours % 12) || 12; // Convert to 12-hour format
+    const period = hours < 12 ? "AM" : "PM";
+    return `${formattedHours}:${minutes} ${period}`;
+}
+
+// Function for order details
 function getEventDetails() {
     // Get values from the form
     var dateValue = document.getElementById("date").value;
@@ -285,9 +294,26 @@ function getEventDetails() {
     var municipalityValue = document.getElementById("municipality").value;
     var eventAddressValue = document.getElementById("eventAddress").value;
 
-    document.getElementById("dateSummary").innerHTML = `<strong>Event Date: </strong> ${dateValue}`;
-    document.getElementById("timeSummary").innerHTML = `<strong>Event Time: </strong> ${timeValue}`;
+    // Format date using Intl.DateTimeFormat
+    const dateObject = new Date(dateValue);
+    const formattedDate = new Intl.DateTimeFormat("en-US", {
+        month: "long",
+        day: "numeric",
+        year: "numeric"
+    }).format(dateObject);
+
+    // Format time using the custom function
+    const formattedTime = format12HourTime(timeValue);
+
+    document.getElementById("dateSummary").innerHTML = `<strong>Event Date: </strong> ${formattedDate}`;
+    document.getElementById("timeSummary").innerHTML = `<strong>Event Time: </strong> ${formattedTime}`;
     document.getElementById("addressSummary").innerHTML = `<strong>Event Location: </strong> ${eventAddressValue}, ${municipalityValue}, ${provinceValue}`;
 }
 
+// Add event listeners for input fields
+document.getElementById("date").addEventListener("input", getEventDetails);
+document.getElementById("time").addEventListener("input", getEventDetails);
+document.getElementById("province").addEventListener("change", getEventDetails);
+document.getElementById("municipality").addEventListener("change", getEventDetails);
+document.getElementById("eventAddress").addEventListener("input", getEventDetails);
 
