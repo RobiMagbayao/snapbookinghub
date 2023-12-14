@@ -24,15 +24,16 @@ function submitForm() {
         timestamp: formattedDateTime
     };
 
-    // Retrieve existing form data from sessionStorage or initialize an empty array
-    const existingFormData = JSON.parse(sessionStorage.getItem('formData')) || [];
+    // Retrieve existing form data from localStorage or initialize an empty array
+    const existingFormData = JSON.parse(localStorage.getItem('formData')) || [];
 
     // Add the new form data
     existingFormData.push(formData);
 
-    // Store updated form data in sessionStorage
-    sessionStorage.setItem('formData', JSON.stringify(existingFormData));
+    // Store updated form data in localStorage
+    localStorage.setItem('formData', JSON.stringify(existingFormData));
 
     // Clear the form fields
     document.getElementById("contactForm").reset();
 }
+

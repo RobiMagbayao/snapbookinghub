@@ -71,6 +71,10 @@ input[type="radio"]:checked {
   background-color: #B99B84;
 }
 
+/*#orderSummary table td{
+  padding-top: 10px !important;
+}
+*/
 /**/
 .adOnCard {
     max-width: 25ch;

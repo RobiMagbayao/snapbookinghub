@@ -1,4 +1,4 @@
-const storedFormData = JSON.parse(sessionStorage.getItem('formData'));
+const storedFormData = JSON.parse(localStorage.getItem('formData'));
 
 if (storedFormData) {
     // Iterate through stored form data and display entries

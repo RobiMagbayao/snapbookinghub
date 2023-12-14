@@ -65,7 +65,7 @@
                 <div class="h4 text-center text-uppercase">Explore Inclusions and Add-ons</div>
                 <div class="text-center lead mb-4">Discover our photobooth packages and add-ons. Choose the ones that suit your event and preferences.</div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-8 col-12 px-md-4 px-0 mx-auto my-auto">
+            <div class="col-lg-5 col-md-6 col-sm-8 col-12 px-md-4 px-0 ms-lg-auto mx-auto mt-0">
                 <p class="card-title text-center h5 pb-2 ">PACKAGE INCLUSION</p>
                 <div class="card inclusion ps-4 pe-3  pt-3 h-100">
                     <div class="card-body mx-auto p-0">
@@ -87,8 +87,8 @@
                 </div>
             </div>
             
-            <div class="col-lg-4 col-md-6 col-sm-8 col-12 px-md-4 px-0 mx-auto my-auto">
-                <p class="card-title text-center h5 pt-md-0 pb-2 pt-sm-5 pt-5">AD-ON OPTIONS</p>
+            <div class="col-lg-5 col-md-6 col-sm-8 col-12 px-md-4 px-0 me-lg-auto mx-auto mt-0">
+                <p class="card-title text-center h5 pt-md-0 pb-2 pt-sm-5 pt-5">ADD-ON OPTIONS</p>
                 <div class="card adOnOptions ps-4 pe-3  pt-3 h-100">
                     <div class="card-body mx-auto p-0">
                         <form action="#" method="post" id="optionsForm">
@@ -253,27 +253,6 @@
 <!--end of photobooth package section-->
 
 
-<!--schedule section
-<section class="subhead">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-10 mx-auto">
-                <div class="display-6 fw-bold text-center pb-5">EVENT SCHEDULE</div>
-            </div>
-            <div class="col-lg-8 col-md-10 col-11 mx-auto">
-                <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Asia%2FManila&src=c25hcGJvb2tpbmdodWJAZ21haWwuY29t&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&src=YWUyOGMxN2RjNDkwOGE3OGE1YWVhZTUyZDA3MjczNWYxYjc2ODk5ZDVlYTVhNjViN2UxZGViZTFkNjAzNzg3ZEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZW4ucGhpbGlwcGluZXMjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23039BE5&color=%2333B679&color=%23009688&color=%230B8043" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-                 Calendly inline widget begin
-                <div class="calendly-inline-widget" data-url="https://calendly.com/snapbookinghub?primary_color=b99b84" style="min-width:320px;height:700px;"></div>
-                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-                
-                Calendly inline widget end 
-            </div>
-        </div>
-    </div>
-</section>
-end of schedule section-->
-
-
 <!--location section-->
 <section class="subhead">
     <div class="container-fluid">
@@ -287,11 +266,11 @@ end of schedule section-->
                 <div class="row">
                     <div class="d-flex col-lg-6 col-md-6 col-sm-6 col-12 mx-auto py-3">
                         <label for="date" class="fw-bold me-2">Date: </label>
-                        <input type="date" style="width: 100%;" id="date" name="date">
+                        <input type="date" style="width: 100%;" id="date" name="date" required>
                     </div>
                     <div class="d-flex col-lg-6 col-md-6 col-sm-6 col-12 mx-auto py-3">
-                        <label for="time" class="fw-bold me-2">Time</label>
-                        <input type="time" style="width: 100%;" id="time" name="time">
+                        <label for="time" class="fw-bold me-2">Time:</label>
+                        <input type="time" style="width: 100%;" id="time" name="time" required>
                     </div>
                     <div class="d-flex col-lg-6 col-md-6 col-12 mx-auto py-2">
                         <label class="form-label fw-bold me-2" for="province" >Province:</label>
@@ -342,7 +321,7 @@ end of schedule section-->
                     </div>
                     <div class="d-flex col-12 mx-auto py-2">
                         <label class="form-label fw-bold me-2 flex-shrink-0">Event Address:</label>
-                        <input id="eventAddress" type="text" class="w-100 py-1 px-2" placeholder="Enter Event Address">
+                        <input id="eventAddress" type="text" class="w-100 py-1 px-2" placeholder="Enter Event Address" required>
                     </div>
                     
                 </div>
@@ -375,31 +354,67 @@ end of schedule section-->
                         <tr>
                             <td class="py-2">Basic Package</td>
                             <td class="py-2">1</td>
-                            <td class="py-2">3000</td>
+                            <td class="py-2">₱3000</td>
                         </tr>
-                        <!-- Order summary will be added here dynamically using JavaScript -->
-                    </tbody>
-                    <tbody>
+                        <tr id="birthdayPropsTable" style="display: none;">
+                            <td class="py-2" id="birthdayPropsItem">Birthday Props</td>
+                            <td class="py-2" id="birthdayPropsQuantity">1</td>
+                            <td class="py-2" id="birthdayPropsPrice">₱500</td>
+                        </tr>
+                        <tr id="weddingPropsTable" style="display: none;">
+                            <td class="py-2" id="weddingPropsItem">Wedding Props</td>
+                            <td class="py-2" id="weddingPropsQuantity">1</td>
+                            <td class="py-2" id="weddingPropsPrice">₱500</td>
+                        </tr>
+                        <tr id="graduationPropsTable" style="display: none;">
+                            <td class="py-2" id="graduationPropsItem">Graduation Props</td>
+                            <td class="py-2" id="graduationPropsQuantity">1</td>
+                            <td class="py-2" id="graduationPropsPrice">₱500</td>
+                        </tr>
                         <tr id="radioTable" style="display: none;">
                             <td class="py-2" id="radioItem"></td>
-                            <td class="py-2" id="radioQuantity"></td>
-                            <td class="py-2" id="radioPrice"></td>
+                            <td class="py-2" id="radioQuantity">1</td>
+                            <td class="py-2" id="radioPrice">₱500</td>
                         </tr>
-                        <tr>
+                        <tr id="photoFilterTable" style="display: none;">
+                            <td class="py-2" id="photoFilterTableItem">Photo Filters</td>
+                            <td class="py-2" id="photoFilterTableQuantity">1</td>
+                            <td class="py-2" id="photoFilterTablePrice">₱500</td>
+                        </tr>
+                        <tr id="videoMessageTable" style="display: none;">
+                            <td class="py-2" id="videoMessageItem">Video Message</td>
+                            <td class="py-2" id="videoMessageQuantity">1</td>
+                            <td class="py-2" id="videoMessagePrice">₱700</td>
+                        </tr>
+                        <tr id="boomerangTable" style="display: none;">
+                            <td class="py-2" id="boomerangItem">Boomerang</td>
+                            <td class="py-2" id="boomerangQuantity">1</td>
+                            <td class="py-2" id="boomerangPrice">₱500</td>
+                        </tr>
+                        <tr id="phoneBoothTable" style="display: none;">
+                            <td class="py-2" id="phoneBoothItem">Phone Booth</td>
+                            <td class="py-2" id="phoneBoothQuantity">1</td>
+                            <td class="py-2" id="phoneBoothPrice">₱700</td>
+                        </tr>
+                        <tr id="photoBookTable" style="display: none;">
+                            <td class="py-2" id="photoBookItem">Photobook</td>
+                            <td class="py-2" id="photoBookQuantity">1</td>
+                            <td class="py-2" id="photoBookPrice">₱700</td>
+                        </tr>
+                        <tr id="printPhotoTable" style="display: none;">
                             <td class="py-2" id="printItem"></td>
                             <td class="py-2" id="printQuantity"></td>
                             <td class="py-2" id="printPrice"></td>
                         </tr>
                     </tbody>
-                    <tbody id="orderSummaryTable2"></tbody>
-                    <!-- Order summary will be added here dynamically using JavaScript -->
-                </tbody>
+                
                     <tfoot>
                         <tr>
                             <td colspan="2" class="text-end fw-bold lead">Total Price</td>
-                            <td id="totalPrice" class="text-center fw-bold lead">3000</td>
+                            <td id="totalPrice" class="text-center fw-bold lead">₱3000</td>
                         </tr>
                     </tfoot>
+                    
                 </table>
             </div>
             <div class="col-12 text-s">
@@ -423,7 +438,8 @@ end of schedule section-->
             </div>
             <div class="col-12">
                 <div class="btns mx-auto text-center" >
-                    <a href=""><div class="button btn rounded-0 py-3 px-4">BOOK NOW</div></a>
+                    <a href="" id="saveOrderButton"><div id="saveOrderButton" class="button btn rounded-0 py-3 px-4">BOOK NOW</div></a>
+                    <a href="faqs1.html" target="_blank" class="text-danger"><div class="btn btn-warning">storage test</div></a>
                 </div>
             </div>
         </div>
@@ -737,8 +753,8 @@ end of schedule section-->
 
 <!--Javascript-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    <script src="packages.js"></script>
-    <script src="shared.js"></script>
+    <script type="application/javascript" src="packages.js"></script>
+    <script type="application/javascript" src="shared.js"></script>
 </body>
 </html>
 
