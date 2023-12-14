@@ -280,27 +280,51 @@ document.getElementById("eventAddress").addEventListener("input", getEventDetail
 
 //SAVING DATA TO LOCAL STORAGE
 
+// Retrieve idNumber from local storage or initialize it to 1
+let idNumber = parseInt(localStorage.getItem("idNumber")) || 0;
+
 // Function to save order details to local storage
 function saveOrderDetails() {
     // Create an object to store order details
     const orderDetails = {
+        idNumber: idNumber,
+        date: document.getElementById("date").value,
+        time: document.getElementById("time").value,
+        province: document.getElementById("province").value,
+        municipality: document.getElementById("municipality").value,
+        eventAddress: document.getElementById("eventAddress").value,
         totalPrice: totalPrice,
-        orderSummary: Array.from(addedRows.values()).map(row => row.innerHTML),
-        eventDetails: {
-            date: document.getElementById("date").value,
-            time: document.getElementById("time").value,
-            province: document.getElementById("province").value,
-            municipality: document.getElementById("municipality").value,
-            eventAddress: document.getElementById("eventAddress").value
-        }
     };
 
-    // Convert the object to a JSON string and store it in local storage
-    localStorage.setItem("orderDetails", JSON.stringify(orderDetails));
+    const existingOrderData = JSON.parse(localStorage.getItem('orderDetails')) || [];
 
+     // Add the new form data
+     existingOrderData.push(orderDetails);
 
+     // Store updated form data in localStorage
+     localStorage.setItem('orderDetails', JSON.stringify(existingOrderData));
+
+    // Increment idNumber for the next order
+    idNumber += 1;
+
+    // Update idNumber in local storage
+    localStorage.setItem("idNumber", idNumber.toString());
 }
 
 // Add event listener to the button that triggers the saveOrderDetails function
 document.getElementById("saveOrderButton").addEventListener("click", saveOrderDetails);
+
+
+// Add event listener to the button that clears local storage
+document.getElementById("clearLocalStorageButton").addEventListener("click", clearLocalStorage);
+
+function clearLocalStorage() {
+    localStorage.clear();
+    
+    // Reset idNumber to 1
+    idNumber = 0;
+    localStorage.setItem("idNumber", idNumber.toString());
+
+    console.log("Local Storage cleared.");
+}
 
