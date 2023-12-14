@@ -18,6 +18,27 @@
         <!-- loading animation -->
         <div id="loader"></div>
 
+        <!-- LogIn  -->
+        <div id="logindiv">
+            <div class="admin-form mx-auto p-3">
+                <div class="mx-auto pt-4">
+                    <img class="logo" src="../images/logo.png" /> <span class="logo-text">SnapBookingHub <sup class="">Admin</sup></span>
+                </div>
+                <form id="adminLogin" class="p-3">
+                    <label class="form-label">Admin ID:</label>
+                    <input id="adminloginId" class="form-control" type="text" required />
+                    <label class="form-label mt-3">Password:</label>
+                    <input id="adminloginPwd" class="form-control" minlength="6" type="password" required />
+                    <p id="error1" class="notif mt-1"></p>
+                    <button id="loginBtn" class="btn mt-4" type="submit">Log In</button>
+                </form>
+                <p class="small p-3">
+                    Want to access the admin panel? Request key and register account
+                    <a href="admin_registration.html" class="link-danger">Here</a>
+                </p>
+            </div>
+        </div>
+
         <div id="admin-content" class="container-fluid p-0">
             <div class="d-flex">
                 <!-- Side menu -->
@@ -59,7 +80,7 @@
 
                                 <!-- Sign out btn -->
                                 <li class="my-0 navs rounded-start-5">
-                                    <a class="nav-a py-3 d-flex align-items-center" href="#"
+                                    <a class="nav-a py-3 d-flex align-items-center" href="./"
                                         ><ion-icon class="ps-3 pe-3" name="log-out-outline"></ion-icon>Sign Out</a
                                     >
                                 </li>
@@ -80,9 +101,16 @@
                         </div>
 
                         <!-- Search bar  -->
-                        <form class="input-group search px-2" onsubmit="return false">
-                            <button class="btn search-btn rounded-start-4" type="submit"><i class="bi bi-search"></i></button>
-                            <input class="form-control border-0 rounded-end-4" type="text" minlength="3" placeholder="Search..." required />
+                        <form id="searchForm" class="input-group search px-2">
+                            <button id="submitButton" class="btn search-btn rounded-start-4" type="submit"><i class="bi bi-search"></i></button>
+                            <input
+                                class="form-control border-0 rounded-end-4"
+                                id="searchBox"
+                                type="text"
+                                minlength="3"
+                                placeholder="Enter Name, Booking# or Date here..."
+                                required
+                            />
                         </form>
 
                         <!-- Admin avatar -->
@@ -91,7 +119,7 @@
                                 ><img class="admin-avatar" src="../avatars/avatar-uni.png" alt="admin-avatar" />
                             </a>
                             <ul class="dropdown-menu dmenu dropdown-menu-lg-end align-content-end text-lg-end text-center">
-                                <li class="list-unstyled"><a class="dropdown-item" href="#">Sign out</a></li>
+                                <li class="list-unstyled"><a class="dropdown-item" href="./">Sign out</a></li>
                             </ul>
                         </div>
                     </nav>
@@ -146,5 +174,11 @@
                 preLoader.style.transition = "all .7s";
             }
         </script>
+
+        <!-- Login Script -->
+        <script src="adminlogin.js"></script>
+
+        <!-- Search box -->
+        <script src="searchbox.js"></script>
     </body>
 </html>
