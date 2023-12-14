@@ -328,3 +328,22 @@ function clearLocalStorage() {
     console.log("Local Storage cleared.");
 }
 
+
+//WRITE NEW FORM TO NEW HTML
+const storedFormData = JSON.parse(localStorage.getItem('orderDetails'));
+
+if (storedFormData) {
+    // Iterate through stored form data and display entries
+    storedFormData.forEach(orderDetails => {
+        const newEntry = document.createElement("div");
+
+        newEntry.innerHTML = `<strong>Date:</strong> ${orderDetails.date}<br>
+        <strong>Time:</strong> ${orderDetails.time}<br>
+        <strong>Location:</strong> ${orderDetails.eventAddress}, ${orderDetails.municipality}, ${orderDetails.province}<br>
+        <br>
+        <hr>`;
+
+        // Append the entry to the output div
+        document.getElementById("outputOrder").appendChild(newEntry);
+    });
+}
