@@ -59,9 +59,10 @@
 <section id="contact">
     <div class="container-fluid">
         <div class="row my-auto">
-            <div class="col-lg-10 col-md-10 col-11 my-auto mx-auto">
-                <div class="display-4 fw-bold">We'd Love to Hear From You</div>
-                <br>
+            <div class="col-12 display-4 fw-bold text-center pb-5">
+                We'd Love to Hear From You
+            </div>
+            <div class="col-lg-6 col-md-6 col-12 mx-auto ps-lg-5 ps-md-4 ps-3 px-md-0 px-sm-5 px-3">
                 <div class="">Have a question, need clarification, or concerns? We're here to help.</div>
                 <br>    
                 <div class="">Check out these <a href="faqs.html">FAQs</a>: Many common concerns are addressed in our frequently asked questions. Find quick answers to common queries.</div>
@@ -72,176 +73,72 @@
                     <li><div class="">Email us at mail.@snapbookinghub.com</div></li>
                     <li><div class="">Call us at (046) 123-4567</div></li>
                 </ul>
-            
-                <div class="">Or kindly provide your information below, and our team will contact you shortly.</div>
+                <div class="pt-3">You can also provide your information, and our team will contact you shortly.</div>
             </div>
-        </div>
-        <div class="col-lg-10 col-md-10 col-12 my-auto mx-auto">
-          <form class="row needs-validation ms-lg-5 my-lg-5 mx-md-5 mx-sm-5 mt-md-0 m-3 mb-sm-5 mb-4" novalidate>
-      
-            <div class="col-md-6 col-12 mx-auto mb-3">
-                <label class="form-label visually-hidden" for="first_name">First Name:</label>
-                <input class="form-control" type="text" id="first_name" name="first_name" required placeholder="Your First Name">
-                <div class="valid-feedback">
-                    Looks good!
-                </div>
-                <div class="invalid-feedback">
-                    Please enter your first name.
-                </div>
-            </div>
+            <div class="col-lg-6 col-md-6 col-12 my-auto mx-auto pt-md-0 pt-4 px-md-0 px-sm-5 px-3">
+                <form id="contactForm" class="row needs-validation px-lg-5 px-md-4 px-3" novalidate>
 
-            <div class="col-md-6 col-12 mx-auto mb-3">
-              <label class="form-label visually-hidden" for="surname">Surname:</label>
-              <input class="form-control" type="text" id="surname" name="surname" required placeholder="Your Surname">
-              <div class="valid-feedback">
-                  Looks good!
-              </div>
-              <div class="invalid-feedback">
-                  Please enter your surname.
-              </div>
-          </div>
+                    <div class="col-md-10 col-sm-11 col-12 mx-auto">
+                        <label class="form-label visually-hidden" for="name">Your Name:</label>
+                        <input class="form-control" type="text" id="name" name="name" required placeholder="Your Name">
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please enter your name
+                        </div>
+                    </div>
 
-            <div class="col-md-6 col-12 mx-auto mb-3">
-                <label class="form-label visually-hidden" for="email">Email:</label>
-                <input class="form-control" type="email" id="email" name="email" required placeholder="Email">
-                <div class="valid-feedback">
-                    Looks good!
+                    <div class="col-md-10 col-sm-11 col-12 my-3 mx-auto">
+                        <label class="form-label visually-hidden" for="email">Email:</label>
+                        <input class="form-control" type="email" id="email" name="email" required placeholder="Email">
+                        <div class="valid-feedback">
+                            Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                            Please enter your email
+                            </div>
                     </div>
-                    <div class="invalid-feedback">
-                    Please enter your email.
-                    </div>
-            </div>
-            
-            <div class="col-md-6 col-12 mx-auto mb-3">
-                <label class="form-label visually-hidden" for="phone">Phone:</label>
-                <input class="form-control" type="tel" id="phone" name="phone" required placeholder="Phone">
-                <div class="valid-feedback">
-                    Looks good!
-                    </div>
-                    <div class="invalid-feedback">
-                    Please enter your phone number.
-                    </div>
-            </div>
 
-            <div class="col-md-6 col-12 mx-auto mb-3">
-                <label class="form-label visually-hidden" for="province">Province:</label>
-                    <select class="form-select" id="province" name="province" required>
-                        <option selected disabled value="">Your Province</option>
-                        <option value="abra">Abra</option>
-                        <option value="agusan_del_norte">Agusan del Norte</option>
-                        <option value="agusan_del_sur">Agusan del Sur</option>
-                        <option value="aklan">Aklan</option>
-                        <option value="albay">Albay</option>
-                        <option value="antique">Antique</option>
-                        <option value="apayao">Apayao</option>
-                        <option value="aurora">Aurora</option>
-                        <option value="basilan">Basilan</option>
-                        <option value="bataan">Bataan</option>
-                        <option value="batanes">Batanes</option>
-                        <option value="batangas">Batangas</option>
-                        <option value="benguet">Benguet</option>
-                        <option value="biliran">Biliran</option>
-                        <option value="bohol">Bohol</option>
-                        <option value="bukidnon">Bukidnon</option>
-                        <option value="bulacan">Bulacan</option>
-                        <option value="cagayan">Cagayan</option>
-                        <option value="camarines_norte">Camarines Norte</option>
-                        <option value="camarines_sur">Camarines Sur</option>
-                        <option value="camiguin">Camiguin</option>
-                        <option value="capiz">Capiz</option>
-                        <option value="catanduanes">Catanduanes</option>
-                        <option value="cavite">Cavite</option>
-                        <option value="cebu">Cebu</option>
-                        <option value="compostela_valley">Compostela Valley</option>
-                        <option value="cotabato">Cotabato</option>
-                        <option value="davao_del_norte">Davao del Norte</option>
-                        <option value="davao_del_sur">Davao del Sur</option>
-                        <option value="davao_occidental">Davao Occidental</option>
-                        <option value="davao_oriental">Davao Oriental</option>
-                        <option value="dinagat_islands">Dinagat Islands</option>
-                        <option value="eastern_samar">Eastern Samar</option>
-                        <option value="guimaras">Guimaras</option>
-                        <option value="ifugao">Ifugao</option>
-                        <option value="ilocos_norte">Ilocos Norte</option>
-                        <option value="ilocos_sur">Ilocos Sur</option>
-                        <option value="iloilo">Iloilo</option>
-                        <option value="isabela">Isabela</option>
-                        <option value="kalinga">Kalinga</option>
-                        <option value="la_union">La Union</option>
-                        <option value="laguna">Laguna</option>
-                        <option value="lanao_del_norte">Lanao del Norte</option>
-                        <option value="lanao_del_sur">Lanao del Sur</option>
-                        <option value="leyte">Leyte</option>
-                        <option value="maguindanao">Maguindanao</option>
-                        <option value="marinduque">Marinduque</option>
-                        <option value="masbate">Masbate</option>
-                        <option value="metro_manila">Metro Manila</option>
-                        <option value="misamis_occidental">Misamis Occidental</option>
-                        <option value="misamis_oriental">Misamis Oriental</option>
-                        <option value="mountain_province">Mountain Province</option>
-                        <option value="negros_occidental">Negros Occidental</option>
-                        <option value="negros_oriental">Negros Oriental</option>
-                        <option value="northern_samar">Northern Samar</option>
-                        <option value="nueva_ecija">Nueva Ecija</option>
-                        <option value="nueva_vizcaya">Nueva Vizcaya</option>
-                        <option value="occidental_mindoro">Occidental Mindoro</option>
-                        <option value="oriental_mindoro">Oriental Mindoro</option>
-                        <option value="palawan">Palawan</option>
-                        <option value="pampanga">Pampanga</option>
-                        <option value="pangasinan">Pangasinan</option>
-                        <option value="quezon">Quezon</option>
-                        <option value="quirino">Quirino</option>
-                        <option value="rizal">Rizal</option>
-                        <option value="romblon">Romblon</option>
-                        <option value="samar">Samar</option>
-                        <option value="sarangani">Sarangani</option>
-                        <option value="siquijor">Siquijor</option>
-                        <option value="sorsogon">Sorsogon</option>
-                        <option value="south_cotabato">South Cotabato</option>
-                        <option value="southern_leyte">Southern Leyte</option>
-                        <option value="sultan_kudarat">Sultan Kudarat</option>
-                        <option value="sulu">Sulu</option>
-                        <option value="surigao_del_norte">Surigao del Norte</option>
-                        <option value="surigao_del_sur">Surigao del Sur</option>
-                        <option value="tarlac">Tarlac</option>
-                        <option value="tawi-tawi">Tawi-Tawi</option>
-                        <option value="zambales">Zambales</option>
-                        <option value="zamboanga_del_norte">Zamboanga del Norte</option>
-                        <option value="zamboanga_del_sur">Zamboanga del Sur</option>
-                        <option value="zamboanga_sibugay">Zamboanga Sibugay</option>
-                    </select>
-                <div class="invalid-feedback">
-                    Please select a valid province.
-                </div>
-                <div class="valid-feedback">
-                    Looks good!
-                </div>
-            </div>
+                    <div class="col-md-10 col-sm-11 col-12 mb-3 mx-auto">
+                        <label class="form-label visually-hidden" for="phone">Phone number:</label>
+                        <input class="form-control" type="tel" id="phone" name="phone" required placeholder="Phone Number">
+                        <div class="valid-feedback">
+                                Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please enter your phone number
+                        </div>
+                    </div>
+
+                    <div class="col-md-10 col-sm-11 col-12 mx-auto">
+                        <label for="message" class="form-label visually-hidden">Message:</label>
+                        <textarea class="form-control" id="message" rows="3" required placeholder="Write Your Message"></textarea>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please enter your message
+                        </div>
+                    </div>
+
+                    <div class="btns col-10 mx-auto text-center  mt-3" >
+                        <button type="button" onclick="submitForm()" class="button btn rounded-0 py-2 px-4 mt-4">SUBMIT</button>
+                    </div>
+                
+                </form>
+
     
-            <div class="col-md-6 col-12 mx-auto mb-3">
-                <label class="form-label visually-hidden" for="last_name">City:</label>
-                <input class="form-control" type="text" id="city" name="city" required placeholder="Enter Your City">
-                <div class="valid-feedback">
-                        Looks good!
-                </div>
-                <div class="invalid-feedback">
-                    Please enter your city.
-                </div>
             </div>
-
-            <div class="col-12 mx-auto mb-3">
-                <label for="message" class="form-label visually-hidden">Message:</label>
-                    <textarea class="form-control" id="Message" rows="3" required placeholder="Write Your Message"></textarea>
-            </div>
-
-            <div class="btns col-12 mx-auto text-center">
-                <a href="#"><div class="button btn rounded-0 py-3 px-5 mt-4">SUBMIT</div></a>
-            </div>
-        </form>
         </div>
     </div>
 </section>
 <!--end of contact section-->
+
+
+<!--DELETE LATER-->
+<center><button class="btn btn-warning btn-lg"><a href="contact-form.html" >See stored data here</a></button></center>
+
 
 
 
@@ -316,10 +213,10 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal- body">
-                <div class="card" style="border-radius: 1rem;">
+                <div class="card">
                   <div class="row g-0">
                     <div class="col-md-6 col-lg-5 d-none d-md-block">
-                      <img src="images/g2.jpg" alt="login form" class="img-fluid h-100" style="border-radius: 1rem 0 0 1rem; object-fit: cover;" />
+                      <img src="images/g2.jpg" alt="login form" class="img-fluid h-100" style="object-fit: cover;" />
                     </div>
                     <div class="col-md-6 col-lg-7">
                       <div class="card-body p-4 p-lg-5 text-black">
@@ -373,10 +270,10 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-body p-0 m-0">
-                <div class="card" style="border-radius: 1rem;">
+                <div class="card">
                   <div class="row g-0">
                     <div class="col-md-6 col-lg-5 d-none d-md-block">
-                      <img src="images/g20.jpg" alt="login form" class="img-fluid h-100" style="border-radius: 1rem 0 0 1rem; object-fit: cover;" />
+                      <img src="images/g20.jpg" alt="login form" class="img-fluid h-100" style="object-fit: cover;" />
                     </div>
                     <div class="col-md-6 col-lg-7">
                       <div class="card-body p-4 p-lg-5 text-black">
@@ -422,7 +319,7 @@
                           <div class="form-check mb-5">
                             <input class="form-check-input me-2" type="checkbox" value="" id="registerCheck" />
                             <label class="form-check-label" for="registerCheck">
-                              I agree all statements in <a href="#TermsAndConditons" data-bs-toggle="modal" data-bs-target="#TermsAndConditons" style="color: #393f81;">Terms & Conditions</a>
+                              I agree all statements in &nbsp<a href="#TermsAndConditons" data-bs-toggle="modal" data-bs-target="#TermsAndConditons" style="color: #393f81;">Terms & Conditions</a>
                             </label>
                           </div>
         
@@ -549,30 +446,13 @@
 <!-- end of Terms & Conditions Modal -->
 
 
+<script src="contact.js"></script>
 <!--bootstrap js-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script type="application/javascript" src="form.js"></script>
+
     
-<!--form validation-->
-    <script>
-      (() => {
-      'use strict'
-  
-      
-      const forms = document.querySelectorAll('.needs-validation')
-  
-  
-      Array.from(forms).forEach(form => {
-          form.addEventListener('submit', event => {
-          if (!form.checkValidity()) {
-              event.preventDefault()
-              event.stopPropagation()
-          }
-  
-          form.classList.add('was-validated')
-          }, false)
-      })
-      })()
-  </script>
+    
 </body>
 </html>
 

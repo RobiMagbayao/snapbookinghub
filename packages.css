@@ -16,7 +16,7 @@
   font-size: 1.05rem;
   list-style: none;
   text-align: center;
-  line-height: 1.5;
+  line-height: 2.5;
 }
 
 .features li:before {
@@ -33,16 +33,26 @@
     object-fit: cover;
 }
 
-.card{
+.package-card, .adOnOptions{
     background-color: #f5dcca;
 }
+
+.adOnOptions, .inclusion{
+  background-color: #f5dcca;
+}
+
+
 
 table th {
   text-align: center;
 }
 
 table td {
-  padding: 8px;
+  padding: 0px !important;
+}
+
+.table tbody tr {
+  line-height: 1; 
 }
 
 label {
@@ -53,7 +63,7 @@ label {
 
 input[type="checkbox"],
 input[type="radio"] {
-  margin-right: 21px;
+  margin-right: 20px;
 }
 
 input[type="checkbox"]:checked,
@@ -61,6 +71,10 @@ input[type="radio"]:checked {
   background-color: #B99B84;
 }
 
+/*#orderSummary table td{
+  padding-top: 10px !important;
+}
+*/
 /**/
 .adOnCard {
     max-width: 25ch;
@@ -126,6 +140,10 @@ input[type="radio"]:checked {
 /**/
 
 
+#orderSummary{
+  text-align: center;
+}
+
 
 
 @media (min-width: 576px) and (max-width: 991.98px) {
@@ -133,3 +151,10 @@ input[type="radio"]:checked {
         width: 24rem !important;
     }
 }
+
+@media (min-width: 200px) and (max-width: 767.98px) {
+  .features{
+    line-height: 1.5;
+  }
+}
+
