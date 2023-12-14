@@ -14,22 +14,26 @@
         <link rel="shortcut icon" type="image/jpg" href="../images/favicon.png" />
         <title>Admin Authentication</title>
     </head>
-    <body class="container-fluid p-0 auth-contain pt-5">
+    <body class="container-fluid p-0 auth-contain">
         <!-- loading animation -->
         <div id="loader"></div>
 
         <!-- Log-in Form -->
-        <div class="admin-form mx-auto my-auto">
-            <div class="mx-auto pt-4 logo-text">
-                <img class="logo" src="../images/logo.png" /> SnapBookingHub <span class="small fs-6">Admin login</span>
+        <div class="admin-form mx-auto my-auto p-3">
+            <div class="mx-auto pt-4">
+                <img class="logo" src="../images/logo.png" /> <span class="logo-text">SnapBookingHub <sup class="">Admin</sup></span>
             </div>
             <form class="p-4">
                 <label class="form-label">Admin ID:</label>
                 <input class="form-control" type="text" required />
                 <label class="form-label mt-3">Password:</label>
                 <input class="form-control" type="password" required />
-                <button class="btn mt-3" type="submit">Log In</button>
+                <button class="btn mt-4" type="submit">Log In</button>
             </form>
+            <p class="small">
+                Want to access the admin panel? Request key and register account
+                <a href="admin_registration.html" class="link-danger">Here</a>
+            </p>
         </div>
 
         <!-- Ion icons script -->
@@ -47,7 +51,7 @@
             //Loader
             let preLoader = document.getElementById("loader");
 
-            setTimeout(preLoaderHandler, 10);
+            setTimeout(preLoaderHandler, 500);
 
             function preLoaderHandler() {
                 preLoader.style.opacity = "0";
