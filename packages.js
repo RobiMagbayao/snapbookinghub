@@ -280,14 +280,16 @@ document.getElementById("eventAddress").addEventListener("input", getEventDetail
 
 //SAVING DATA TO LOCAL STORAGE
 
-// Retrieve idNumber from local storage or initialize it to 1
-let idNumber = parseInt(localStorage.getItem("idNumber")) || 0;
+// 1 KEY, MULTIPLE OBJECTS
+
+// Retrieve bookingNumber from local storage or initialize it to 1
+let bookingNumber = parseInt(localStorage.getItem("bookingNumber")) || 0;
 
 // Function to save order details to local storage
 function saveOrderDetails() {
     // Create an object to store order details
     const orderDetails = {
-        idNumber: idNumber,
+        bookingNumber: bookingNumber,
         date: document.getElementById("date").value,
         time: document.getElementById("time").value,
         province: document.getElementById("province").value,
@@ -304,46 +306,61 @@ function saveOrderDetails() {
      // Store updated form data in localStorage
      localStorage.setItem('orderDetails', JSON.stringify(existingOrderData));
 
-    // Increment idNumber for the next order
-    idNumber += 1;
+    // Increment bookingNumber for the next order
+    bookingNumber += 1;
 
-    // Update idNumber in local storage
-    localStorage.setItem("idNumber", idNumber.toString());
+    // Update bookingNumber in local storage
+    localStorage.setItem("bookingNumber", bookingNumber.toString());
 }
 
 // Add event listener to the button that triggers the saveOrderDetails function
 document.getElementById("saveOrderButton").addEventListener("click", saveOrderDetails);
 
 
-// Add event listener to the button that clears local storage
+// CLEAR LOCAL STORAGE
 document.getElementById("clearLocalStorageButton").addEventListener("click", clearLocalStorage);
 
 function clearLocalStorage() {
     localStorage.clear();
     
-    // Reset idNumber to 1
-    idNumber = 0;
-    localStorage.setItem("idNumber", idNumber.toString());
+    // Reset bookingNumber to 0
+    bookingNumber = 0;
+    localStorage.setItem("bookingNumber", bookingNumber.toString());
 
     console.log("Local Storage cleared.");
 }
 
 
-//WRITE NEW FORM TO NEW HTML
-const storedFormData = JSON.parse(localStorage.getItem('orderDetails'));
 
-if (storedFormData) {
-    // Iterate through stored form data and display entries
-    storedFormData.forEach(orderDetails => {
-        const newEntry = document.createElement("div");
+// MULTIPLE KEYS
 
-        newEntry.innerHTML = `<strong>Date:</strong> ${orderDetails.date}<br>
-        <strong>Time:</strong> ${orderDetails.time}<br>
-        <strong>Location:</strong> ${orderDetails.eventAddress}, ${orderDetails.municipality}, ${orderDetails.province}<br>
-        <br>
-        <hr>`;
+// Retrieve keyNumber from local storage or initialize it to 1
+// Retrieve keyNumber from local storage or initialize it to 1
+let keyNumber = parseInt(localStorage.getItem("keyNumber")) || 0;
 
-        // Append the entry to the output div
-        document.getElementById("outputOrder").appendChild(newEntry);
-    });
+// Function to save order details to local storage
+function bookingDetails() {
+    // Create an object to store order details
+    const eventDetails = {
+        keyNumber: keyNumber,
+        date: document.getElementById("date").value,
+        time: document.getElementById("time").value,
+        province: document.getElementById("province").value,
+        municipality: document.getElementById("municipality").value,
+        eventAddress: document.getElementById("eventAddress").value,
+        totalPrice: totalPrice,
+    };
+
+    localStorage.setItem(`eventDetails${keyNumber}`, JSON.stringify(eventDetails));
+
+    // Increment keyNumber for the next booking
+    keyNumber += 1;
+
+    // Update keyNumber in local storage
+    localStorage.setItem("keyNumber", keyNumber.toString());
 }
+
+// Add event listener to the button that triggers the bookingDetails function
+document.getElementById("orderDetailsButton").addEventListener("click", bookingDetails);
+
+

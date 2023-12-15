@@ -8,7 +8,9 @@ if (storedFormData) {
 
 
         //PART THAT USER/ADMIN CAN SEE
-        newEntry.innerHTML = `<strong>Event Date:</strong> ${orderDetails.date}<br>
+        newEntry.innerHTML = `
+        <strong>Booking Number:</strong> ${orderDetails.bookingNumber}<br>
+        <strong>Event Date:</strong> ${orderDetails.date}<br>
         <strong>Event Time:</strong> ${orderDetails.time}<br>
         <strong>Event Location:</strong> ${orderDetails.eventAddress}, ${orderDetails.municipality}, ${orderDetails.province}<br>
         <strong>Total Price: </strong> ₱${orderDetails.totalPrice}<br>
