@@ -496,11 +496,11 @@
                     <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-3">
                         <div class="footer-header h5 mb-sm-2 m-0 pt-lg-0 pt-md-3 pt-2">Sign Up for Newsletters</div>
                         <p>Be the one to know what's new and get exclusive deals!</p>
-                        <div class="input-group w-75 mx-auto">
-                            <input type="text" class="form-control" placeholder="Email" aria-label="email" aria-describedby="button-addon">
-                            <button id="newsletter-btn" class="btn text-light" type="button" id="button-addon"><i class="bi bi-arrow-right-circle"></i></button>
-                        </div>
-                    </div>
+                        <form id="newsletterForm" class="input-group w-75 mx-auto" onsubmit="submitEmailForm(event)">
+                            <input id="newsletter-email" type="email" class="form-control" placeholder="Email" aria-label="email" aria-describedby="button-addon" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+                            <button id="newsletter-btn" class="btn text-light" type="submit"><i class="bi bi-arrow-right-circle"></i></button>
+                        </form>
+                    </div>    
                 </div>
             </div>
         </div>

@@ -336,7 +336,7 @@ function clearLocalStorage() {
 
 // Retrieve keyNumber from local storage or initialize it to 1
 // Retrieve keyNumber from local storage or initialize it to 1
-let keyNumber = parseInt(localStorage.getItem("keyNumber")) || 0;
+let keyNumber = parseInt(localStorage.getItem("keyNumber")) || 1;
 
 // Function to save order details to local storage
 function bookingDetails() {

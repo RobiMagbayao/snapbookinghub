@@ -5,12 +5,6 @@ function submitForm() {
     const phone = document.getElementById("phone").value;
     const message = document.getElementById("message").value;
 
-    // Check if any input field is blank
-    if (!name || !email || !phone || !message) {
-        alert("Please fill in all fields.");
-        return;
-    }
-
     // Get the current date and time
     const dateTime = new Date();
     const formattedDateTime = dateTime.toLocaleString();
@@ -33,10 +27,12 @@ function submitForm() {
     // Store updated form data in localStorage
     localStorage.setItem('formData', JSON.stringify(existingFormData));
 
-    // Clear the form fields
-    document.getElementById("contactForm").reset();
-}
+    // Reset the form's validation state
+    form.classList.remove('was-validated');
 
+    // Clear the form fields
+    form.reset();
+}
 
 
 //WRITE NEW FORM TO NEW HTML
