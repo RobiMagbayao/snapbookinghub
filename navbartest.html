@@ -21,120 +21,62 @@
     </head>
     <body class="m-0 p-0 overflow-auto">
         <!--navigation section-->
-        <header w3-include-html="./navbartest.html"></header>
+        <header class="m-0 p-0 sticky-top z-1">
+            <div class="container-fluid p-0">
+                <div class="col-12">
+                    <nav class="navbar nav-bar navbar-expand-lg pe-2">
+                        <a class="navbar-brand ps-lg-3 ps-1 py-2" href="index.html#home">
+                            <img src="images/logo.png" height="50" class="d-inline-block align-top" alt="logo" />
+                            <span id="siteName">SnapBookingHub</span>
+                        </a>
+                        <button
+                            class="navbar-toggler"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#nav-menu"
+                            aria-controls="nav-menu"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation"
+                        >
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="nav-menu">
+                            <ul class="navbar-nav d-flex align-items-center ms-auto mb-2 mb-lg-0 pe-lg-4 pe-0">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.html">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="packages.html">Packages</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="about.html">About Us</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="contact.html">Contact Us</a>
+                                </li>
+                                <li id="not-loggedin" class="nav-item d-none">
+                                    <a class="nav-link" href="#signInModal" data-bs-toggle="modal" data-bs-target="#signInModal"
+                                        ><i class="bi bi-person-circle"></i> Sign In</a
+                                    >
+                                </li>
+                                <li class="nav-item" id="user-account">
+                                    <div class="dropdown">
+                                        <a class="nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <img class="img-fluid login-avatar" src="./avatars/avatar-uni.png" alt="avatar" />
+                                        </a>
+                                        <ul class="dropdown-menu dmenu dropdown-menu-lg-end align-content-end text-lg-end text-center">
+                                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                                            <li><a class="dropdown-item" href="#">Log out</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
         <!--end of navigation section-->
-
-        <!--User section-->
-        <section id="user-page" class="container-fluid p-0">
-            <div class="p-0 d-flex flex-row">
-                <div class="col-auto p-0 m-0">
-                    <ul class="list-group-item list-unstyled z-0 side-menu-list mt-2 sticky-top">
-                        <li class="py-3 ps- px-3">
-                            <a class="d-flex align-items-center" onclick="document.getElementById('userframe').src = './user_profile/profile.html'">
-                                <button
-                                    class="icon fs-4 bi bi-person-lines-fill"
-                                    data-bs-toggle="tooltip"
-                                    data-bs-custom-class="custom-tooltip"
-                                    data-bs-placement="right"
-                                    data-bs-title="Profile"
-                                ></button>
-                                <span class="ps-4 d-none d-xl-inline"> Profile</span></a
-                            >
-                        </li>
-                        <li class="py-3 px-3">
-                            <a
-                                class="d-flex pe-lg-3 align-items-center"
-                                onclick="document.getElementById('userframe').src = './user_profile/bookinghistory.html'"
-                                ><button
-                                    class="icon fs-4 bi bi-clock-history"
-                                    data-bs-toggle="tooltip"
-                                    data-bs-custom-class="custom-tooltip"
-                                    data-bs-placement="right"
-                                    data-bs-title="Booking History"
-                                ></button>
-                                <span class="ps-4 d-none d-xl-inline"> Booking History </span></a
-                            >
-                        </li>
-
-                        <li class="py-3 px-3">
-                            <a class="d-flex align-items-center" onclick="document.getElementById('userframe').src = './user_profile/help.html'"
-                                ><button
-                                    class="icon fs-4 bi bi-question-circle"
-                                    data-bs-toggle="tooltip"
-                                    data-bs-custom-class="custom-tooltip"
-                                    data-bs-placement="right"
-                                    data-bs-title="Help"
-                                ></button>
-                                <span class="ps-4 d-none d-xl-inline"> Help </span></a
-                            >
-                        </li>
-                    </ul>
-                </div>
-                <div class="col p-0 m-0 user-content">
-                    <div class="d-flex container-fluid flex-column justify-content-center p-2">
-                        <iframe class="" id="userframe" src="./user_profile/profile.html"></iframe>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!--end of User section-->
-
-        <!--footer section-->
-
-        <footer id="footer" class="text-white z-1 pt-4 position-sticky">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-4 col-md-12 col-12 footer-img text-center my-auto mx-0">
-                        <img class="img-fluid" style="height: 100px" src="images/footer-logo.png" alt="logo" />
-                        <div class="h4 mb-1">SnapBookingHub</div>
-                        <p class="mb-2">Picture-Perfect Moments, Every Time</p>
-                        <div class="mb-3">
-                            <a href="https://www.facebook.com/" target="_blank"><i class="bi bi-facebook px-1"></i></a>
-                            <a href="https://www.instagram.com/" target="_blank"><i class="bi bi-instagram px-1"></i></a>
-                            <a href="https://twitter.com/" target="_blank"><i class="bi bi-twitter px-1"></i></a>
-                            <a href="https://www.tiktok.com/en/" target="_blank"><i class="bi bi-tiktok px-1"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-8 col-md-12 col-12 text-center my-auto">
-                        <div class="row p-0 m-0">
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-12 mb-3">
-                                <div class="footer-header h5 mb-sm-2 m-0 pt-lg-0 pt-md-3 pt-2">COMPANY</div>
-                                <div><a href="about.html">About Us</a></div>
-                                <div><a href="packages.html">Packages</a></div>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-12 mb-3 p-0">
-                                <div class="footer-header h5 mb-sm-2 m-0 pt-lg-0 pt-md-3 pt-2">HELP</div>
-                                <div><a href="contact.html">Contact Us</a></div>
-                                <div><a href="faqs.html">FAQs</a></div>
-                                <div><a href="#PrivacyPolicy" data-bs-toggle="modal" data-bs-target="#PrivacyPolicy">Privacy Policy</a></div>
-                                <div>
-                                    <a href="#TermsAndConditons" data-bs-toggle="modal" data-bs-target="#TermsAndConditons">Terms & Conditions</a>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-3">
-                                <div class="footer-header h5 mb-sm-2 m-0 pt-lg-0 pt-md-3 pt-2">Sign Up for Newsletters</div>
-                                <p>Be the one to know what's new and get exclusive deals!</p>
-                                <div class="input-group w-75 mx-auto">
-                                    <input type="text" class="form-control" placeholder="Email" aria-label="email" aria-describedby="button-addon" />
-                                    <button id="newsletter-btn" class="btn text-light" type="button" id="button-addon">
-                                        <i class="bi bi-arrow-right-circle"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row m-0 p-0">
-                    <div class="col-12 m-0 p-0">
-                        <hr class="m-0 py-2" />
-                        <div class="col text-center pb-3">&copy; SnapBookingHub 2023 | All Rights Reserved</div>
-                        <div class="col text-center pb-3">Developed by: Magbayao & Bustamante</div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!--end of footer section-->
 
         <!-- signIn Modal -->
         <div
@@ -457,8 +399,6 @@
             integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
             crossorigin="anonymous"
         ></script>
-
-        <script src="navbar-test.js"></script>
 
         <!-- BS tooltip -->
         <script>

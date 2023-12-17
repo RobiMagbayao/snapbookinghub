@@ -16,6 +16,7 @@ function updateCheckCounter() {
     checkCounter.innerText = selected;
 
     // Disable "Show Password" and "Edit Password" if multiple checkbox are checked
+    //Add disable and enable for "Show Password" and "Edit Password"
     if (selected > 1) {
         editPassword.disabled;
         editPassword.style.cursor = "default";
