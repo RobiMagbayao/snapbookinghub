@@ -1,8 +1,8 @@
-#faq{
-    margin-top: 130px;
+#faq {
+    margin-top: 50px;
 }
 
-.accordion{
+.accordion {
     --bs-accordion-btn-bg: #dbb293;
     --bs-accordion-active-bg: rgb(193, 151, 119);
     --bs-accordion-active-color: white;
@@ -13,25 +13,25 @@
     --bs-accordion-btn-active-icon: white;
 }
 
-.accordion-body{
-    font-family: 'Josefin Sans', sans-serif;
+.accordion-body {
+    font-family: "Josefin Sans", sans-serif;
     color: black;
     font-size: 1.1rem;
     padding-left: 40px;
 }
 
-.accordion-button{
-    font-family: 'Poppins', sans-serif;
+.accordion-button {
+    font-family: "Poppins", sans-serif;
 }
 
-.accordion-button:not(.collapsed){
+.accordion-button:not(.collapsed) {
     box-shadow: none;
 }
 
-.accordion-button:after{
+.accordion-button:after {
     color: white;
 }
 
-.accordion-button:before{
+.accordion-button:before {
     color: white;
 }
