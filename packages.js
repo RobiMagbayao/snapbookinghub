@@ -317,18 +317,16 @@ document.getElementById("eventAddress").addEventListener("input", getEventDetail
 let bookingNumber = parseInt(localStorage.getItem("bookingNumber")) || 0;
 
 
-orderDetails = {
-    bookingNumber: bookingNumber,
-    date: document.getElementById("date").value,
-    time: document.getElementById("time").value,
-    province: document.getElementById("province").value,
-    municipality: document.getElementById("municipality").value,
-    eventAddress: document.getElementById("eventAddress").value,
-    totalPrice: totalPrice,
-};
-
 // Function to save order details to local storage
 function saveOrderDetails() {
+
+    orderDetails.bookingNumber = bookingNumber;
+    orderDetails.date = document.getElementById("date").value;
+    orderDetails.time = document.getElementById("time").value;
+    orderDetails.province = document.getElementById("province").value;
+    orderDetails.municipality = document.getElementById("municipality").value;
+    orderDetails.eventAddress = document.getElementById("eventAddress").value;
+    orderDetails.totalPrice = totalPrice;
 
     const existingOrderData = JSON.parse(localStorage.getItem('orderDetails')) || [];
 
@@ -373,7 +371,7 @@ let keyNumber = parseInt(localStorage.getItem("keyNumber")) || 1;
 // Function to save order details to local storage
 function bookingDetails() {
     // Create an object to store order details
-    const eventDetails = orderDetails
+    const eventDetails = orderDetails;
 
     localStorage.setItem(`eventDetails${keyNumber}`, JSON.stringify(eventDetails));
 

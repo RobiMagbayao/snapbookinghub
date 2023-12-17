@@ -6,8 +6,14 @@ if (storedFormData) {
     storedFormData.forEach(orderDetails => {
         const newEntry = document.createElement("div");
 
+        // Get the current timestamp
+        const currentDate = new Date();
+        const formattedDate = currentDate.toLocaleDateString();
+        const formattedTime = currentDate.toLocaleTimeString();
+
         // Start building the inner HTML
         let innerHTML = `
+        <strong>Date of Entry:</strong> ${formattedDate}, ${formattedTime}<br>
         <strong>Booking Number:</strong> ${orderDetails.bookingNumber}<br>
         <strong>Event Date:</strong> ${orderDetails.date}<br>
         <strong>Event Time:</strong> ${orderDetails.time}<br>
