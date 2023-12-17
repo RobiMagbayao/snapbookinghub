@@ -81,8 +81,23 @@
         <!--end of User section-->
 
         <!--footer section-->
+        <section class="m-0 p-0">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 p-0 m-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                            <path
+                                fill="#B99B84"
+                                fill-opacity="1"
+                                d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+                            ></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <footer id="footer" class="text-white z-1 pt-4 position-sticky">
+        <footer id="footer" class="text-white">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-4 col-md-12 col-12 footer-img text-center my-auto mx-0">
@@ -115,12 +130,19 @@
                             <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-3">
                                 <div class="footer-header h5 mb-sm-2 m-0 pt-lg-0 pt-md-3 pt-2">Sign Up for Newsletters</div>
                                 <p>Be the one to know what's new and get exclusive deals!</p>
-                                <div class="input-group w-75 mx-auto">
-                                    <input type="text" class="form-control" placeholder="Email" aria-label="email" aria-describedby="button-addon" />
-                                    <button id="newsletter-btn" class="btn text-light" type="button" id="button-addon">
-                                        <i class="bi bi-arrow-right-circle"></i>
-                                    </button>
-                                </div>
+                                <form id="newsletterForm" class="input-group w-75 mx-auto" onsubmit="submitEmailForm(event)">
+                                    <input
+                                        id="newsletter-email"
+                                        type="email"
+                                        class="form-control"
+                                        placeholder="Email"
+                                        aria-label="email"
+                                        aria-describedby="button-addon"
+                                        required
+                                        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                                    />
+                                    <button id="newsletter-btn" class="btn text-light" type="submit"><i class="bi bi-arrow-right-circle"></i></button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -136,317 +158,6 @@
         </footer>
         <!--end of footer section-->
 
-        <!-- signIn Modal -->
-        <div
-            class="modal modal-lg fade text-dark"
-            id="signInModal"
-            data-bs-backdrop="static"
-            tabindex="-1"
-            aria-labelledby="signInModal"
-            aria-hidden="true"
-        >
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal- body">
-                        <div class="card border-0" style="border-radius: 1rem">
-                            <div class="row g-0">
-                                <div class="col-md-6 col-lg-5 d-none d-md-block">
-                                    <img
-                                        src="images/g2.jpg"
-                                        alt="login form"
-                                        class="img-fluid h-100"
-                                        style="border-radius: 1rem 0 0 1rem; object-fit: cover"
-                                    />
-                                </div>
-                                <div class="col-md-6 col-lg-7">
-                                    <div class="card-body p-4 p-lg-5 text-black">
-                                        <button
-                                            type="button"
-                                            class="btn-close position-absolute top-0 end-0 mt-3 me-3"
-                                            data-bs-dismiss="modal"
-                                            aria-label="Close"
-                                        ></button>
-                                        <form>
-                                            <div class="mb-4 pb-1 text-center">
-                                                <div class="h1 mb-0" style="font-family: 'Fjalla One', sans-serif">SnapBookingHub</div>
-                                            </div>
-
-                                            <div class="input-group mb-4">
-                                                <span class="input-group-text" id="loginEmail"><i class="bi bi-envelope-at"></i></span>
-                                                <div class="form-outline flex-fill mb-0">
-                                                    <input type="email" id="loginEmail" class="form-control" placeholder="Your Email" />
-                                                    <label class="form-label" for="loginEmail" hidden>Your Email</label>
-                                                </div>
-                                            </div>
-
-                                            <div class="input-group mb-4">
-                                                <span class="input-group-text" id="loginPassword"><i class="bi bi-person-lock"></i></span>
-                                                <div class="form-outline flex-fill mb-0">
-                                                    <input type="password" id="loginPassword" class="form-control" placeholder="Password" />
-                                                    <label class="form-label" for="loginPassword" hidden>Password</label>
-                                                </div>
-                                            </div>
-
-                                            <div class="pt-1 mb-4 text-center">
-                                                <button class="btn btn-dark btn-lg btn-block px-4" type="button">Login</button>
-                                            </div>
-
-                                            <a class="small text-muted" href="#!">Forgot password?</a>
-                                            <p class="mb-5 pb-lg-2" style="color: #393f81">
-                                                Don't have an account?
-                                                <a href="#signUpModal" data-bs-toggle="modal" data-bs-target="#signUpModal" style="color: #393f81"
-                                                    >Register here</a
-                                                >
-                                            </p>
-                                            <a
-                                                href="#PrivacyPolicy"
-                                                data-bs-toggle="modal"
-                                                data-bs-target="#PrivacyPolicy"
-                                                class="small"
-                                                style="color: #393f81"
-                                                >Privacy Policy</a
-                                            >
-                                            <a
-                                                href="#TermsAndConditons"
-                                                data-bs-toggle="modal"
-                                                data-bs-target="#TermsAndConditons"
-                                                class="small"
-                                                style="color: #393f81"
-                                                >Terms & Conditions</a
-                                            >
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- end of signIn Modal -->
-
-        <!-- signUp Modal -->
-        <div
-            class="modal modal-lg fade text-dark"
-            id="signUpModal"
-            data-bs-backdrop="static"
-            tabindex="-1"
-            aria-labelledby="signUpModal"
-            aria-hidden="true"
-        >
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-body p-0 m-0">
-                        <div class="card border-0" style="border-radius: 1rem">
-                            <div class="row g-0">
-                                <div class="col-md-6 col-lg-5 d-none d-md-block">
-                                    <img
-                                        src="images/g20.jpg"
-                                        alt="login form"
-                                        class="img-fluid h-100"
-                                        style="border-radius: 1rem 0 0 1rem; object-fit: cover"
-                                    />
-                                </div>
-                                <div class="col-md-6 col-lg-7">
-                                    <div class="card-body p-4 p-lg-5 text-black">
-                                        <button
-                                            type="button"
-                                            class="btn-close position-absolute top-0 end-0 mt-3 me-3"
-                                            data-bs-dismiss="modal"
-                                            aria-label="Close"
-                                        ></button>
-                                        <form>
-                                            <div class="mb-3 pb-1 text-center">
-                                                <div class="h1 mb-0" style="font-family: 'Fjalla One', sans-serif">Register</div>
-                                            </div>
-
-                                            <div class="input-group mb-4">
-                                                <span class="input-group-text" id="registerName"><i class="bi bi-person-circle"></i></span>
-                                                <div class="form-outline flex-fill mb-0">
-                                                    <input type="text" id="registerName" class="form-control" placeholder="Your Name" />
-                                                    <label class="form-label" for="registerName" hidden>Your Name</label>
-                                                </div>
-                                            </div>
-
-                                            <div class="input-group mb-4">
-                                                <span class="input-group-text" id="registerEmail"><i class="bi bi-envelope-at"></i></span>
-                                                <div class="form-outline flex-fill mb-0">
-                                                    <input type="email" id="registerEmail" class="form-control" placeholder="Your Email" />
-                                                    <label class="form-label" for="registerEmail" hidden>Your Email</label>
-                                                </div>
-                                            </div>
-
-                                            <div class="input-group mb-4">
-                                                <span class="input-group-text" id="registerPassword"><i class="bi bi-person-lock"></i></span>
-                                                <div class="form-outline flex-fill mb-0">
-                                                    <input type="password" id="registerPassword" class="form-control" placeholder="Password" />
-                                                    <label class="form-label" for="registerPassword" hidden>Password</label>
-                                                </div>
-                                            </div>
-
-                                            <div class="input-group mb-4">
-                                                <span class="input-group-text" id="registerPassword2"><i class="bi bi-lock-fill"></i></span>
-                                                <div class="form-outline flex-fill mb-0">
-                                                    <input
-                                                        type="password"
-                                                        id="registerPassword2"
-                                                        class="form-control"
-                                                        placeholder="Repeat your password"
-                                                    />
-                                                    <label class="form-label" for="registerPassword2" hidden>Repeat your password</label>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-check mb-5">
-                                                <input class="form-check-input me-2" type="checkbox" value="" id="registerCheck" />
-                                                <label class="form-check-label" for="registerCheck">
-                                                    I agree all statements in
-                                                    <a
-                                                        href="#TermsAndConditons"
-                                                        data-bs-toggle="modal"
-                                                        data-bs-target="#TermsAndConditons"
-                                                        style="color: #393f81"
-                                                        >Terms & Conditions</a
-                                                    >
-                                                </label>
-                                            </div>
-
-                                            <div class="pt-1 mb-4 text-center">
-                                                <button class="btn btn-dark btn-lg btn-block" type="button">Register</button>
-                                            </div>
-
-                                            <p class="mt-5 text-center" style="color: #393f81">
-                                                Already have an account?
-                                                <a href="#signInModal" data-bs-toggle="modal" data-bs-target="#signInModal" style="color: #393f81"
-                                                    >Login here</a
-                                                >
-                                            </p>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- end of signUp Modal -->
-
-        <!-- Private Policy Modal -->
-        <div class="modal modal-lg fade text-dark" id="PrivacyPolicy" tabindex="-1" aria-labelledby="PrivacyPolicy" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-scrollable">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="PrivacyPolicy">Privacy Policy</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <i>Effective Date: 24 November 2023</i><br /><br />
-                        <p>
-                            Your privacy and the security of your personal information are important to SnapBookingHub. In the event that you visit
-                            our website or engage with us in any other manner, this Privacy Policy describes how we will gather, use, and protect your
-                            data.
-                        </p>
-                        <p><strong>Information We Collect</strong></p>
-                        <p>
-                            When you give us personal information, including your name, email address, phone number, and other contact information,
-                            like when you inquire or book a reservation, we may be able to use that information to identify you. In addition, our
-                            website may gather non-personal data like IP addresses, browser information, and browsing patterns.
-                        </p>
-                        <p><strong>How We Use Your Information</strong></p>
-                        <p>
-                            In order to better serve you and answer to your questions, we use the information you voluntarily give us. With your
-                            permission only, we may also use your data for marketing and promotional activities.
-                        </p>
-                        <p><strong>Data Security</strong></p>
-                        <p>
-                            We take data security seriously and use industry-recognized safeguards to guard against unauthorized access, disclosure,
-                            alteration, and destruction of your information.
-                        </p>
-                        <p><strong>Third-Party Links</strong></p>
-                        <p>
-                            Links to other websites may be found on our website. The privacy policies or content of these external websites are not
-                            our responsibility.
-                        </p>
-                        <p><strong>Cookies</strong></p>
-                        <p>
-                            To improve your experience on our website, we use cookies. These cookies can be disabled through your browser settings and
-                            do not gather personal information.
-                        </p>
-                        <p><strong>Your Privacy Choices</strong></p>
-                        <p>
-                            You have the right to access, modify, or delete your personal information and can manage your data by getting in touch
-                            with us. Additionally, you can unsubscribe from our marketing mailings whenever you choose.
-                        </p>
-                        <p><strong>Changes to This Policy</strong></p>
-                        <p>
-                            This Privacy Policy may be updated and revised at any time by SnapBookingHub. Any modifications will have an updated
-                            effective date and be displayed on our website.
-                        </p>
-                        <p><strong>Contact Us</strong></p>
-                        <p>
-                            Please get in touch with us at mail@snapbookinghub.com if you have any queries or complaints regarding our privacy policy.
-                        </p>
-                        <p>We value your trust in SnapBookingHub and value your privacy very much.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- end of Private Policy Modal -->
-
-        <!-- Terms & Conditions Modal -->
-        <div class="modal modal-lg fade text-dark" id="TermsAndConditons" tabindex="-1" aria-labelledby="TermsAndConditons" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-scrollable">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="TermsAndConditons">Terms & Conditions</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <i>Effective Date: 24 November 2023</i><br /><br />
-                        <p>
-                            Before using the services of SnapBookingHub or visiting our website, please read these Terms & Conditions carefully. You
-                            accept these terms and conditions by using our services or website.
-                        </p>
-                        <p><strong>Use of Services</strong></p>
-                        <p>
-                            You must follow all relevant rules and regulations when using our services and website. Any usage that contravenes,
-                            infringes upon, or is inconsistent with the intended use of our services is strictly forbidden.
-                        </p>
-                        <p><strong>Privacy and Security</strong></p>
-                        <p>
-                            We are devoted to keeping your personal information secure. For more information on how we collect, utilize, and safeguard
-                            your data, please refer to our Privacy Policy.
-                        </p>
-                        <p><strong>Liability</strong></p>
-                        <p>
-                            On our website and in our services, we strive to present accurate and current information. However, we disclaim all
-                            liability for any mistakes, omissions, or inaccurate information. You do so at your own risk when using our services.
-                        </p>
-                        <p><strong>Third-Party Links</strong></p>
-                        <p>
-                            Links to other websites may be found on our website. The terms and conditions, privacy policies, or content of these
-                            external websites are not our responsibility.
-                        </p>
-                        <p><strong>Changes to Terms & Conditions</strong></p>
-                        <p>
-                            These Terms & Conditions may be updated and revised at any time by SnapBookingHub. Any changes will have an updated
-                            effective date and be displayed on our website.
-                        </p>
-                        <p><strong>Contact Us</strong></p>
-                        <p>Please email us at mail@snapbookinghub.com if you have any inquiries or complaints about our Terms & Conditions.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- end of Terms & Conditions Modal -->
-
         <!-- Ion icon script -->
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
@@ -459,7 +170,7 @@
         ></script>
 
         <!-- Navbar -->
-        <script src="navbar.js"></script>
+        <script type="application/javascript" src="navbar.js"></script>
 
         <!-- BS tooltip -->
         <script>

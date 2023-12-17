@@ -1,449 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=320, height=device-height, target-densitydpi=medium-dpi" />
-    <title>SnapBookingHub</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="shared.css">
-    <link rel="stylesheet" type="text/css" href="contact.css">
-    <link rel="shortcut icon" type="image/jpg" href="images/favicon.png"/>
-</head>
-<body class="m-0 p-0">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=320, height=device-height, target-densitydpi=medium-dpi"
+        />
+        <title>SnapBookingHub</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" type="text/css" href="shared.css" />
+        <link rel="stylesheet" type="text/css" href="contact.css" />
+        <link rel="shortcut icon" type="image/jpg" href="images/favicon.png" />
+    </head>
+    <body class="m-0 p-0">
+        <!--navigation section-->
+        <header w3-include-html="./navbar07301987.html"></header>
+        <!--end of navigation section-->
 
-<!--navigation section-->
-<header class="m-0 p-0">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12">
-                <nav class="navbar navbar-expand-lg fixed-top">
-                    <a class="navbar-brand ps-lg-3 ps-1 py-2" href="index.html#home">
-                    <img src="images/logo.png" height="50" class="d-inline-block align-top" alt="logo"> 
-                    <span id="siteName">SnapBookingHub</span> </a>
-                    <button class="navbar-toggler" 
-                        type="button" 
-                        data-bs-toggle="collapse" 
-                        data-bs-target="#nav-menu" 
-                        aria-controls="nav-menu" 
-                        aria-expanded="false" 
-                        aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="nav-menu">
-                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 pe-lg-4 pe-0">
-                            <li class="nav-item">
-                                <a class="nav-link" href="index.html">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="packages.html">Packages</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="about.html">About Us</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="contact.html">Contact Us</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#signInModal" data-bs-toggle="modal" data-bs-target="#signInModal"><i class="bi bi-person-circle"></i> Sign In</a>
-                            </li>
+        <!--contact section-->
+        <section id="contact">
+            <div class="container-fluid">
+                <div class="row my-auto">
+                    <div class="col-12 display-4 fw-bold text-center pb-5">
+                        We'd Love to Hear From You
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-12 mx-auto ps-lg-5 ps-md-4 ps-3 px-md-0 px-sm-5 px-3">
+                        <div class="">Have a question, need clarification, or concerns? We're here to help.</div>
+                        <br>    
+                        <div class="">Check out these <a href="faqs.html">FAQs</a>: Many common concerns are addressed in our frequently asked questions. Find quick answers to common queries.</div>
+                        <br>
+                        <div class=""> For further assistance or personalized inquiries, feel free to:</div>
+                        <br>
+                        <ul>
+                            <li><div class="">Email us at mail.@snapbookinghub.com</div></li>
+                            <li><div class="">Call us at (046) 123-4567</div></li>
                         </ul>
+                        <div class="pt-3">You can also provide your information, and our team will contact you shortly.</div>
                     </div>
-                </nav>
-            </div>
-        </div>
-    </div>
-</header>
-<!--end of navigation section-->
+                    <div class="col-lg-6 col-md-6 col-12 my-auto mx-auto pt-md-0 pt-4 px-md-0 px-sm-5 px-3">
+                        <form id="contactForm" class="row needs-validation px-lg-5 px-md-4 px-3" novalidate onsubmit="if(this.checkValidity()) submitForm(); return false;">
 
-<!--contact section-->
-<section id="contact">
-    <div class="container-fluid">
-        <div class="row my-auto">
-            <div class="col-12 display-4 fw-bold text-center pb-5">
-                We'd Love to Hear From You
-            </div>
-            <div class="col-lg-6 col-md-6 col-12 mx-auto ps-lg-5 ps-md-4 ps-3 px-md-0 px-sm-5 px-3">
-                <div class="">Have a question, need clarification, or concerns? We're here to help.</div>
-                <br>    
-                <div class="">Check out these <a href="faqs.html">FAQs</a>: Many common concerns are addressed in our frequently asked questions. Find quick answers to common queries.</div>
-                <br>
-                <div class=""> For further assistance or personalized inquiries, feel free to:</div>
-                <br>
-                <ul>
-                    <li><div class="">Email us at mail.@snapbookinghub.com</div></li>
-                    <li><div class="">Call us at (046) 123-4567</div></li>
-                </ul>
-                <div class="pt-3">You can also provide your information, and our team will contact you shortly.</div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-12 my-auto mx-auto pt-md-0 pt-4 px-md-0 px-sm-5 px-3">
-                <form id="contactForm" class="row needs-validation px-lg-5 px-md-4 px-3" novalidate onsubmit="if(this.checkValidity()) submitForm(); return false;">
-
-                    <div class="col-md-10 col-sm-11 col-12 mx-auto">
-                        <label class="form-label visually-hidden" for="name">Your Name:</label>
-                        <input class="form-control" type="text" id="name" name="name" required pattern=".{4,}" title="Please enter at least 4 characters" placeholder="Your Name">
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
-                        <div class="invalid-feedback">
-                            Please enter your name (at least 4 characters).
-                        </div>
-                    </div>
-                
-                    <div class="col-md-10 col-sm-11 col-12 my-3 mx-auto">
-                        <label class="form-label visually-hidden" for="email">Email:</label>
-                        <input class="form-control" type="email" id="email" name="email" required placeholder="Email">
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
-                        <div class="invalid-feedback">
-                            Please enter a valid email address.
-                        </div>
-                    </div>
-                
-                    <div class="col-md-10 col-sm-11 col-12 mb-3 mx-auto">
-                        <label class="form-label visually-hidden" for="phone">Phone number:</label>
-                        <input class="form-control" type="tel" id="phone" name="phone" required pattern="[0-9]{11}" title="Please enter a valid 11-digit phone number (09XXXXXXXXX)" placeholder="Phone Number">
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
-                        <div class="invalid-feedback">
-                            Please enter a valid 11-digit phone number (09XXXXXXXXX).
-                        </div>
-                    </div>
-                
-                    <div class="col-md-10 col-sm-11 col-12 mx-auto">
-                        <label for="message" class="form-label visually-hidden">Message:</label>
-                        <textarea class="form-control" id="message" rows="3" required minlength="10" placeholder="Write Your Message"></textarea>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
-                        <div class="invalid-feedback">
-                            Please enter a message with at least 10 characters.
-                        </div>
-                    </div>
-                
-                    <div class="btns col-10 mx-auto text-center mt-3">
-                        <button type="submit" class="button btn rounded-0 py-2 px-4 mt-4" id="submitButton">SUBMIT</button>
-                    </div>                  
-                
-                </form>
-                
-
-    
-            </div>
-        </div>
-    </div>
-</section>
-<!--end of contact section-->
-
-
-<!--DELETE LATER-->
-<center><button class="btn btn-warning btn-lg"><a href="contact-form.html" target="_blank" >See stored contact form data here</a></button></center>
-<center><button class="btn btn-info btn-lg mt-3"><a href="newsletter.html" target="_blank">See stored newsletter email</a></button></center>
-
-
-<!--footer section-->
-<section class="m-0 p-0">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12 p-0 m-0">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#B99B84" fill-opacity="1" d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
-            </div>
-        </div>
-    </div>
-</section>
-
-<footer id="footer" class="text-white">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-4 col-md-12 col-12 footer-img text-center my-auto mx-0">
-                <img class="img-fluid" style="height: 100px" src="images/footer-logo.png" alt="logo">
-                <div class="h4 mb-1">SnapBookingHub</div>
-                <p class="mb-2">Picture-Perfect Moments, Every Time</p>
-                <div class="mb-3">
-                    <a href="https://www.facebook.com/" target="_blank"><i class="bi bi-facebook px-1"></i></a>
-                    <a href="https://www.instagram.com/" target="_blank"><i class="bi bi-instagram px-1"></i></a>
-                    <a href="https://twitter.com/" target="_blank"><i class="bi bi-twitter px-1"></i></a>
-                    <a href="https://www.tiktok.com/en/" target="_blank"><i class="bi bi-tiktok px-1"></i></a>
-                </div>
-            </div>
-            <div class="col-lg-8 col-md-12 col-12 text-center my-auto">
-                <div class="row p-0 m-0">
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-12 mb-3">
-                        <div class="footer-header h5 mb-sm-2 m-0 pt-lg-0 pt-md-3 pt-2">COMPANY</div>
-                        <div><a href="about.html">About Us</a></div>
-                        <div><a href="packages.html">Packages</a></div>
+                            <div class="col-md-10 col-sm-11 col-12 mx-auto">
+                                <label class="form-label visually-hidden" for="name">Your Name:</label>
+                                <input class="form-control" type="text" id="name" name="name" required pattern=".{4,}" title="Please enter at least 4 characters" placeholder="Your Name">
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Please enter your name (at least 4 characters).
+                                </div>
+                            </div>
                         
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-12 mb-3 p-0">
-                        <div class="footer-header h5 mb-sm-2 m-0 pt-lg-0 pt-md-3 pt-2">HELP</div>
-                        <div><a href="contact.html">Contact Us</a></div>
-                        <div><a href="faqs.html">FAQs</a></div>
-                        <div><a href="#PrivacyPolicy" data-bs-toggle="modal" data-bs-target="#PrivacyPolicy">Privacy Policy</a></div>
-                        <div><a href="#TermsAndConditons" data-bs-toggle="modal" data-bs-target="#TermsAndConditons">Terms & Conditions</a></div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-3">
-                        <div class="footer-header h5 mb-sm-2 m-0 pt-lg-0 pt-md-3 pt-2">Sign Up for Newsletters</div>
-                        <p>Be the one to know what's new and get exclusive deals!</p>
-                        <form id="newsletterForm" class="input-group w-75 mx-auto" onsubmit="submitEmailForm(event)">
-                            <input id="newsletter-email" type="email" class="form-control" placeholder="Email" aria-label="email" aria-describedby="button-addon" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
-                            <button id="newsletter-btn" class="btn text-light" type="submit"><i class="bi bi-arrow-right-circle"></i></button>
+                            <div class="col-md-10 col-sm-11 col-12 my-3 mx-auto">
+                                <label class="form-label visually-hidden" for="email">Email:</label>
+                                <input class="form-control" type="email" id="email" name="email" required placeholder="Email">
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Please enter a valid email address.
+                                </div>
+                            </div>
+                        
+                            <div class="col-md-10 col-sm-11 col-12 mb-3 mx-auto">
+                                <label class="form-label visually-hidden" for="phone">Phone number:</label>
+                                <input class="form-control" type="tel" id="phone" name="phone" required pattern="[0-9]{11}" title="Please enter a valid 11-digit phone number (09XXXXXXXXX)" placeholder="Phone Number">
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Please enter a valid 11-digit phone number (09XXXXXXXXX).
+                                </div>
+                            </div>
+                        
+                            <div class="col-md-10 col-sm-11 col-12 mx-auto">
+                                <label for="message" class="form-label visually-hidden">Message:</label>
+                                <textarea class="form-control" id="message" rows="3" required minlength="10" placeholder="Write Your Message"></textarea>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Please enter a message with at least 10 characters.
+                                </div>
+                            </div>
+                        
+                            <div class="btns col-10 mx-auto text-center mt-3">
+                                <button type="submit" class="button btn rounded-0 py-2 px-4 mt-4" id="submitButton">SUBMIT</button>
+                            </div>                  
+                        
                         </form>
-                    </div>    
-                </div>
-            </div>
-        </div>
-        <div class="row m-0 p-0">
-            <div class="col-12 m-0 p-0">
-                <hr class="m-0 py-2">
-                <div class="col text-center pb-3">
-                    &copy; SnapBookingHub 2023 | All Rights Reserved
-                </div>
-                <div class="col text-center pb-3">
-                    Developed by: Magbayao & Bustamante
-                </div>
-            </div>
-        </div> 
-    </div>
-</footer>
-<!--end of footer section-->
 
-<!-- signIn Modal -->
-<div class="modal modal-lg fade text-dark" id="signInModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="signInModal" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal- body">
-                <div class="card">
-                  <div class="row g-0">
-                    <div class="col-md-6 col-lg-5 d-none d-md-block">
-                      <img src="images/g2.jpg" alt="login form" class="img-fluid h-100" style="object-fit: cover;" />
                     </div>
-                    <div class="col-md-6 col-lg-7">
-                      <div class="card-body p-4 p-lg-5 text-black">
-                        <button type="button" class="btn-close position-absolute top-0 end-0 mt-3 me-3" data-bs-dismiss="modal" aria-label="Close"></button>
-                        <form>
-                              
-                          <div class="mb-4 pb-1 text-center">
-                            
-                            <div class="h1 mb-0 " style="font-family: 'Fjalla One', sans-serif;">SnapBookingHub</div>
-                          </div>
-        
-                          <div class="input-group mb-4">
-                            <span class="input-group-text" id="loginEmail"><i class="bi bi-envelope-at"></i></span>
-                            <div class="form-outline flex-fill mb-0">
-                              <input type="email" id="loginEmail" class="form-control" placeholder="Your Email"/>
-                              <label class="form-label" for="loginEmail" hidden>Your Email</label>
-                            </div>
-                          </div>
-        
-                          <div class="input-group mb-4">
-                            <span class="input-group-text" id="loginPassword"><i class="bi bi-person-lock"></i></span>
-                            <div class="form-outline flex-fill mb-0">
-                              <input type="password" id="loginPassword" class="form-control" placeholder="Password"/>
-                              <label class="form-label" for="loginPassword" hidden>Password</label>
-                            </div>
-                          </div>
-        
-                          <div class="pt-1 mb-4  text-center">
-                            <button class="btn btn-dark btn-lg btn-block px-4" type="button">Login</button>
-                          </div>
-        
-                          <a class="small text-muted" href="#!">Forgot password?</a>
-                          <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a href="#signUpModal" data-bs-toggle="modal" data-bs-target="#signUpModal" style="color: #393f81;">Register here</a>
-                          </p>
-                          <a href="#PrivacyPolicy" data-bs-toggle="modal" data-bs-target="#PrivacyPolicy" class="small" style="color: #393f81">Privacy Policy</a>
-                          <a href="#TermsAndConditons" data-bs-toggle="modal" data-bs-target="#TermsAndConditons" class="small" style="color: #393f81">Terms & Conditions</a>
-                        </form>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-        </div>
-    </div>
-  </div>
-<!-- end of signIn Modal -->
-
-
-<!-- signUp Modal -->
-<div class="modal modal-lg fade text-dark" id="signUpModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="signUpModal" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-body p-0 m-0">
-                <div class="card">
-                  <div class="row g-0">
-                    <div class="col-md-6 col-lg-5 d-none d-md-block">
-                      <img src="images/g20.jpg" alt="login form" class="img-fluid h-100" style="object-fit: cover;" />
-                    </div>
-                    <div class="col-md-6 col-lg-7">
-                      <div class="card-body p-4 p-lg-5 text-black">
-                        <button type="button" class="btn-close position-absolute top-0 end-0 mt-3 me-3" data-bs-dismiss="modal" aria-label="Close"></button>
-                        <form>
-      
-                          <div class="mb-3 pb-1 text-center">
-                            <div class="h1 mb-0 " style="font-family: 'Fjalla One', sans-serif;">Register</div>
-                          </div>
-        
-                          <div class="input-group mb-4">
-                            <span class="input-group-text" id="registerName"><i class="bi bi-person-circle"></i></span>
-                            <div class="form-outline flex-fill mb-0">
-                              <input type="text" id="registerName" class="form-control" placeholder="Your Name"/>
-                              <label class="form-label" for="registerName" hidden>Your Name</label>
-                            </div>
-                          </div>
-        
-                          <div class="input-group mb-4">
-                            <span class="input-group-text" id="registerEmail"><i class="bi bi-envelope-at"></i></span>
-                            <div class="form-outline flex-fill mb-0">
-                              <input type="email" id="registerEmail" class="form-control" placeholder="Your Email"/>
-                              <label class="form-label" for="registerEmail" hidden>Your Email</label>
-                            </div>
-                          </div>
-        
-                          <div class="input-group mb-4">
-                            <span class="input-group-text" id="registerPassword"><i class="bi bi-person-lock"></i></span>
-                            <div class="form-outline flex-fill mb-0">
-                              <input type="password" id="registerPassword" class="form-control" placeholder="Password"/>
-                              <label class="form-label" for="registerPassword" hidden>Password</label>
-                            </div>
-                          </div>
-        
-                          <div class="input-group mb-4">
-                            <span class="input-group-text" id="registerPassword2"><i class="bi bi-lock-fill"></i></i></span>
-                            <div class="form-outline flex-fill mb-0">
-                              <input type="password" id="registerPassword2" class="form-control" placeholder="Repeat your password"/>
-                              <label class="form-label" for="registerPassword2" hidden>Repeat your password</label>
-                            </div>
-                          </div>
-        
-                          <div class="form-check mb-5">
-                            <input class="form-check-input me-2" type="checkbox" value="" id="registerCheck" />
-                            <label class="form-check-label" for="registerCheck">
-                              I agree all statements in &nbsp<a href="#TermsAndConditons" data-bs-toggle="modal" data-bs-target="#TermsAndConditons" style="color: #393f81;">Terms & Conditions</a>
-                            </label>
-                          </div>
-        
-                          <div class="pt-1 mb-4 text-center">
-                            <button class="btn btn-dark btn-lg btn-block" type="button">Register</button>
-                          </div>
-                          
-                          <p class="mt-5 text-center" style="color: #393f81;">Already have an account? <a href="#signInModal" data-bs-toggle="modal" data-bs-target="#signInModal"
-                            style="color: #393f81;">Login here</a></p>
-
-                        </form>
-                      </div>
-                    </div>
-                  </div>
                 </div>
             </div>
-        </div>
-    </div>
-  </div>
-<!-- end of signUp Modal -->
+        </section>
+        <!--end of contact section-->
 
 
-<!-- Private Policy Modal -->
-<div class="modal modal-lg fade text-dark" id="PrivacyPolicy" tabindex="-1" aria-labelledby="PrivacyPolicy" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h1 class="modal-title fs-5" id="PrivacyPolicy">Privacy Policy</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <i>Effective Date: 24 November 2023</i><br><br>
-                <p>
-                    Your privacy and the security of your personal information are important to SnapBookingHub. In the event that you visit our website or engage with us in any other manner, this Privacy Policy describes how we will gather, use, and protect your data.
-                </p>
-                <p><strong>Information We Collect</strong></p>
-                <p>
-                    When you give us personal information, including your name, email address, phone number, and other contact information, like when you inquire or book a reservation, we may be able to use that information to identify you. In addition, our website may gather non-personal data like IP addresses, browser information, and browsing patterns.
-                </p>
-                <p><strong>How We Use Your Information</strong></p>
-                <p>
-                    In order to better serve you and answer to your questions, we use the information you voluntarily give us. With your permission only, we may also use your data for marketing and promotional activities.
-                </p>
-                <p><strong>Data Security</strong></p>
-                <p>
-                    We take data security seriously and use industry-recognized safeguards to guard against unauthorized access, disclosure, alteration, and destruction of your information.
-                </p>
-                <p><strong>Third-Party Links</strong></p>
-                <p>
-                    Links to other websites may be found on our website. The privacy policies or content of these external websites are not our responsibility.
-                </p>
-                <p><strong>Cookies</strong></p>
-                <p>
-                    To improve your experience on our website, we use cookies. These cookies can be disabled through your browser settings and do not gather personal information.
-                </p>
-                <p><strong>Your Privacy Choices</strong></p>
-                <p>
-                    You have the right to access, modify, or delete your personal information and can manage your data by getting in touch with us. Additionally, you can unsubscribe from our marketing mailings whenever you choose.
-                </p>
-                <p><strong>Changes to This Policy</strong></p>
-                <p>
-                    This Privacy Policy may be updated and revised at any time by SnapBookingHub. Any modifications will have an updated effective date and be displayed on our website.
-                </p>
-                <p><strong>Contact Us</strong></p>
-                <p>
-                    Please get in touch with us at mail@snapbookinghub.com if you have any queries or complaints regarding our privacy policy.
-                </p>
-                <p>
-                    We value your trust in SnapBookingHub and value your privacy very much.
-                </p>
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- end of Private Policy Modal -->
+        <!--DELETE LATER-->
+        <center><button class="btn btn-warning btn-lg"><a href="contact-form.html" target="_blank" >See stored contact form data here</a></button></center>
+        <center><button class="btn btn-info btn-lg mt-3"><a href="newsletter.html" target="_blank">See stored newsletter email</a></button></center>
 
-<!-- Terms & Conditions Modal -->
-<div class="modal modal-lg fade text-dark" id="TermsAndConditons" tabindex="-1" aria-labelledby="TermsAndConditons" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable">
-        <div class="modal-content">
-        <div class="modal-header">
-            <h1 class="modal-title fs-5" id="TermsAndConditons">Terms & Conditions</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <i>Effective Date: 24 November 2023</i><br><br>
-            <p>
-            Before using the services of SnapBookingHub or visiting our website, please read these Terms & Conditions carefully. You accept these terms and conditions by using our services or website.
-            </p>
-            <p><strong>Use of Services</strong></p>
-            <p>
-            You must follow all relevant rules and regulations when using our services and website. Any usage that contravenes, infringes upon, or is inconsistent with the intended use of our services is strictly forbidden.
-            </p>
-            <p><strong>Privacy and Security</strong></p>
-            <p>
-            We are devoted to keeping your personal information secure. For more information on how we collect, utilize, and safeguard your data, please refer to our Privacy Policy.
-            </p>
-            <p><strong>Liability</strong></p>
-            <p>
-            On our website and in our services, we strive to present accurate and current information. However, we disclaim all liability for any mistakes, omissions, or inaccurate information. You do so at your own risk when using our services.
-            </p>
-            <p><strong>Third-Party Links</strong></p>
-            <p>
-            Links to other websites may be found on our website. The terms and conditions, privacy policies, or content of these external websites are not our responsibility.
-            </p>
-            <p><strong>Changes to Terms & Conditions</strong></p>
-            <p>
-            These Terms & Conditions may be updated and revised at any time by SnapBookingHub. Any changes will have an updated effective date and be displayed on our website.
-            </p>
-            <p><strong>Contact Us</strong></p>
-            <p>
-            Please email us at mail@snapbookinghub.com if you have any inquiries or complaints about our Terms & Conditions.
-            </p>
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+        <!--footer section-->
+        <section class="m-0 p-0">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 p-0 m-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                            <path
+                                fill="#B99B84"
+                                fill-opacity="1"
+                                d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+                            ></path>
+                        </svg>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-</div>
-<!-- end of Terms & Conditions Modal -->
+        </section>
+
+        <footer id="footer" class="text-white">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-4 col-md-12 col-12 footer-img text-center my-auto mx-0">
+                        <img class="img-fluid" style="height: 100px" src="images/footer-logo.png" alt="logo" />
+                        <div class="h4 mb-1">SnapBookingHub</div>
+                        <p class="mb-2">Picture-Perfect Moments, Every Time</p>
+                        <div class="mb-3">
+                            <a href="https://www.facebook.com/" target="_blank"><i class="bi bi-facebook px-1"></i></a>
+                            <a href="https://www.instagram.com/" target="_blank"><i class="bi bi-instagram px-1"></i></a>
+                            <a href="https://twitter.com/" target="_blank"><i class="bi bi-twitter px-1"></i></a>
+                            <a href="https://www.tiktok.com/en/" target="_blank"><i class="bi bi-tiktok px-1"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-md-12 col-12 text-center my-auto">
+                        <div class="row p-0 m-0">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-12 mb-3">
+                                <div class="footer-header h5 mb-sm-2 m-0 pt-lg-0 pt-md-3 pt-2">COMPANY</div>
+                                <div><a href="about.html">About Us</a></div>
+                                <div><a href="packages.html">Packages</a></div>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-12 mb-3 p-0">
+                                <div class="footer-header h5 mb-sm-2 m-0 pt-lg-0 pt-md-3 pt-2">HELP</div>
+                                <div><a href="contact.html">Contact Us</a></div>
+                                <div><a href="faqs.html">FAQs</a></div>
+                                <div><a href="#PrivacyPolicy" data-bs-toggle="modal" data-bs-target="#PrivacyPolicy">Privacy Policy</a></div>
+                                <div>
+                                    <a href="#TermsAndConditons" data-bs-toggle="modal" data-bs-target="#TermsAndConditons">Terms & Conditions</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-3">
+                                <div class="footer-header h5 mb-sm-2 m-0 pt-lg-0 pt-md-3 pt-2">Sign Up for Newsletters</div>
+                                <p>Be the one to know what's new and get exclusive deals!</p>
+                                <form id="newsletterForm" class="input-group w-75 mx-auto" onsubmit="submitEmailForm(event)">
+                                    <input
+                                        id="newsletter-email"
+                                        type="email"
+                                        class="form-control"
+                                        placeholder="Email"
+                                        aria-label="email"
+                                        aria-describedby="button-addon"
+                                        required
+                                        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                                    />
+                                    <button id="newsletter-btn" class="btn text-light" type="submit"><i class="bi bi-arrow-right-circle"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row m-0 p-0">
+                    <div class="col-12 m-0 p-0">
+                        <hr class="m-0 py-2" />
+                        <div class="col text-center pb-3">&copy; SnapBookingHub 2023 | All Rights Reserved</div>
+                        <div class="col text-center pb-3">Developed by: Magbayao & Bustamante</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--end of footer section-->
 
 
 <!--bootstrap js-->
@@ -451,7 +191,8 @@
     <script type="application/javascript" src="form.js"></script>
     <script type="application/javascript" src="shared.js"></script>
 
-    
+<!-- Navbar -->
+    <script type="application/javascript" src="navbar.js"></script>
     
 </body>
 </html>
