@@ -245,7 +245,7 @@ function updateResult() {
 
     //update local storage
     if (quantity > 0){
-        orderDetails.userAddOnPrintPhoto = `Item: Print Photo size ${selectedSize} inches, Qty: ${quantity}, Price: ${printtotal}`;
+        orderDetails.userAddOnPrintPhoto = `Print Photo size ${selectedSize} inches, Qty: ${quantity}, Price: ${printtotal}`;
     }
     
     // Update result row
