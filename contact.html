@@ -76,57 +76,58 @@
                 <div class="pt-3">You can also provide your information, and our team will contact you shortly.</div>
             </div>
             <div class="col-lg-6 col-md-6 col-12 my-auto mx-auto pt-md-0 pt-4 px-md-0 px-sm-5 px-3">
-                <form id="contactForm" class="row needs-validation px-lg-5 px-md-4 px-3" novalidate>
+                <form id="contactForm" class="row needs-validation px-lg-5 px-md-4 px-3" novalidate onsubmit="if(this.checkValidity()) submitForm(); return false;">
 
                     <div class="col-md-10 col-sm-11 col-12 mx-auto">
                         <label class="form-label visually-hidden" for="name">Your Name:</label>
-                        <input class="form-control" type="text" id="name" name="name" required placeholder="Your Name">
+                        <input class="form-control" type="text" id="name" name="name" required pattern=".{4,}" title="Please enter at least 4 characters" placeholder="Your Name">
                         <div class="valid-feedback">
                             Looks good!
                         </div>
                         <div class="invalid-feedback">
-                            Please enter your name
+                            Please enter your name (at least 4 characters).
                         </div>
                     </div>
-
+                
                     <div class="col-md-10 col-sm-11 col-12 my-3 mx-auto">
                         <label class="form-label visually-hidden" for="email">Email:</label>
                         <input class="form-control" type="email" id="email" name="email" required placeholder="Email">
                         <div class="valid-feedback">
                             Looks good!
-                            </div>
-                            <div class="invalid-feedback">
-                            Please enter your email
-                            </div>
-                    </div>
-
-                    <div class="col-md-10 col-sm-11 col-12 mb-3 mx-auto">
-                        <label class="form-label visually-hidden" for="phone">Phone number:</label>
-                        <input class="form-control" type="tel" id="phone" name="phone" required placeholder="Phone Number">
-                        <div class="valid-feedback">
-                                Looks good!
                         </div>
                         <div class="invalid-feedback">
-                            Please enter your phone number
+                            Please enter a valid email address.
                         </div>
                     </div>
-
-                    <div class="col-md-10 col-sm-11 col-12 mx-auto">
-                        <label for="message" class="form-label visually-hidden">Message:</label>
-                        <textarea class="form-control" id="message" rows="3" required placeholder="Write Your Message"></textarea>
+                
+                    <div class="col-md-10 col-sm-11 col-12 mb-3 mx-auto">
+                        <label class="form-label visually-hidden" for="phone">Phone number:</label>
+                        <input class="form-control" type="tel" id="phone" name="phone" required pattern="[0-9]{11}" title="Please enter a valid 11-digit phone number (09XXXXXXXXX)" placeholder="Phone Number">
                         <div class="valid-feedback">
                             Looks good!
                         </div>
                         <div class="invalid-feedback">
-                            Please enter your message
+                            Please enter a valid 11-digit phone number (09XXXXXXXXX).
                         </div>
                     </div>
-
-                    <div class="btns col-10 mx-auto text-center  mt-3" >
-                        <button type="button" onclick="submitForm()" class="button btn rounded-0 py-2 px-4 mt-4">SUBMIT</button>
+                
+                    <div class="col-md-10 col-sm-11 col-12 mx-auto">
+                        <label for="message" class="form-label visually-hidden">Message:</label>
+                        <textarea class="form-control" id="message" rows="3" required minlength="10" placeholder="Write Your Message"></textarea>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please enter a message with at least 10 characters.
+                        </div>
                     </div>
                 
+                    <div class="btns col-10 mx-auto text-center mt-3">
+                        <button type="submit" class="button btn rounded-0 py-2 px-4 mt-4" id="submitButton">SUBMIT</button>
+                    </div>                  
+                
                 </form>
+                
 
     
             </div>
@@ -137,9 +138,8 @@
 
 
 <!--DELETE LATER-->
-<center><button class="btn btn-warning btn-lg"><a href="contact-form.html" >See stored data here</a></button></center>
-
-
+<center><button class="btn btn-warning btn-lg"><a href="contact-form.html" target="_blank" >See stored contact form data here</a></button></center>
+<center><button class="btn btn-info btn-lg mt-3"><a href="newsletter.html" target="_blank">See stored newsletter email</a></button></center>
 
 
 <!--footer section-->
@@ -185,11 +185,11 @@
                     <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-3">
                         <div class="footer-header h5 mb-sm-2 m-0 pt-lg-0 pt-md-3 pt-2">Sign Up for Newsletters</div>
                         <p>Be the one to know what's new and get exclusive deals!</p>
-                        <div class="input-group w-75 mx-auto">
-                            <input type="text" class="form-control" placeholder="Email" aria-label="email" aria-describedby="button-addon">
-                            <button id="newsletter-btn" class="btn text-light" type="button" id="button-addon"><i class="bi bi-arrow-right-circle"></i></button>
-                        </div>
-                    </div>
+                        <form id="newsletterForm" class="input-group w-75 mx-auto" onsubmit="submitEmailForm(event)">
+                            <input id="newsletter-email" type="email" class="form-control" placeholder="Email" aria-label="email" aria-describedby="button-addon" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+                            <button id="newsletter-btn" class="btn text-light" type="submit"><i class="bi bi-arrow-right-circle"></i></button>
+                        </form>
+                    </div>    
                 </div>
             </div>
         </div>
@@ -446,10 +446,10 @@
 <!-- end of Terms & Conditions Modal -->
 
 
-<script src="contact.js"></script>
 <!--bootstrap js-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script type="application/javascript" src="form.js"></script>
+    <script type="application/javascript" src="shared.js"></script>
 
     
     

@@ -1,6 +1,7 @@
 let totalPrice = 3000;
 let printtotal = 0;
 let backdropPriceAdded = false;
+let orderDetails = {};
 
 //VARIABLES FOR ADD-ONS INPUT
 const birthdayProps = document.getElementById("birthdayProps");
@@ -32,9 +33,11 @@ birthdayProps.addEventListener("change", function() {
     if (birthdayProps.checked) {
         totalPrice += 500;
         birthdayPropsTable.style.display = "table-row";
+        orderDetails.userAddOnBirthdayProps = "Item: Birthday Props, Qty: 1, Price: 500";
     } else {
         totalPrice -= 500;
         birthdayPropsTable.style.display = "none";
+        delete orderDetails.userAddOnBirthdayProps;
     }
     document.getElementById("totalPrice").innerHTML = `₱${totalPrice}`;
 });
@@ -43,32 +46,37 @@ weddingProps.addEventListener("change", function() {
     if (weddingProps.checked) {
         totalPrice += 500;
         weddingPropsTable.style.display = "table-row";
+        orderDetails.userAddOnWeddingProps = "Item: Wedding Props, Qty: 1, Price: 500";
     } else {
         totalPrice -= 500;
         weddingPropsTable.style.display = "none";
+        delete orderDetails.userAddOnWeddingProps;
     }
-    document.getElementById("totalPrice").innerHTML = totalPrice;
+    document.getElementById("totalPrice").innerHTML = `₱${totalPrice}`;
 });
 
 graduationProps.addEventListener("change", function() {
     if (graduationProps.checked) {
         totalPrice += 500;
         graduationPropsTable.style.display = "table-row";
+        orderDetails.userAddOnGraduationProps = "Item: Graduation Props, Qty: 1, Price: 500";
     } else {
         totalPrice -= 500;
         graduationPropsTable.style.display = "none";
+        delete orderDetails.userAddOnGraduationProps;
     }
     document.getElementById("totalPrice").innerHTML = `₱${totalPrice}`;
 });
-
 
 photoFilter.addEventListener("change", function() {
     if (photoFilter.checked) {
         totalPrice += 500;
         photoFilterTable.style.display = "table-row";
+        orderDetails.userAddOnPhotoFilter = "Item: Photo Filter, Qty: 1, Price: 500";
     } else {
         totalPrice -= 500;
         photoFilterTable.style.display = "none";
+        delete orderDetails.userAddOnPhotoFilter;
     }
     document.getElementById("totalPrice").innerHTML = `₱${totalPrice}`;
 });
@@ -77,9 +85,11 @@ videoMessage.addEventListener("change", function() {
     if (videoMessage.checked) {
         totalPrice += 700;
         videoMessageTable.style.display = "table-row";
+        orderDetails.userAddOnVideoMessage = "Item: Video Message, Qty: 1, Price: 700";
     } else {
         totalPrice -= 700;
         videoMessageTable.style.display = "none";
+        delete orderDetails.userAddOnVideoMessage;
     }
     document.getElementById("totalPrice").innerHTML = `₱${totalPrice}`;
 });
@@ -88,9 +98,11 @@ boomerang.addEventListener("change", function() {
     if (boomerang.checked) {
         totalPrice += 500;
         boomerangTable.style.display = "table-row";
+        orderDetails.userAddOnBoomerang = "Item: Boomerang, Qty: 1, Price: 500";
     } else {
         totalPrice -= 500;
         boomerangTable.style.display = "none";
+        delete orderDetails.userAddOnBoomerang;
     }
     document.getElementById("totalPrice").innerHTML = `₱${totalPrice}`;
 });
@@ -99,9 +111,11 @@ phoneBooth.addEventListener("change", function() {
     if (phoneBooth.checked) {
         totalPrice += 700;
         phoneBoothTable.style.display = "table-row";
+        orderDetails.userAddOnPhoneBooth = "Item: Phone Booth, Qty: 1, Price: 700";
     } else {
         totalPrice -= 700;
         phoneBoothTable.style.display = "none";
+        delete orderDetails.userAddOnPhoneBooth;
     }
     document.getElementById("totalPrice").innerHTML = `₱${totalPrice}`;
 });
@@ -109,13 +123,16 @@ phoneBooth.addEventListener("change", function() {
 photoBook.addEventListener("change", function() {
     if (photoBook.checked) {
         totalPrice += 700;
-       photoBookTable.style.display = "table-row";
+        photoBookTable.style.display = "table-row";
+        orderDetails.userAddOnPhotoBook = "Item: Photo Book, Qty: 1, Price: 700";
     } else {
         totalPrice -= 700;
         photoBookTable.style.display = "none";
+        delete orderDetails.userAddOnPhotoBook;
     }
     document.getElementById("totalPrice").innerHTML = `₱${totalPrice}`;
 });
+
 
 
 
@@ -126,12 +143,15 @@ radioButtons.forEach(function (radioButton) {
     radioButton.addEventListener("change", function () {
         if (balloonBackdrop.checked) {
             setBackdropInfo("Balloon Backdrop"); 
+            orderDetails.userAddOnBackdrop = "Item: Balloon Backdrop, Qty: 1, Price: 500";
         }
         else if(sparklyBackdrop.checked){
             setBackdropInfo("Sparkly Backdrop"); 
+            orderDetails.userAddOnBackdrop = "Item: Sparkly Backdrop, Qty: 1, Price: 500";
         }
         else if(flowerBackdrop.checked){
             setBackdropInfo("Flower Backdrop");
+            orderDetails.userAddOnBackdrop = "Item: Flower Backdrop, Qty: 1, Price: 500";
         }
         radioTable.style.display = "table-row"; 
     });
@@ -176,10 +196,14 @@ function updateResult() {
         totalPrice = totalPrice - previousPrinttotal + printtotal;
         // Update the total price in the HTML
         document.getElementById("totalPrice").innerHTML = `₱${totalPrice}`;
+        //Update local storage
+        delete orderDetails.userAddOnPrintPhoto;
         return;
     }
 
     let pricePerPiece = 0;
+
+    
 
     if (selectedSize === "2x6" && quantity >= 100 && quantity <= 1000) {
         pricePerPiece = 8;
@@ -211,11 +235,18 @@ function updateResult() {
         document.getElementById('warning').innerHTML = "Maximum quantity is 1000 pieces";
     }
 
+   
+
     const previousPrinttotal = printtotal;
     printtotal = quantity * pricePerPiece;
 
     // Update totalPrice by subtracting the previous printtotal and adding the new printtotal
     totalPrice = totalPrice - previousPrinttotal + printtotal;
+
+    //update local storage
+    if (quantity > 0){
+        orderDetails.userAddOnPrintPhoto = `Item: Print Photo size ${selectedSize} inches, Qty: ${quantity}, Price: ${printtotal}`;
+    }
     
     // Update result row
     document.getElementById("printItem").textContent = `Print Photo size ${selectedSize} inches`;
@@ -280,21 +311,24 @@ document.getElementById("eventAddress").addEventListener("input", getEventDetail
 
 //SAVING DATA TO LOCAL STORAGE
 
-// Retrieve idNumber from local storage or initialize it to 1
-let idNumber = parseInt(localStorage.getItem("idNumber")) || 0;
+// 1 KEY, MULTIPLE OBJECTS
+
+// Retrieve bookingNumber from local storage or initialize it to 1
+let bookingNumber = parseInt(localStorage.getItem("bookingNumber")) || 0;
+
+
+orderDetails = {
+    bookingNumber: bookingNumber,
+    date: document.getElementById("date").value,
+    time: document.getElementById("time").value,
+    province: document.getElementById("province").value,
+    municipality: document.getElementById("municipality").value,
+    eventAddress: document.getElementById("eventAddress").value,
+    totalPrice: totalPrice,
+};
 
 // Function to save order details to local storage
 function saveOrderDetails() {
-    // Create an object to store order details
-    const orderDetails = {
-        idNumber: idNumber,
-        date: document.getElementById("date").value,
-        time: document.getElementById("time").value,
-        province: document.getElementById("province").value,
-        municipality: document.getElementById("municipality").value,
-        eventAddress: document.getElementById("eventAddress").value,
-        totalPrice: totalPrice,
-    };
 
     const existingOrderData = JSON.parse(localStorage.getItem('orderDetails')) || [];
 
@@ -304,46 +338,53 @@ function saveOrderDetails() {
      // Store updated form data in localStorage
      localStorage.setItem('orderDetails', JSON.stringify(existingOrderData));
 
-    // Increment idNumber for the next order
-    idNumber += 1;
+    // Increment bookingNumber for the next order
+    bookingNumber += 1;
 
-    // Update idNumber in local storage
-    localStorage.setItem("idNumber", idNumber.toString());
+    // Update bookingNumber in local storage
+    localStorage.setItem("bookingNumber", bookingNumber.toString());
 }
 
 // Add event listener to the button that triggers the saveOrderDetails function
 document.getElementById("saveOrderButton").addEventListener("click", saveOrderDetails);
 
 
-// Add event listener to the button that clears local storage
+// CLEAR LOCAL STORAGE
 document.getElementById("clearLocalStorageButton").addEventListener("click", clearLocalStorage);
 
 function clearLocalStorage() {
     localStorage.clear();
     
-    // Reset idNumber to 1
-    idNumber = 0;
-    localStorage.setItem("idNumber", idNumber.toString());
+    // Reset bookingNumber to 0
+    bookingNumber = 0;
+    localStorage.setItem("bookingNumber", bookingNumber.toString());
 
     console.log("Local Storage cleared.");
 }
 
 
-//WRITE NEW FORM TO NEW HTML
-const storedFormData = JSON.parse(localStorage.getItem('orderDetails'));
 
-if (storedFormData) {
-    // Iterate through stored form data and display entries
-    storedFormData.forEach(orderDetails => {
-        const newEntry = document.createElement("div");
+// MULTIPLE KEYS
 
-        newEntry.innerHTML = `<strong>Date:</strong> ${orderDetails.date}<br>
-        <strong>Time:</strong> ${orderDetails.time}<br>
-        <strong>Location:</strong> ${orderDetails.eventAddress}, ${orderDetails.municipality}, ${orderDetails.province}<br>
-        <br>
-        <hr>`;
 
-        // Append the entry to the output div
-        document.getElementById("outputOrder").appendChild(newEntry);
-    });
+// Retrieve keyNumber from local storage or initialize it to 1
+let keyNumber = parseInt(localStorage.getItem("keyNumber")) || 1;
+
+// Function to save order details to local storage
+function bookingDetails() {
+    // Create an object to store order details
+    const eventDetails = orderDetails
+
+    localStorage.setItem(`eventDetails${keyNumber}`, JSON.stringify(eventDetails));
+
+    // Increment keyNumber for the next booking
+    keyNumber += 1;
+
+    // Update keyNumber in local storage
+    localStorage.setItem("keyNumber", keyNumber.toString());
 }
+
+// Add event listener to the button that triggers the bookingDetails function
+document.getElementById("orderDetailsButton").addEventListener("click", bookingDetails);
+
+

@@ -438,11 +438,16 @@
             </div>
             <div class="col-12">
                 <div class="btns mx-auto text-center" >
-                    <a href="" id="saveOrderButton"><div id="saveOrderButton" class="button btn rounded-0 py-3 px-4">BOOK NOW</div></a>
-                    <a href="newOrder.html" target="_blank" class="text-danger"><div class="btn btn-warning">storage test</div></a>
+                    <a href="" id="saveOrderButton"><div id="saveOrderButton" class="button btn rounded-0 py-3 my-2 px-4">1 key, multiple objects</div></a>
                 </div>
             </div>
-            <button id="clearLocalStorageButton">Clear Local Storage</button>
+            <div class="col-12">
+                <div class="btns mx-auto text-center" >
+                    <a href="" id="orderDetailsButton"><div id="orderDetailsButton" class="button btn rounded-0 py-3 px-4">different key</div></a>
+                </div>
+            </div>
+            <a href="newOrder.html" target="_blank" class="text-danger text-center py-2"><div class="btn btn-warning">storage test (1 key, multiple objects)</div></a>
+            <a href="" id="clearLocalStorageButton" class="text-danger text-center py-2"><div class="btn btn-info" id="clearLocalStorageButton">Clear Local Storage</div></a>
         </div>
     </div>
 </section>
@@ -491,11 +496,11 @@
                     <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-3">
                         <div class="footer-header h5 mb-sm-2 m-0 pt-lg-0 pt-md-3 pt-2">Sign Up for Newsletters</div>
                         <p>Be the one to know what's new and get exclusive deals!</p>
-                        <div class="input-group w-75 mx-auto">
-                            <input type="text" class="form-control" placeholder="Email" aria-label="email" aria-describedby="button-addon">
-                            <button id="newsletter-btn" class="btn text-light" type="button" id="button-addon"><i class="bi bi-arrow-right-circle"></i></button>
-                        </div>
-                    </div>
+                        <form id="newsletterForm" class="input-group w-75 mx-auto" onsubmit="submitEmailForm(event)">
+                            <input id="newsletter-email" type="email" class="form-control" placeholder="Email" aria-label="email" aria-describedby="button-addon" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+                            <button id="newsletter-btn" class="btn text-light" type="submit"><i class="bi bi-arrow-right-circle"></i></button>
+                        </form>
+                    </div>    
                 </div>
             </div>
         </div>

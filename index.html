@@ -484,9 +484,6 @@
 </section>
 <!--gallery section-->
 
-<!--services section-->
-<!--end of services section-->
-
 <!--occasions section-->
 <section id="occasion" class="my-5 py-5 px-0 mx-0">
     <div class="container-fluid">
@@ -925,21 +922,11 @@
                     <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-3">
                         <div class="footer-header h5 mb-sm-2 m-0 pt-lg-0 pt-md-3 pt-2">Sign Up for Newsletters</div>
                         <p>Be the one to know what's new and get exclusive deals!</p>
-                        <form action="#" class="needs-validation">
-                            <div class="input-group w-75 mx-auto">
-                                <label class="visually-hidden form-label" for="email">Email</label>
-                                <input class="form-control" type="email" id="email" name="email" required placeholder="Email">
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                                <div class="invalid-feedback">
-                                    Please enter your email.
-                                </div>
-                                <button id="newsletter-btn" class="btn text-light" type="submit" value="submit"><i class="bi bi-arrow-right-circle"></i></button>
-                            </div>
+                        <form id="newsletterForm" class="input-group w-75 mx-auto" onsubmit="submitEmailForm(event)">
+                            <input id="newsletter-email" type="email" class="form-control" placeholder="Email" aria-label="email" aria-describedby="button-addon" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+                            <button id="newsletter-btn" class="btn text-light" type="submit"><i class="bi bi-arrow-right-circle"></i></button>
                         </form>
-                        
-                    </div>
+                    </div>    
                 </div>
             </div>
         </div>
@@ -1198,123 +1185,12 @@
 
 <!--bootstrap js-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-
 <!--slick js-->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-  <script type="text/javascript">
-        $(document).ready(function(){
-            $('.reviews').slick({
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                autoplay: true,
-                autoplaySpeed: 3700,
-                infinite: true,
-                centerMode: false,
-                speed: 10,
-                fade: true,
-                cssEase: 'linear',
-                arrows: false,
-                dots: true
 
-});
-        });
-      </script>
-
-<script type="text/javascript">
-    $(document).ready(function(){
-        $('.homeCarousel').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 1700,
-        infinite: true,
-        centerMode: false,
-        speed: 400,
-        fade: true,
-        cssEase: 'linear',
-        arrows: false
-});
-    });
-  </script>
-
-<script type="text/javascript">
-  $(document).ready(function(){
-    $('.gallery-lg').slick({
-    infinite: true,
-    slidesToShow: 4,
-    slidesToScroll: 4, 
-    arrows: true,
-    infinite: true,
-    autoplay: true,
-    autoplaySpeed: 3500,
-});
-  });
-  </script>
-
-<script type="text/javascript">
-    $(document).ready(function(){
-      $('.gallery-md').slick({
-      infinite: true,
-      slidesToShow: 3,
-      slidesToScroll: 3, 
-      arrows: true,
-      infinite: true,
-      autoplay: true,
-      autoplaySpeed: 3500,
-  });
-    });
-    </script>
-
-<script type="text/javascript">
-    $(document).ready(function(){
-      $('.gallery-sm').slick({
-      infinite: true,
-      slidesToShow: 2,
-      slidesToScroll: 2, 
-      arrows: true,
-      infinite: true,
-      autoplay: true,
-      autoplaySpeed: 3500,
-  });
-    });
-    </script>
-
-<script type="text/javascript">
-    $(document).ready(function(){
-      $('.gallery-d').slick({
-      infinite: true,
-      slidesToShow: 1,
-      slidesToScroll: 1, 
-      arrows: true,
-      infinite: true,
-      autoplay: true,
-      autoplaySpeed: 3500,
-  });
-    });
-    </script>
-
-<!--form validation-->
-<script>
-    (() => {
-    'use strict'
-
-    
-    const forms = document.querySelectorAll('.needs-validation')
-
-
-    Array.from(forms).forEach(form => {
-        form.addEventListener('submit', event => {
-        if (!form.checkValidity()) {
-            event.preventDefault()
-            event.stopPropagation()
-        }
-
-        form.classList.add('was-validated')
-        }, false)
-    })
-    })()
-</script>
+    <script type="text/javascript" src="homepage.js"></script>
+    <script type="text/javascript" src="shared.js"></script>
 
 </body>
 </html>
