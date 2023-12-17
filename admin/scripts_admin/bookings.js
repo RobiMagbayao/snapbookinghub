@@ -1,49 +1,25 @@
-//Get the booking details from the localStorage
-let bookingNumber = parseInt(localStorage.getItem("bookingNumber")) || 1;
+// Get and display the orderDetails from localStorage to the #booking-table
+const storedFormData = JSON.parse(localStorage.getItem("orderDetails"));
+let bookingTable = document.querySelector("#booking-table tbody");
 
-// Get the table body where you want to display the data
-let tableBody = document.querySelector("#booking-table tbody");
-
-// Get the saved details from local storage
-let savedDetails = JSON.parse(localStorage.getItem("orderDetails")) || [];
-
-// Function to display the booking details in the table
-function displayBookingDetails() {
-    // Clear the table body
-
-    // Loop through the saved details
-    for (let i = 0; i < savedDetails.length; i++) {
-        // Create a new row
-        let row = document.createElement("tr");
-
-        // Create a new cell for each column
-        let bookingId = document.createElement("td span class='booking-id'");
-        let username = document.createElement("td span class='user-name'");
-        let packages = document.createElement("td span class='packages-id'");
-        let addOn = document.createElement("span class='add-on-id'");
-        let location = document.createElement("td span class='location-id'");
-        let date = document.createElement("td span class='date-id'");
-        let time = document.createElement("span class='time-id'");
-        let total = document.createElement("td span class='total-id'");
-        let status = document.createElement("td span class='status-id'");
-
-        // Add the data to the cells
-        bookingId.textContent = savedDetails[i].bookingNumber;
-        date.textContent = savedDetails[i].date;
-        status.textContent = savedDetails[i].status;
-
-        // Append the cells to the row
-        row.appendChild(bookingId);
-        row.appendChild(date);
-        row.appendChild(status);
-        row.appendChild(action);
-
-        // Append the row to the table body
-        tableBody.appendChild(row);
-    }
+if (storedFormData) {
+    storedFormData.forEach((orderDetails) => {
+        // Iterate through stored form data and display entries
+        storedFormData.forEach((orderDetails) => {
+            // Create new row for the table with each td has class name
+            let newRow = document.createElement("tr");
+            newRow.innerHTML = `
+        <td class="booking-id">${orderDetails.bookingNumber}</td>
+        <td class="user-name-id">${orderDetails.date}</td>
+        <td class= "package-id">${orderDetails.package} <br> ${orderDetails.AddOn} </td>
+        <td class="location-id">${orderDetails.eventAddress}, ${orderDetails.municipality}, ${orderDetails.province}</td>
+        <td class="date-id">${orderDetails.date} <br> ${orderDetails.time} </td>
+        <td class="total-price-id">₱${orderDetails.totalPrice}</td>
+        
+        `;
+        });
+    });
 }
-
-displayBookingDetails();
 
 //------------------------------------------------------//
 
