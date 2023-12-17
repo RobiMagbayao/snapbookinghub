@@ -1,5 +1,5 @@
 //Loader
-let preLoader = document.getElementById("loader");
+const preLoader = document.getElementById("loader");
 
 setTimeout(preLoaderHandler, 1000);
 

@@ -6,7 +6,7 @@
             name="viewport"
             content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=320, height=device-height, target-densitydpi=medium-dpi"
         />
-        <title>Users</title>
+        <title>Bookings</title>
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
             rel="stylesheet"
@@ -20,78 +20,61 @@
     <body id="bookings-page" class="p-0 m-0">
         <!-- loading animation -->
         <div id="loader"></div>
-        <!-- Profile Content -->
+        <!-- Booking Content -->
         <section id="user-profile" class="container-fluid p-3 p-lg-3">
             <div class="mx-auto card admin-card rounded-4 p-3 mb-3 shadow-sm">
                 <h3 class="h4">All Bookings</h3>
+
+                <div class="d-flex small flex-wrap p-0">
+                    <p class="fw-semibold"><i class="bi bi-sort-down-alt"></i> Sort by</p>
+                    <div>&nbsp; | &nbsp;</div>
+                    <a id="sort-bookingNum">Booking No.</a>
+                    <div>&nbsp; | &nbsp;</div>
+                    <a id="sort-date">Date</a>
+                    <div>&nbsp; | &nbsp;</div>
+                    <a id="sort-status">Status</a>
+                </div>
+
                 <div class="table-responsive">
-                    <table class="table border-5 border-black border-opacity-25 table-hover small">
+                    <table id="booking-table" class="table border-5 border-black border-opacity-25 table-hover small">
                         <thead>
                             <tr class="bg-warning bg-opacity-10">
-                                <th class="col-2">
-                                    <span><button class="bi bi-sort-down-alt bg-transparent border-0 fs-5"></button> </span> Booking No.
-                                </th>
+                                <th class="col-2">Booking No.</th>
                                 <th class="col-2">User</th>
-                                <th class="col-3">Package</th>
-                                <th class="col-2">
-                                    <span><button class="bi bi-sort-down-alt bg-transparent border-0 fs-5"></button> </span> Date
-                                </th>
-                                <th class="col-1">
-                                    <span><button class="bi bi-sort-down-alt bg-transparent border-0 fs-5"></button> </span> Total
-                                </th>
-                                <th class="col-1">
-                                    <span><button class="bi bi-sort-down-alt bg-transparent border-0 fs-5"></button> </span> Status
-                                </th>
+                                <th class="col-4">Package</th>
+                                <th class="col-2">Date</th>
+                                <th class="col-1">Total</th>
+                                <th class="col-1">Status</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr id="booked-event" class="">
-                                <td><span id="booking-id">0006</span></td>
-                                <td><span id="user-name">Juana Dela Cruz</span></td>
-                                <td>Basic 3000<br /><span id="add-on-id">No Add-ons</span></td>
-                                <td><span id="date-id">Dec 20, 2023</span><br /><span id="time-id">7:00AM</span></td>
-                                <td>Php<span id="total-id">3000</span></td>
-                                <td><span id="status-id">Upcoming</span></td>
+                            <tr id="" class="">
+                                <td class="booking-id"><span>0001</span></td>
+                                <td><span class="user-name">Juana Dela Cruz</span></td>
+                                <td><span class="packages-id">Basic 3000</span><br /><span class="add-on-id">No Add-ons</span></td>
+                                <td><span class="date-id">Dec 20, 2023</span><br /><span class="time-id">7:00AM</span></td>
+                                <td>Php<span class="total-id">3000</span></td>
+                                <td><span class="status-id">Upcoming</span></td>
                             </tr>
-                            <tr id="booked-event" class="">
-                                <td><span id="booking-id">0005</span></td>
-                                <td><span id="user-name">John Smith</span></td>
-                                <td>Classic 4000<br /><span id="add-on-id">Printed photos, Phone Booth, Birthday Props</span></td>
-                                <td><span id="date-id">Dec 14, 2023</span><br /><span id="time-id">2:00PM</span></td>
-                                <td>Php<span id="total-id">7000</span></td>
-                                <td><span id="status-id">Upcoming</span></td>
+                            <tr id="" class="">
+                                <td class="booking-id"><span>0010</span></td>
+                                <td><span class="user-name">John Smith</span></td>
+                                <td>
+                                    <span class="packages-id">Classic 4000</span><br /><span class="add-on-id"
+                                        >Printed photos, Phone Booth, Birthday Props</span
+                                    >
+                                </td>
+                                <td><span class="date-id">Dec 14, 2023</span><br /><span class="time-id">2:00PM</span></td>
+                                <td>Php<span class="total-id">7000</span></td>
+                                <td><span class="status-id">Upcoming</span></td>
                             </tr>
-                            <tr id="booked-event" class="">
-                                <td><span id="booking-id">0004</span></td>
-                                <td><span id="user-name">Michelle Smith</span></td>
-                                <td>Premium 5000<br /><span id="add-on-id">Printed photos</span></td>
-                                <td><span id="date-id">Jan 05, 2024</span><br /><span id="time-id">7:00PM</span></td>
-                                <td>Php<span id="total-id">6000</span></td>
-                                <td><span id="status-id">Upcoming</span></td>
-                            </tr>
-                            <tr id="booked-event" class="">
-                                <td><span id="booking-id">0003</span></td>
-                                <td><span id="user-name">Juana Smith</span></td>
-                                <td>Premium 5000<br /><span id="add-on-id">Printed photos</span></td>
-                                <td><span id="date-id">Dec 09, 2023</span><br /><span id="time-id">7:00PM</span></td>
-                                <td>Php<span id="total-id">6000</span></td>
-                                <td><span id="status-id">On-going</span></td>
-                            </tr>
-                            <tr id="booked-event" class="">
-                                <td><span id="booking-id">0002</span></td>
-                                <td><span id="user-name">Juana Smith</span></td>
-                                <td>Premium 5000<br /><span id="add-on-id">Printed photos</span></td>
-                                <td><span id="date-id">Dec 01, 2023</span><br /><span id="time-id">7:00PM</span></td>
-                                <td>Php<span id="total-id">6000</span></td>
-                                <td><span id="status-id">Finished</span></td>
-                            </tr>
-                            <tr id="booked-event" class="">
-                                <td>---</td>
-                                <td>---</td>
-                                <td>---</td>
-                                <td>---</td>
-                                <td>---</td>
-                                <td>---</td>
+                            <tr id="" class="">
+                                <td class="booking-id"><span>0004</span></td>
+                                <td><span class="user-name">Michelle Smith</span></td>
+                                <td><span class="packages-id">Premium 5000</span><br /><span class="add-on-id">Printed photos</span></td>
+                                <td><span class="date-id">Jan 05, 2024</span><br /><span class="time-id">7:00PM</span></td>
+                                <td>Php<span class="total-id">6000</span></td>
+                                <td><span class="status-id">Upcoming</span></td>
                             </tr>
                         </tbody>
                     </table>
@@ -109,6 +92,8 @@
             integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
             crossorigin="anonymous"
         ></script>
+
+        <script type="module" src="../scripts_admin/bookings.js"></script>
 
         <!-- loader script -->
         <script type="module" src="../scripts_admin/loader.js"></script>
