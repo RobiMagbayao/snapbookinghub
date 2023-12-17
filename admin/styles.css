@@ -196,9 +196,9 @@ iframe {
 table {
     min-width: 600px;
 }
-
+#booking-table,
 .users-table {
-    min-width: 600px;
+    min-width: 700px;
 }
 
 .table th,
@@ -280,4 +280,22 @@ table {
     color: #966640;
     padding: 0;
     margin: 0;
+}
+
+#edit-password,
+#delete-user,
+#show-password,
+#sort-bookingNum,
+#sort-date,
+#sort-status {
+    cursor: pointer;
+}
+
+#edit-password:hover,
+#delete-user:hover,
+#show-password:hover,
+#sort-bookingNum:hover,
+#sort-date:hover,
+#sort-status:hover {
+    color: var(--headline-text);
 }

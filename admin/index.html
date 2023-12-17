@@ -32,13 +32,10 @@
                     <p id="error1" class="notif mt-1"></p>
                     <button id="loginBtn" class="btn mt-4" type="submit">Log In</button>
                 </form>
-                <p class="small p-3">
-                    Want to access the admin panel? Request key and register account
-                    <a href="admin_registration.html" class="link-danger">Here</a>
-                </p>
             </div>
         </div>
 
+        <!-- SideMenu, Main iFrame and TopNav -->
         <div id="admin-content" class="container-fluid p-0">
             <div class="d-flex">
                 <!-- Side menu -->
@@ -78,6 +75,24 @@
                                     >
                                 </li>
 
+                                <!-- Msg from Contact Us btn -->
+                                <li class="my-0 navs rounded-start-5">
+                                    <a
+                                        class="nav-a py-3 d-flex align-items-center"
+                                        onclick="document.getElementById('userframe').src = './iframes_admin/messages.html'"
+                                        ><ion-icon class="ps-3 pe-4" name="mail-outline"></ion-icon>Messages</a
+                                    >
+                                </li>
+
+                                <!-- Newsletter Subs btn -->
+                                <li class="my-0 navs rounded-start-5">
+                                    <a
+                                        class="nav-a py-3 d-flex align-items-center"
+                                        onclick="document.getElementById('userframe').src = './iframes_admin/subscribers.html'"
+                                        ><ion-icon class="ps-3 pe-4" name="paper-plane-outline"></ion-icon>Subscribers</a
+                                    >
+                                </li>
+
                                 <!-- Sign out btn -->
                                 <li class="my-0 navs rounded-start-5">
                                     <a class="nav-a py-3 d-flex align-items-center" href="./"
@@ -89,7 +104,7 @@
                     </div>
                 </div>
 
-                <!-- Main Column -->
+                <!-- Top Navbar and Main iFrame content -->
                 <div class="container-fluid p-0 z-2">
                     <!-- Navbar -->
                     <nav class="topnav col-auto sticky-top d-flex flex-grow-1 align-items-center justify-content-between">
@@ -144,7 +159,7 @@
             crossorigin="anonymous"
         ></script>
 
-        <!-- Collapse responsiveness -->
+        <!-- Collapse responsiveness script -->
         <script>
             const sidemenu = document.getElementById("admin-sidenav");
             const screenWidth = window.matchMedia("( max-width: 1000px )");
@@ -164,7 +179,7 @@
         <!-- loader script -->
         <script>
             //Loader
-            let preLoader = document.getElementById("loader");
+            const preLoader = document.getElementById("loader");
 
             setTimeout(preLoaderHandler, 1300);
 
@@ -176,9 +191,9 @@
         </script>
 
         <!-- Login Script -->
-        <script src="adminlogin.js"></script>
+        <script src="./scripts_admin/adminlogin.js"></script>
 
         <!-- Search box -->
-        <script src="searchbox.js"></script>
+        <script src="./scripts_admin/searchbox.js"></script>
     </body>
 </html>
