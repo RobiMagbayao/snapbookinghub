@@ -33,7 +33,7 @@ birthdayProps.addEventListener("change", function() {
     if (birthdayProps.checked) {
         totalPrice += 500;
         birthdayPropsTable.style.display = "table-row";
-        orderDetails.userAddOnBirthdayProps = "Item: Birthday Props, Qty: 1, Price: 500";
+        orderDetails.userAddOnBirthdayProps = "Birthday Props, Qty: 1, Price: 500";
     } else {
         totalPrice -= 500;
         birthdayPropsTable.style.display = "none";
@@ -46,7 +46,7 @@ weddingProps.addEventListener("change", function() {
     if (weddingProps.checked) {
         totalPrice += 500;
         weddingPropsTable.style.display = "table-row";
-        orderDetails.userAddOnWeddingProps = "Item: Wedding Props, Qty: 1, Price: 500";
+        orderDetails.userAddOnWeddingProps = "Wedding Props, Qty: 1, Price: 500";
     } else {
         totalPrice -= 500;
         weddingPropsTable.style.display = "none";
@@ -59,7 +59,7 @@ graduationProps.addEventListener("change", function() {
     if (graduationProps.checked) {
         totalPrice += 500;
         graduationPropsTable.style.display = "table-row";
-        orderDetails.userAddOnGraduationProps = "Item: Graduation Props, Qty: 1, Price: 500";
+        orderDetails.userAddOnGraduationProps = "Graduation Props, Qty: 1, Price: 500";
     } else {
         totalPrice -= 500;
         graduationPropsTable.style.display = "none";
@@ -72,7 +72,7 @@ photoFilter.addEventListener("change", function() {
     if (photoFilter.checked) {
         totalPrice += 500;
         photoFilterTable.style.display = "table-row";
-        orderDetails.userAddOnPhotoFilter = "Item: Photo Filter, Qty: 1, Price: 500";
+        orderDetails.userAddOnPhotoFilter = "Photo Filter, Qty: 1, Price: 500";
     } else {
         totalPrice -= 500;
         photoFilterTable.style.display = "none";
@@ -85,7 +85,7 @@ videoMessage.addEventListener("change", function() {
     if (videoMessage.checked) {
         totalPrice += 700;
         videoMessageTable.style.display = "table-row";
-        orderDetails.userAddOnVideoMessage = "Item: Video Message, Qty: 1, Price: 700";
+        orderDetails.userAddOnVideoMessage = "Video Message, Qty: 1, Price: 700";
     } else {
         totalPrice -= 700;
         videoMessageTable.style.display = "none";
@@ -98,7 +98,7 @@ boomerang.addEventListener("change", function() {
     if (boomerang.checked) {
         totalPrice += 500;
         boomerangTable.style.display = "table-row";
-        orderDetails.userAddOnBoomerang = "Item: Boomerang, Qty: 1, Price: 500";
+        orderDetails.userAddOnBoomerang = "Boomerang, Qty: 1, Price: 500";
     } else {
         totalPrice -= 500;
         boomerangTable.style.display = "none";
@@ -111,7 +111,7 @@ phoneBooth.addEventListener("change", function() {
     if (phoneBooth.checked) {
         totalPrice += 700;
         phoneBoothTable.style.display = "table-row";
-        orderDetails.userAddOnPhoneBooth = "Item: Phone Booth, Qty: 1, Price: 700";
+        orderDetails.userAddOnPhoneBooth = "Phone Booth, Qty: 1, Price: 700";
     } else {
         totalPrice -= 700;
         phoneBoothTable.style.display = "none";
@@ -124,7 +124,7 @@ photoBook.addEventListener("change", function() {
     if (photoBook.checked) {
         totalPrice += 700;
         photoBookTable.style.display = "table-row";
-        orderDetails.userAddOnPhotoBook = "Item: Photo Book, Qty: 1, Price: 700";
+        orderDetails.userAddOnPhotoBook = "Photo Book, Qty: 1, Price: 700";
     } else {
         totalPrice -= 700;
         photoBookTable.style.display = "none";
@@ -143,15 +143,15 @@ radioButtons.forEach(function (radioButton) {
     radioButton.addEventListener("change", function () {
         if (balloonBackdrop.checked) {
             setBackdropInfo("Balloon Backdrop"); 
-            orderDetails.userAddOnBackdrop = "Item: Balloon Backdrop, Qty: 1, Price: 500";
+            orderDetails.userAddOnBackdrop = "Balloon Backdrop, Qty: 1, Price: 500";
         }
         else if(sparklyBackdrop.checked){
             setBackdropInfo("Sparkly Backdrop"); 
-            orderDetails.userAddOnBackdrop = "Item: Sparkly Backdrop, Qty: 1, Price: 500";
+            orderDetails.userAddOnBackdrop = "Sparkly Backdrop, Qty: 1, Price: 500";
         }
         else if(flowerBackdrop.checked){
             setBackdropInfo("Flower Backdrop");
-            orderDetails.userAddOnBackdrop = "Item: Flower Backdrop, Qty: 1, Price: 500";
+            orderDetails.userAddOnBackdrop = "Flower Backdrop, Qty: 1, Price: 500";
         }
         radioTable.style.display = "table-row"; 
     });
@@ -375,6 +375,7 @@ function saveOrderDetails() {
     orderDetails.province = document.getElementById("province").value;
     orderDetails.municipality = document.getElementById("municipality").value;
     orderDetails.eventAddress = document.getElementById("eventAddress").value;
+    orderDetails.package = "Basic Package";
     orderDetails.totalPrice = totalPrice;
 
     const existingOrderData = JSON.parse(localStorage.getItem('orderDetails')) || [];
@@ -438,6 +439,7 @@ function bookingDetails() {
     orderDetails.province = document.getElementById("province").value;
     orderDetails.municipality = document.getElementById("municipality").value;
     orderDetails.eventAddress = document.getElementById("eventAddress").value;
+    orderDetails.package = "Basic Package";
     orderDetails.totalPrice = totalPrice;
 
     const existingOrderData = JSON.parse(localStorage.getItem('orderDetails')) || [];

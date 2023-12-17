@@ -18,6 +18,7 @@ if (storedFormData) {
         <strong>Event Date:</strong> ${orderDetails.date}<br>
         <strong>Event Time:</strong> ${orderDetails.time}<br>
         <strong>Event Location:</strong> ${orderDetails.eventAddress}, ${orderDetails.municipality}, ${orderDetails.province}<br>
+        <strong>Package:</strong> ${orderDetails.package}<br>
         <strong>Total Price: </strong> ₱${orderDetails.totalPrice}<br>`;
 
         // Check if add-ons are present in orderDetails

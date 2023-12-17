@@ -298,6 +298,7 @@ function saveOrderDetails() {
     orderDetails.province = document.getElementById("province").value;
     orderDetails.municipality = document.getElementById("municipality").value;
     orderDetails.eventAddress = document.getElementById("eventAddress").value;
+    orderDetails.package = "Premium Package";
     orderDetails.totalPrice = totalPrice;
 
     const existingOrderData = JSON.parse(localStorage.getItem('orderDetails')) || [];
@@ -361,6 +362,7 @@ function bookingDetails() {
     orderDetails.province = document.getElementById("province").value;
     orderDetails.municipality = document.getElementById("municipality").value;
     orderDetails.eventAddress = document.getElementById("eventAddress").value;
+    orderDetails.package = "Premium Package";
     orderDetails.totalPrice = totalPrice;
 
     const existingOrderData = JSON.parse(localStorage.getItem('orderDetails')) || [];
