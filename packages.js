@@ -274,28 +274,62 @@ function format12HourTime(timeString) {
     return `${formattedHours}:${minutes} ${period}`;
 }
 
+// Function to check if a date is in the past
+function isPastDate(date) {
+    const currentDate = new Date();
+    currentDate.setHours(0, 0, 0, 0); // Set current date to midnight
+    return date <= currentDate;
+}
 
+// Function to check if a time is in the past
+function isPastTime(time) {
+    const currentTime = new Date();
+    const [hours, minutes] = time.split(":");
+    currentTime.setHours(hours, minutes, 0, 0);
+    return currentTime < new Date();
+}
 
-//FOR ORDER SUMMARY
+// Function to get event details
 function getEventDetails() {
     // Get values from the form
-    var dateValue = document.getElementById("date").value;
-    var timeValue = document.getElementById("time").value;
+    var dateInput = document.getElementById("date");
+    var timeInput = document.getElementById("time");
     var provinceValue = document.getElementById("province").value;
     var municipalityValue = document.getElementById("municipality").value;
     var eventAddressValue = document.getElementById("eventAddress").value;
 
+    // Check if the selected date and time are in the past
+    const selectedDate = new Date(dateInput.value);
+    const currentDate = new Date();
+    currentDate.setHours(0, 0, 0, 0); // Set current date to midnight
+
+    if (selectedDate <= currentDate) {
+        // If the selected date is in the past, automatically select the next day
+        const nextDay = new Date(currentDate);
+        nextDay.setDate(nextDay.getDate() + 2);
+        dateInput.value = nextDay.toISOString().split("T")[0];
+    }
+
+    // Check if the selected date is less than 1 day from now
+    const oneDayFromNow = new Date(currentDate);
+    oneDayFromNow.setDate(oneDayFromNow.getDate() + 1);
+
+    if (selectedDate < oneDayFromNow) {
+        // If the selected date is less than 1 day from now, show an alert
+        alert("Please select a date at least 1 day from now.");
+        return;
+    }
+
     // Format date using Intl.DateTimeFormat
-    const dateObject = new Date(dateValue);
     const formattedDate = new Intl.DateTimeFormat("en-US", {
         month: "long",
         day: "numeric",
         year: "numeric"
-    }).format(dateObject);
+    }).format(selectedDate);
 
     // Format time using the custom function
-    const formattedTime = format12HourTime(timeValue);
-    
+    const formattedTime = format12HourTime(timeInput.value);
+
     document.getElementById("dateSummary").innerHTML = `<strong>Event Date: </strong> ${formattedDate}`;
     document.getElementById("timeSummary").innerHTML = `<strong>Event Time: </strong> ${formattedTime}`;
     document.getElementById("addressSummary").innerHTML = `<strong>Event Location: </strong> ${eventAddressValue}, ${municipalityValue}, ${provinceValue}`;
@@ -309,16 +343,31 @@ document.getElementById("municipality").addEventListener("change", getEventDetai
 document.getElementById("eventAddress").addEventListener("input", getEventDetails);
 
 
+
 //SAVING DATA TO LOCAL STORAGE
 
 // 1 KEY, MULTIPLE OBJECTS
 
 // Retrieve bookingNumber from local storage or initialize it to 1
-let bookingNumber = parseInt(localStorage.getItem("bookingNumber")) || 0;
+let bookingNumber = parseInt(localStorage.getItem("bookingNumber")) || 1;
+
 
 
 // Function to save order details to local storage
 function saveOrderDetails() {
+
+    // Get values from the form
+    const dateValue = document.getElementById("date").value;
+    const timeValue = document.getElementById("time").value;
+    const provinceValue = document.getElementById("province").value;
+    const municipalityValue = document.getElementById("municipality").value;
+    const eventAddressValue = document.getElementById("eventAddress").value;
+
+    // Check if required details are empty
+    if (!dateValue || !timeValue || !municipalityValue || !eventAddressValue) {
+        alert("Please input all required details (Date, Time, Municipality, and Event Address) before saving the order.");
+        return;
+    }
 
     orderDetails.bookingNumber = bookingNumber;
     orderDetails.date = document.getElementById("date").value;
@@ -364,25 +413,46 @@ function clearLocalStorage() {
 
 // MULTIPLE KEYS
 
-
 // Retrieve keyNumber from local storage or initialize it to 1
 let keyNumber = parseInt(localStorage.getItem("keyNumber")) || 1;
 
 // Function to save order details to local storage
+
 function bookingDetails() {
-    // Create an object to store order details
-    const eventDetails = orderDetails;
 
-    localStorage.setItem(`eventDetails${keyNumber}`, JSON.stringify(eventDetails));
+    // Get values from the form
+    const dateValue = document.getElementById("date").value;
+    const timeValue = document.getElementById("time").value;
+    const municipalityValue = document.getElementById("municipality").value;
+    const eventAddressValue = document.getElementById("eventAddress").value;
 
-    // Increment keyNumber for the next booking
+    // Check if required details are empty
+    if (!dateValue || !timeValue || !municipalityValue || !eventAddressValue) {
+        alert("Please input all required details (Date, Time, Municipality, and Event Address) before saving the order.");
+        return;
+    }
+
+    orderDetails.keyNumber = keyNumber;
+    orderDetails.date = document.getElementById("date").value;
+    orderDetails.time = document.getElementById("time").value;
+    orderDetails.province = document.getElementById("province").value;
+    orderDetails.municipality = document.getElementById("municipality").value;
+    orderDetails.eventAddress = document.getElementById("eventAddress").value;
+    orderDetails.totalPrice = totalPrice;
+
+    const existingOrderData = JSON.parse(localStorage.getItem('orderDetails')) || [];
+
+     // Add the new form data
+     existingOrderData.push(orderDetails);
+
+     // Store updated form data in localStorage
+     localStorage.setItem(`eventDetails${keyNumber}`, JSON.stringify(orderDetails));
+
+    // Increment bookingNumber for the next order
     keyNumber += 1;
 
-    // Update keyNumber in local storage
+    // Update bookingNumber in local storage
     localStorage.setItem("keyNumber", keyNumber.toString());
 }
-
 // Add event listener to the button that triggers the bookingDetails function
 document.getElementById("orderDetailsButton").addEventListener("click", bookingDetails);
-
-
