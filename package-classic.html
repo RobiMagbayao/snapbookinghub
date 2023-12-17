@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="shared.css">
     <link rel="stylesheet" type="text/css" href="packages.css">
+    <link rel="stylesheet" type="text/css" href="package-classic.css">
     <link rel="shortcut icon" type="image/jpg" href="images/favicon.png"/>
 </head>
 <body class="m-0 p-0">
@@ -59,91 +60,165 @@
 <section id="packages">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-10 mx-auto">
-                <div class="display-6 fw-bold text-center">CHOOSE A PACKAGE</div>
+            <div class="col-12 mx-auto">
+                <div class="display-6 text-center text-uppercase mb-5">Classic Package Booking Guide</div>
+                <div class="h6 text-center">STEP 1</div>
+                <div class="h4 text-center text-uppercase">Explore Inclusions and Add-ons</div>
+                <div class="text-center lead mb-4">Discover our photobooth packages and add-ons. Choose the ones that suit your event and preferences.</div>
             </div>
-            <div class="col-xl-10 col-lg-11 col-md-10 mx-auto">
-                <div class="row">
-                    <div class="col-lg-4 mt-md-5 mt-4">
-                        <div class="package-card card h-100  mx-auto" style="width: 18rem;">
-                            <div class="card-body">
-                                <h5 class="card-title text-center h3">Basic</h5>
-                                <h6 class="card-subtitle mb-2 text-muted text-center h5">&#8369;3,000</h6>
-                                <p class="card-text">
-                                    <ul>
-                                        <li>Studio Quality Photo Equipment and Lighting</li>
-                                        <li>Photo Booth Attendant</li>
-                                        <li>Delivery, Set Up & Breakdown</li>
-                                        <li>Unlimited Digital Photo Sessions</li>
-                                        <li>Standard Prop Station</li>
-                                        <li>Standard Backdrop</li>
-                                        <li>Email, Text, and AirDrop Sharing</li>
-                                        <li>Digital Copies of the Gallery</li>
-                                        <li>Customize this package with our add-on options</li>
-                                    </ul>
-                                </p>
-                            </div>
-                            <div class="btns col-10 mx-auto text-center" >
-                                <a href="package-basic.html"><div class="button btn rounded-0 mb-3 w-100">SELECT</div></a>
-                            </div>
-                        </div>
+            <div class="col-lg-5 col-md-6 col-sm-8 col-12 px-md-4 px-0 ms-lg-auto mx-auto mt-0">
+                <p class="card-title text-center h5 pb-2 ">PACKAGE INCLUSION</p>
+                <div class="card inclusion ps-4 pe-3  pt-3 h-100">
+                    <div class="card-body mx-auto p-0">
+                        <p class="card-text">
+                            <ul class="features text-start ps-3">
+                                <li>&nbspStudio Quality Photo Equipment and Lighting</li>
+                                <li>&nbspPhoto Booth Attendant</li>
+                                <li>&nbspDelivery, Set Up & Breakdown</li>
+                                <li>&nbspUnlimited Digital Photo Sessions</li>
+                                <li>&nbspStandard Prop Station</li>
+                                <li>&nbsp&nbspStandard Backdrop</li>
+                                <li>&nbspEmail, Text, and AirDrop Sharing</li>
+                                <li>&nbspDigital Copies of the Gallery</li>
+                                <li>&nbspCustomize this package with our add-on options</li>
+                            </ul>
+                        </p>
                     </div>
-                    <div class="col-lg-4 pt-lg-0 mt-md-5 mt-4">
-                        <div class="package-card card h-100 mx-auto" style="width: 18rem;">
-                            <div class="card-body">
-                                <h5 class="card-title text-center h3">Classic</h5>
-                                <h6 class="card-subtitle mb-2 text-muted text-center h5">&#8369;4,000</h6>
-                                <p class="card-text">
-                                <ul>
-                                    <li>Studio Quality Photo Equipment and Lighting</li>
-                                    <li>Photo Booth Attendant</li>
-                                    <li>Delivery, Set Up & Breakdown</li>
-                                    <li>Unlimited Digital Photo Sessions</li>
-                                    <li>Standard Prop Station</li>
-                                    <li>Standard Backdrop</li>
-                                    <li>Email, Text, and AirDrop Sharing</li>
-                                    <li>Digital Copies of the Gallery</li>
-                                    <li>Photo Filters</li>
-                                    <li>Unlimited Boomerangs</li>
-                                    <li>Video Message</li>
-                                    <li>Customize this package with our add-on options</li>
-                                </ul>
-                                </p>
-                            </div>
-                            <div class="btns col-10 mx-auto text-center" >
-                                <a href="package-classic.html"><div class="button btn rounded-0 mb-3 w-100">SELECT</div></a>
-                            </div>
-                        </div>
+                            
+                </div>
+            </div>
+            
+            <div class="col-lg-5 col-md-6 col-sm-8 col-12 px-md-4 px-0 me-lg-auto mx-auto mt-0">
+                <p class="card-title text-center h5 pt-md-0 pb-2 pt-sm-5 pt-5">ADD-ON OPTIONS</p>
+                <div class="card adOnOptions ps-4 pe-3  pt-3 h-100">
+                    <div class="card-body mx-auto p-0">
+                        <form action="#" method="post" id="optionsForm">
+
+                            <table class="table">
+
+                                <tbody>
+                
+                                    <!-- Props Section -->
+                                    <tr>
+                                        <th>Props</th>
+                                        <th>Price</th>
+                                    </tr>
+                
+                                    <tr>
+                                        <td>
+                                            <label class="form-check-label">
+                                                <input id="birthdayProps" class="form-check-input" type="checkbox" name="options[]" value="Birthday Props"> Birthday Props
+                                            </label>
+                                        </td>
+                                        <td class="text-center">500</td>
+                                    </tr>
+                
+                                    <tr>
+                                        <td>
+                                            <label class="form-check-label">
+                                                <input id="weddingProps" class="form-check-input" type="checkbox" name="options[]" value="Wedding Props"> Wedding Props
+                                            </label>
+                                        </td>
+                                        <td class="text-center">500</td>
+                                    </tr>
+                
+                                    <tr>
+                                        <td>
+                                            <label class="form-check-label">
+                                                <input id="graduationProps" class="form-check-input" type="checkbox" name="options[]" value="Graduation Props"> Graduation Props
+                                            </label>
+                                        </td>
+                                        <td class="text-center">500</td>
+                                    </tr>
+                
+                                    <!-- Backdrop Options Section -->
+                                    <tr>
+                                        <th>Backdrop Options</th>
+                                        <th>Price</th>
+                                    </tr>
+                
+                                    <tr>
+                                        <td>
+                                            <label class="form-check-label">
+                                                <input id="balloonBackdrop" class="form-check-input" type="radio" name="backdrop" value="Balloon Backdrop"> Balloon Backdrop
+                                            </label>
+                                        </td>
+                                        <td class="text-center">500</td>
+                                    </tr>
+                
+                                    <tr>
+                                        <td>
+                                            <label class="form-check-label">
+                                                <input id="sparklyBackdrop" class="form-check-input" type="radio" name="backdrop" value="Sparkly Backdrop"> Sparkly Backdrop
+                                            </label>
+                                        </td>
+                                        <td class="text-center">500</td>
+                                    </tr>
+                
+                                    <tr>
+                                        <td>
+                                            <label class="form-check-label">
+                                                <input id="flowerBackdrop" class="form-check-input" type="radio" name="backdrop" value="Flower Backdrop"> Flower Backdrop
+                                            </label>
+                                        </td>
+                                        <td class="text-center">500</td>
+                                    </tr>
+                
+                                    <!-- Other Ad-Ons Section -->
+                                    <tr>
+                                        <th>Other Options</th>
+                                        <th>Price</th>
+                                    </tr>
+                                       
+                                    <tr>
+                                        <td>
+                                            <label class="form-check-label">
+                                                <input id="phoneBooth" class="form-check-input" type="checkbox" name="options[]" value="Phone Booth"> Phone Booth
+                                            </label>
+                                        </td>
+                                        <td class="text-center">700</td>
+                                    </tr>
+                
+                                    <tr>
+                                        <td>
+                                            <label class="form-check-label">
+                                                <input id="photoBook" class="form-check-input" type="checkbox" name="options[]" value="Photobook"> Photobook
+                                            </label>
+                                        </td>
+                                        <td class="text-center">700</td>
+                                    </tr>
+
+                                    
+                            <!-- Printed Photos Section -->
+                            <tr>
+                                <th>Printed Photo Size</th>
+                                <th>Quantity</th>
+                            </tr>
+                            <tr>
+                                <td class="pe-4">
+                                    <label for="photoSize" hidden>Photo Size:</label>
+                                    <select class="form-select" id="photoSize" name="photoSize" data-price="0" >
+                                        <option value="2x6">2 x 6 inches (&#8369;8 per/pc)</option>
+                                        <option value="4x6">4 x 6 inches (&#8369;10 per/pc)</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <label for="photoQuantity" hidden>Quantity:</label>
+                                    <input type="number" class="form-control mx-auto" id="photoQuantity" name="photoQuantity" min="100" max="1000" data-price="0" >
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="text-end">
+                                    <div id="warning" class="small text-danger mt-2"></div>
+                                </td>
+                            </tr>
+                
+                                </tbody>
+                            </table>
+                
+                        </form>
                     </div>
-                    <div class="col-lg-4 pt-lg-0 mt-md-5 mt-4">
-                        <div class="package-card card h-100 mx-auto" style="width: 18rem;">
-                            <div class="card-body">
-                                <h5 class="card-title text-center h3">Premium</h5>
-                                <h6 class="card-subtitle mb-2 text-muted text-center h5">&#8369;5,000</h6>
-                                <p class="card-text">
-                                <ul>
-                                    <li>Studio Quality Photo Equipment and Lighting</li>
-                                    <li>Photo Booth Attendant</li>
-                                    <li>Delivery, Set Up & Breakdown</li>
-                                    <li>Unlimited Digital Photo Sessions</li>
-                                    <li>Standard Prop Station</li>
-                                    <li>Standard Backdrop</li>
-                                    <li>Email, Text, and AirDrop Sharing</li>
-                                    <li>Digital Copies of the Gallery</li>
-                                    <li>Photo Filters</li>
-                                    <li>Unlimited Boomerangs</li>
-                                    <li>Video Message</li>
-                                    <li>Phone Booth</li>
-                                    <li>Personalized Photobook</li>
-                                    <li>Customize this package with our add-on options</li>
-                                </ul>
-                                </p>
-                            </div>
-                            <div class="btns col-10 mx-auto text-center" >
-                                <a href="package-premium.html"><div class="button btn rounded-0 mb-3 w-100">SELECT</div></a>
-                            </div>
-                        </div>
-                    </div>
+                            
                 </div>
             </div>
         </div>
@@ -151,187 +226,191 @@
 </section>
 <!--end of photobooth package section-->
 
-<!--add-on section-->
-<section id="ad-ons" class="pt-5">
+
+<!--location section-->
+<section class="subhead">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-10 mx-auto">
-                <div class="h2 addOnHeading text-center text-uppercase">Available Ad-Ons</div>
-                <p class="text-center lead">You can personalize your package by incorporating these optional add-ons to tailor your experience</p>
+            <div class="col-12 mx-auto">
+                <div class="h6  text-center mt-5">STEP 2</div>
+                <div class="h4 text-center text-uppercase">Enter Event Date and Location</div>
+                <div class="text-center lead mb-4">Specify the date of your event and its location to check availability and customize your experience.</div>
             </div>
-            <div class="col-xl-9 col-lg-11 col-md-11 col-12 mx-auto">
+            <div class="col-lg-6 col-md-8 col-11 mx-auto">
                 <div class="row">
-
-                    <div class="col-lg-4 col-md-4 col-sm-6 col mt-md-5 mt-4 mb-4 text-center d-flex justify-content-center">
-                        <div class="adOnCard">
-                            <div class="icon">
-                                <img src="images/add-on1.jpg" alt="" class="card-img-top add-on mx-auto">
-                            </div>
-                            <strong class="pt-3"> Printed Photos</strong>
-                            <div class="card__body">
-                                Price Varies
-                            </div>
-                            <span>Choose between 2x6 inches (₱8 per piece) or 4x6 inches (₱10 per piece). Minimum order: 100 pieces, maximum: 1,000 pieces.</span>
+                    <div class="d-flex col-lg-6 col-md-6 col-sm-6 col-12 mx-auto py-3">
+                        <label for="date" class="fw-bold me-2">Date: </label>
+                        <input type="date" style="width: 100%;" id="date" name="date" required>
+                    </div>
+                    <div class="d-flex col-lg-6 col-md-6 col-sm-6 col-12 mx-auto py-3">
+                        <label for="time" class="fw-bold me-2">Time:</label>
+                        <input type="time" style="width: 100%;" id="time" name="time" required>
+                    </div>
+                    <div class="d-flex col-lg-6 col-md-6 col-12 mx-auto py-2">
+                        <label class="form-label fw-bold me-2" for="province" >Province:</label>
+                        <select class="form-select" id="province" name="province" required>
+                            <option disabled value="">Province</option>
+                            <option selected value="Cavite">Cavite</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Please select a valid province.
+                        </div>
+                        <div class="valid-feedback">
+                            Looks good!
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-4 col-sm-6 col mt-md-5 mt-4 mb-4 text-center d-flex justify-content-center">
-                        <div class="adOnCard">
-                            <div class="icon">
-                                <img src="images/add-on2.png" alt="" class="card-img-top add-on mx-auto">
-                            </div>
-                            <strong class="pt-3"> Photo Filters</strong>
-                            <div class="card__body">
-                                &#8369;500
-                            </div>
-                            <span>Transform your photos effortlessly with a variety of beautiful filters</span>
+                    <div class="d-flex col-lg-6 col-md-6 col-12 mx-auto py-2">
+                        <label class="form-label fw-bold me-2" for="municipality">Municipality:</label>
+                        <select class="form-select" id="municipality" name="municipality" required>
+                            <option selected disabled value="">Choose Municipality</option>
+                            <option value="Amadeo">Amadeo</option>
+                            <option value="Bacoor">Bacoor</option>
+                            <option value="Carmona">Carmona</option>
+                            <option value="Cavite City">Cavite City</option>
+                            <option value="Dasmariñas">Dasmarinas</option>
+                            <option value="General Emilio Aguinaldo">General Emilio Aguinaldo</option>
+                            <option value="General Mariano Alvarez">General Mariano Alvarez</option>
+                            <option value="General Trias">General Trias</option>
+                            <option value="Imus">Imus</option>
+                            <option value="Indang">Indang</option>
+                            <option value="Kawit">Kawit</option>
+                            <option value="Magallanes">Magallanes</option>
+                            <option value="Maragondon">Maragondon</option>
+                            <option value="Mendez">Mendez</option>
+                            <option value="Naic">Naic</option>
+                            <option value="Noveleta">Noveleta</option>
+                            <option value="Rosario">Rosario</option>
+                            <option value="Silang">Silang</option>
+                            <option value="Tagaytay">Tagaytay</option>
+                            <option value="Tanza">Tanza</option>
+                            <option value="Ternate">Ternate</option>
+                            <option value="Trece Martires">Trece Martires</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Please select a valid municipality.
+                        </div>
+                        <div class="valid-feedback">
+                            Looks good!
                         </div>
                     </div>
-
-                    <div class="col-lg-4 col-md-4 col-sm-6 col mt-md-5 mt-4 mb-4 text-center d-flex justify-content-center">
-                        <div class="adOnCard">
-                            <div class="icon">
-                                <video src="images/add-on3.mp4" class="card-img-top add-on mx-auto" alt="..." autoplay muted loop></video>
-                            </div>
-                            <strong class="pt-3">Video Message</strong>
-                            <div class="card__body">
-                                &#8369;700
-                            </div>
-                            <span>Allow your guests to leave heartfelt messages with this add-on, or create memorable videos yourself</span>
-                        </div>
+                    <div class="d-flex col-12 mx-auto py-2">
+                        <label class="form-label fw-bold me-2 flex-shrink-0">Event Address:</label>
+                        <input id="eventAddress" type="text" class="w-100 py-1 px-2" placeholder="Enter Event Address" required>
                     </div>
-
-                    <div class="col-lg-4 col-md-4 col-sm-6 col mt-md-5 mt-4 mb-4 text-center d-flex justify-content-center">
-                        <div class="adOnCard">
-                            <div class="icon">
-                                <img src="images/add-on5.jpg" alt="" class="card-img-top add-on mx-auto">
-                            </div>
-                            <strong class="pt-3"> Phone Booth</strong>
-                            <div class="card__body">
-                                &#8369;700
-                            </div>
-                            <span>Ideal for guests who prefer leaving heartfelt messages without getting in front of the camera</span>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-4 col-sm-6 col mt-md-5 mt-4 mb-4 text-center d-flex justify-content-center">
-                        <div class="adOnCard">
-                            <div class="icon">
-                                <video src="images/add-on4.mp4" class="card-img-top add-on mx-auto" alt="..." autoplay muted loop></video>
-                            </div>
-                            <strong class="pt-3">Boomerang</strong>
-                            <div class="card__body">
-                                &#8369;500
-                            </div>
-                            <span>Infuse a playful touch into your photobooth experience with animated photos—add a Boomerang!</span>
-                        </div>
-                    </div>
-
                     
-
-                    <div class="col-lg-4 col-md-4 col-sm-6 col mt-md-5 mt-4 mb-4 text-center d-flex justify-content-center">
-                        <div class="adOnCard">
-                            <div class="icon">
-                                <img src="images/add-on6.jpg" alt="" class="card-img-top add-on mx-auto">
-                            </div>
-                            <strong class="pt-3"> Photobook</strong>
-                            <div class="card__body">
-                                &#8369;700
-                            </div>
-                            <span>Compile unforgettable memories in a 50-page photobook, preserving each moment beautifully</span>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-4 col-sm-6 col mt-md-5 mt-4 mb-4 text-center d-flex justify-content-center">
-                        <div class="adOnCard">
-                            <div class="icon">
-                                <img src="images/add-on7.jpg" alt="" class="card-img-top add-on mx-auto">
-                            </div>
-                            <strong class="pt-3">Birthday Props</strong>
-                            <div class="card__body">
-                                &#8369;500
-                            </div>
-                            <span>Elevate your birthday celebration with our themed birthday props, adding a touch of fun and festivity</span>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-4 col-sm-6 col mt-md-5 mt-4 mb-4 text-center d-flex justify-content-center">
-                        <div class="adOnCard">
-                            <div class="icon">
-                                <img src="images/add-on8.jpg" alt="" class="card-img-top add-on mx-auto">
-                            </div>
-                            <strong class="pt-3">Wedding Props</strong>
-                            <div class="card__body">
-                                &#8369;500
-                            </div>
-                            <span>Enhance your wedding moments with our exquisite wedding-themed props, adding elegance and charm to your celebration</span>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-4 col-sm-6 col mt-md-5 mt-4 mb-4 text-center d-flex justify-content-center">
-                        <div class="adOnCard">
-                            <div class="icon">
-                                <img src="images/add-on9.jpg" alt="" class="card-img-top add-on mx-auto">
-                            </div>
-                            <strong class="pt-3">Graduation Props</strong>
-                            <div class="card__body">
-                                &#8369;500
-                            </div>
-                            <span>Level up your graduation celebration with our specialized props, bringing a touch of joy and accomplishment to your photos</span>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-4 col-sm-6 col mt-md-5 mt-4 mb-4 text-center d-flex justify-content-center">
-                        <div class="adOnCard">
-                            <div class="icon">
-                                <img src="images/add-on10.jpg" alt="" class="card-img-top add-on mx-auto">
-                            </div>
-                            <strong class="pt-3">Balloon Backdrop</strong>
-                            <div class="card__body">
-                                &#8369;500
-                            </div>
-                            <span>Elevate your photobooth experience with our enchanting Balloon Backdrop, adding a touch of whimsy and celebration to your memories</span>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-4 col-sm-6 col mt-md-5 mt-4 mb-4 text-center d-flex justify-content-center">
-                        <div class="adOnCard">
-                            <div class="icon">
-                                <img src="images/add-on11.jpg" alt="" class="card-img-top add-on mx-auto">
-                            </div>
-                            <strong class="pt-3">Sparkly Backdrop</strong>
-                            <div class="card__body">
-                                &#8369;500
-                            </div>
-                            <span>Transform your photobooth experience with our Sparkly Backdrop, perfect for those seeking a touch of sparkle and glamour in their memories</span>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-4 col-sm-6 col mt-md-5 mt-4 mb-4 text-center d-flex justify-content-center">
-                        <div class="adOnCard">
-                            <div class="icon">
-                                <img src="images/add-on12.png" alt="" class="card-img-top add-on mx-auto">
-                            </div>
-                            <strong class="pt-3">Flower Backdrop</strong>
-                            <div class="card__body">
-                                &#8369;500
-                            </div>
-                            <span>Enhance your photobooth memories with our Flower Backdrop, adding a touch of natural beauty and elegance to your celebration</span>
-                        </div>
-                    </div>
-
-                    <div class="col-12">
-                        <div class="package-footer h2 text-center mt-5">Ready to elevate your event? Seal the deal and make memories!</div>
-                        <div class="btns col-10 mx-auto text-center mt-1" >
-                            <a href="packages.html#packages"><div class="button btn rounded-0 py-3 px-4 mt-4">BOOK NOW</div></a>
-                        </div>
-                    </div>
                 </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+<!--end of location section-->
+
+<!-- Order Summary Table -->
+<section id="orderSummary">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 mx-auto">
+                <div class="h6text-center mt-5">STEP 3</div>
+                <div class="h4 text-center text-uppercase"> Review Order Summary</div>
+                <div class="text-center lead mb-4">Check your order summary to ensure everything aligns with your preferences and requirements.</div>
+            </div>
+            <div class="col-md-10 col-11 mx-auto">
+                <table class="table mt-2">
+                    <thead>
+                        <tr>
+                            <th>Item Name</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody id="orderSummaryTable">
+                        <tr>
+                            <td class="py-2">Classic Package</td>
+                            <td class="py-2">1</td>
+                            <td class="py-2">₱4000</td>
+                        </tr>
+                        <tr id="birthdayPropsTable" style="display: none;">
+                            <td class="py-2" id="birthdayPropsItem">Birthday Props</td>
+                            <td class="py-2" id="birthdayPropsQuantity">1</td>
+                            <td class="py-2" id="birthdayPropsPrice">₱500</td>
+                        </tr>
+                        <tr id="weddingPropsTable" style="display: none;">
+                            <td class="py-2" id="weddingPropsItem">Wedding Props</td>
+                            <td class="py-2" id="weddingPropsQuantity">1</td>
+                            <td class="py-2" id="weddingPropsPrice">₱500</td>
+                        </tr>
+                        <tr id="graduationPropsTable" style="display: none;">
+                            <td class="py-2" id="graduationPropsItem">Graduation Props</td>
+                            <td class="py-2" id="graduationPropsQuantity">1</td>
+                            <td class="py-2" id="graduationPropsPrice">₱500</td>
+                        </tr>
+                        <tr id="radioTable" style="display: none;">
+                            <td class="py-2" id="radioItem"></td>
+                            <td class="py-2" id="radioQuantity">1</td>
+                            <td class="py-2" id="radioPrice">₱500</td>
+                        </tr>
+                        <tr id="phoneBoothTable" style="display: none;">
+                            <td class="py-2" id="phoneBoothItem">Phone Booth</td>
+                            <td class="py-2" id="phoneBoothQuantity">1</td>
+                            <td class="py-2" id="phoneBoothPrice">₱700</td>
+                        </tr>
+                        <tr id="photoBookTable" style="display: none;">
+                            <td class="py-2" id="photoBookItem">Photobook</td>
+                            <td class="py-2" id="photoBookQuantity">1</td>
+                            <td class="py-2" id="photoBookPrice">₱700</td>
+                        </tr>
+                        <tr id="printPhotoTable" style="display: none;">
+                            <td class="py-2" id="printItem"></td>
+                            <td class="py-2" id="printQuantity"></td>
+                            <td class="py-2" id="printPrice"></td>
+                        </tr>
+                    </tbody>
+                
+                    <tfoot>
+                        <tr>
+                            <td colspan="2" class="text-end fw-bold lead">Total Price</td>
+                            <td id="totalPrice" class="text-center fw-bold lead">₱4000</td>
+                        </tr>
+                    </tfoot>
+                    
+                </table>
+            </div>
+            <div class="col-12 text-s">
+                <div id="dateSummary"></div>
+                <div id="timeSummary"></div>
+                <div id="addressSummary"></div>
             </div>
         </div>
     </div>
 </section>
-<!--end of add-on section-->
+<!-- Order Summary Table -->
 
+<!--Book Now section-->
+<section>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 mx-auto">
+                <div class="h6  text-center mt-5">STEP 4</div>
+                <div class="h4 text-center text-uppercase">Ready to Book?</div>
+                <div class="text-center lead mb-4">If everything looks perfect, click the button below to secure your photobooth experience.</div>
+            </div>
+            <div class="col-12">
+                <div class="btns mx-auto text-center" >
+                    <a href="" id="saveOrderButton"><div id="saveOrderButton" class="button btn rounded-0 py-3 my-2 px-4">1 key, multiple objects</div></a>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="btns mx-auto text-center" >
+                    <a href="" id="orderDetailsButton"><div id="orderDetailsButton" class="button btn rounded-0 py-3 px-4">different key</div></a>
+                </div>
+            </div>
+            <a href="newOrder.html" target="_blank" class="text-danger text-center py-2"><div class="btn btn-warning">storage test (1 key, multiple objects)</div></a>
+            <a href="" id="clearLocalStorageButton" class="text-danger text-center py-2"><div class="btn btn-info" id="clearLocalStorageButton">Clear Local Storage</div></a>
+        </div>
+    </div>
+</section>
+<!--end of Book Now section-->
 
 <!--footer section-->
 <section class="m-0 p-0">
@@ -404,10 +483,10 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal- body">
-                <div class="card">
+                <div class="card" style="border-radius: 1rem;">
                   <div class="row g-0">
                     <div class="col-md-6 col-lg-5 d-none d-md-block">
-                      <img src="images/g2.jpg" alt="login form" class="img-fluid h-100" style="object-fit: cover;" />
+                      <img src="images/g2.jpg" alt="login form" class="img-fluid h-100" style="border-radius: 1rem 0 0 1rem; object-fit: cover;" />
                     </div>
                     <div class="col-md-6 col-lg-7">
                       <div class="card-body p-4 p-lg-5 text-black">
@@ -461,10 +540,10 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-body p-0 m-0">
-                <div class="card">
+                <div class="card" style="border-radius: 1rem;">
                   <div class="row g-0">
                     <div class="col-md-6 col-lg-5 d-none d-md-block">
-                      <img src="images/g20.jpg" alt="login form" class="img-fluid h-100" style="object-fit: cover;" />
+                      <img src="images/g20.jpg" alt="login form" class="img-fluid h-100" style="border-radius: 1rem 0 0 1rem; object-fit: cover;" />
                     </div>
                     <div class="col-md-6 col-lg-7">
                       <div class="card-body p-4 p-lg-5 text-black">
@@ -510,7 +589,7 @@
                           <div class="form-check mb-5">
                             <input class="form-check-input me-2" type="checkbox" value="" id="registerCheck" />
                             <label class="form-check-label" for="registerCheck">
-                              I agree all statements in &nbsp<a href="#TermsAndConditons" data-bs-toggle="modal" data-bs-target="#TermsAndConditons" style="color: #393f81;">Terms & Conditions</a>
+                              I agree all statements in <a href="#TermsAndConditons" data-bs-toggle="modal" data-bs-target="#TermsAndConditons" style="color: #393f81;">Terms & Conditions</a>
                             </label>
                           </div>
         
@@ -637,10 +716,11 @@
 <!-- end of Terms & Conditions Modal -->
 
 
-<!--bootstrap js-->
+<!--Javascript-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script type="application/javascript" src="package-classic.js"></script>
+   
     <script type="application/javascript" src="shared.js"></script>
-
 </body>
 </html>
 

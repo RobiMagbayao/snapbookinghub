@@ -11,14 +11,6 @@
   font-family: 'Fjalla One', sans-serif;
 }
 
-.features{
-  font-weight: 400;
-  font-size: 1.05rem;
-  list-style: none;
-  text-align: center;
-  line-height: 2.5;
-}
-
 .features li:before {
   content: '✓ ';
 }
@@ -152,9 +144,4 @@ input[type="radio"]:checked {
     }
 }
 
-@media (min-width: 200px) and (max-width: 767.98px) {
-  .features{
-    line-height: 1.5;
-  }
-}
 
