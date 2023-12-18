@@ -75,7 +75,6 @@ if (storedFormData) {
         let period = +hours < 12 ? "AM" : "PM";
 
         if (hours == 0) {
-            // midnight
             hours = 12;
         } else if (hours > 12) {
             hours = hours - 12;
@@ -83,7 +82,7 @@ if (storedFormData) {
 
         let formattedTime = `${hours}:${minutes} ${period}`;
 
-        // Set status to Upcoming if the date is greater than the current date and Ongoing if the date is equal to the current date and Finished if the date is less than the current date
+        // Set status of the booking
         let currentDate = new Date();
         let formattedCurrentDate = currentDate.toLocaleDateString("en-US", {
             year: "numeric",
@@ -96,18 +95,18 @@ if (storedFormData) {
         } else if (formattedDate === formattedCurrentDate) {
             status = "Ongoing";
         } else {
-            status = "Finished";
+            status = "Completed";
         }
 
         // SET THE CONTENT OF THE ROW WITH THE ORDER DETAILS
         let bookedDetails = `
-        <td class="booking-id">${bookingNumber}</td>
-        <td class="user-name-id">${userName}</td>
-        <td class= "package-id">${orderDetails.package} <br> ${addOns} </td>
-        <td class="location-id">${orderDetails.eventAddress}, ${orderDetails.municipality}, ${orderDetails.province}</td>
-        <td class="date-id">${formattedDate} <br> ${formattedTime} </td>
-        <td class="total-price-id">₱${orderDetails.totalPrice}</td>
-        <td class="status-id">${status}</td>`;
+        <td><span class="booking-id">${bookingNumber}</span></td>
+        <td><span class="user-name-id">${userName}</span></td>
+        <td><span class= "package-id">${orderDetails.package}</span> <br> <span>${addOns}</span></td>
+        <td><span class="location-id">${orderDetails.eventAddress}</span>, <span>${orderDetails.municipality}</span>, <span>${orderDetails.province}</span></td>
+        <td><span class="date-id">${formattedDate}</span> <br> <span>${formattedTime}</span></td>
+        <td><span class="total-price-id">₱${orderDetails.totalPrice}<span></td>
+        <td><span class="status-id">${status}<span></td>`;
 
         // Put the bookedDetails to the row
         newRow.innerHTML = bookedDetails;
@@ -118,6 +117,7 @@ if (storedFormData) {
 }
 
 //------------------------------------------------------//
+// Sorting functions
 
 // Declare ascending as a boolean variable
 let ascending = true;
