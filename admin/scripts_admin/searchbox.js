@@ -19,10 +19,10 @@ function findTextInIframeContent(text, iframeElement) {
     for (const element of contentElements) {
         const foundText = element.querySelectorAll("*");
         for (const ftext of foundText) {
-            // Check if node contains the search text
+            // Check if piece contains the search text
             if (ftext.textContent.includes(text)) {
                 // Highlight the same text
-                highlightNode(ftext, text);
+                highlightPiece(ftext, text);
             }
         }
     }
@@ -35,6 +35,6 @@ function clearHighlights(document) {
     }
 }
 
-function highlightNode(node, text) {
-    node.innerHTML = node.innerHTML.replace(new RegExp(text, "gi"), `<span class="highlighter">$&</span>`);
+function highlightPiece(piece, text) {
+    piece.innerHTML = piece.innerHTML.replace(new RegExp(text, "gi"), `<span class="highlighter">$&</span>`);
 }
