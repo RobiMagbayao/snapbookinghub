@@ -3,21 +3,117 @@ const storedFormData = JSON.parse(localStorage.getItem("orderDetails"));
 let bookingTable = document.querySelector("#booking-table tbody");
 
 if (storedFormData) {
+    // Iterate through stored form data and display entries
     storedFormData.forEach((orderDetails) => {
-        // Iterate through stored form data and display entries
-        storedFormData.forEach((orderDetails) => {
-            // Create new row for the table with each td has class name
-            let newRow = document.createElement("tr");
-            newRow.innerHTML = `
-        <td class="booking-id">${orderDetails.bookingNumber}</td>
-        <td class="user-name-id">${orderDetails.date}</td>
-        <td class= "package-id">${orderDetails.package} <br> ${orderDetails.AddOn} </td>
-        <td class="location-id">${orderDetails.eventAddress}, ${orderDetails.municipality}, ${orderDetails.province}</td>
-        <td class="date-id">${orderDetails.date} <br> ${orderDetails.time} </td>
-        <td class="total-price-id">₱${orderDetails.totalPrice}</td>
-        
-        `;
+        // Create new row for the table with each td has class name
+        let newRow = document.createElement("tr");
+
+        // let user-name a sample name
+        let userName = "Juana Dela Cruz";
+
+        // Add 0000 to the booking number if it is less than 4 digits
+        let bookingNumber = orderDetails.bookingNumber;
+        if (bookingNumber < 10) {
+            bookingNumber = "000" + bookingNumber;
+        } else if (bookingNumber < 100) {
+            bookingNumber = "00" + bookingNumber;
+        } else if (bookingNumber < 1000) {
+            bookingNumber = "0" + bookingNumber;
+        } else {
+            bookingNumber = bookingNumber;
+        }
+
+        // Check if there are any add-ons if none, display "No Add-Ons"
+        let addOns = "";
+        if (orderDetails.userAddOnBirthdayProps) {
+            addOns += "Birthday Props" + ", ";
+        }
+        if (orderDetails.userAddOnWeddingProps) {
+            addOns += "Wedding Props" + ", ";
+        }
+        if (orderDetails.userAddOnGraduationProps) {
+            addOns += "Graduation Props" + ", ";
+        }
+        if (orderDetails.userAddOnPhotoFilter) {
+            addOns += "Photo Filter" + ", ";
+        }
+        if (orderDetails.userAddOnVideoMessage) {
+            addOns += "Video Message" + ", ";
+        }
+        if (orderDetails.userAddOnBoomerang) {
+            addOns += "Boomerang" + ", ";
+        }
+        if (orderDetails.userAddOnPhoneBooth) {
+            addOns += "Phone Booth" + ", ";
+        }
+        if (orderDetails.userAddOnPhotoBook) {
+            addOns += "Photo Book" + ", ";
+        }
+        if (orderDetails.userAddOnBackdrop) {
+            addOns += "Backdrop" + ", ";
+        }
+        if (orderDetails.userAddOnPrintPhoto) {
+            addOns += "Print Photo" + ", ";
+        }
+        if (addOns === "") {
+            addOns = "No Add-Ons";
+        } else {
+            // Remove the last comma and space
+            addOns = addOns.slice(0, -2);
+        }
+
+        // Format date to abbreviated month, day, year
+        let date = new Date(orderDetails.date);
+        let formattedDate = date.toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
         });
+
+        // Format time to 12-hour format
+        let [hours, minutes] = orderDetails.time.split(":");
+        let period = +hours < 12 ? "AM" : "PM";
+
+        if (hours == 0) {
+            // midnight
+            hours = 12;
+        } else if (hours > 12) {
+            hours = hours - 12;
+        }
+
+        let formattedTime = `${hours}:${minutes} ${period}`;
+
+        // Set status to Upcoming if the date is greater than the current date and Ongoing if the date is equal to the current date and Finished if the date is less than the current date
+        let currentDate = new Date();
+        let formattedCurrentDate = currentDate.toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+        });
+        let status = "";
+        if (formattedDate > formattedCurrentDate) {
+            status = "Upcoming";
+        } else if (formattedDate === formattedCurrentDate) {
+            status = "Ongoing";
+        } else {
+            status = "Finished";
+        }
+
+        // SET THE CONTENT OF THE ROW WITH THE ORDER DETAILS
+        let bookedDetails = `
+        <td class="booking-id">${bookingNumber}</td>
+        <td class="user-name-id">${userName}</td>
+        <td class= "package-id">${orderDetails.package} <br> ${addOns} </td>
+        <td class="location-id">${orderDetails.eventAddress}, ${orderDetails.municipality}, ${orderDetails.province}</td>
+        <td class="date-id">${formattedDate} <br> ${formattedTime} </td>
+        <td class="total-price-id">₱${orderDetails.totalPrice}</td>
+        <td class="status-id">${status}</td>`;
+
+        // Put the bookedDetails to the row
+        newRow.innerHTML = bookedDetails;
+
+        // Append the new row to the table
+        bookingTable.appendChild(newRow);
     });
 }
 
