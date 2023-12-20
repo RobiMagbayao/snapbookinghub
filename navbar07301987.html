@@ -12,7 +12,7 @@
     </head>
     <body class="m-0 p-0 overflow-auto">
         <!--navigation section-->
-        <header class="m-0 p-0 sticky-top z-1">
+        <header class="m-0 p-0 fixed-top z-1">
             <div class="container-fluid p-0">
                 <div class="col-12">
                     <nav class="navbar nav-bar navbar-expand-lg pe-2">
@@ -105,7 +105,7 @@
                                             </div>
 
                                             <div class="input-group mb-4">
-                                                <span class="input-group-text" id="loginEmail"><i class="bi bi-envelope-at"></i></span>
+                                                <span class="input-group-text"><i class="bi bi-envelope-at"></i></span>
                                                 <div class="form-outline flex-fill mb-0">
                                                     <input
                                                         type="email"
@@ -118,7 +118,7 @@
                                             </div>
 
                                             <div class="input-group mb-4">
-                                                <span class="input-group-text" id="loginPassword"><i class="bi bi-person-lock"></i></span>
+                                                <span class="input-group-text"><i class="bi bi-person-lock"></i></span>
                                                 <div class="form-outline flex-fill mb-0">
                                                     <input
                                                         type="password"
@@ -207,7 +207,7 @@
                                             <div class="d-flex">
                                                 <!-- First Name -->
                                                 <div class="input-group mb-3 me-2">
-                                                    <span class="input-group-text"><i class="bi bi-person-circle"></i></span>
+                                                    <span class="input-group-text"><i class="bi bi-person-vcard"></i></span>
 
                                                     <input
                                                         type="text"
@@ -216,12 +216,12 @@
                                                         placeholder="First Name"
                                                         required
                                                     />
-                                                    <label class="form-label" for="registerName" hidden>Your Name</label>
+                                                    <label class="form-label" for="registerFirstName" hidden>First Name</label>
                                                 </div>
 
                                                 <!-- Last Name -->
                                                 <div class="input-group mb-3">
-                                                    <span class="input-group-text"><i class="bi bi-person-circle"></i></span>
+                                                    <span class="input-group-text"><i class="bi bi-person-vcard-fill"></i></span>
 
                                                     <input
                                                         type="text"
@@ -230,76 +230,121 @@
                                                         placeholder="Last Name"
                                                         required
                                                     />
-                                                    <label class="form-label" for="registerName" hidden>Your Name</label>
+                                                    <label class="form-label" for="registerLastName" hidden>Last Name</label>
                                                 </div>
                                             </div>
 
-                                            <div class="input-group mb-4">
-                                                <span class="input-group-text" id="registerEmail"><i class="bi bi-envelope-at"></i></span>
+                                            <!-- Phone -->
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text"><i class="bi bi-telephone-fill"></i></span>
+
+                                                <input
+                                                    type="number"
+                                                    id="registerPhone"
+                                                    class="form-control rounded-start-0 rounded-2"
+                                                    placeholder="Phone Number"
+                                                    minlength="10"
+                                                    maxlength="14"
+                                                    pattern="[0-9]"
+                                                    required
+                                                />
+                                                <label class="form-label" for="registerPhone" hidden>Phone Number</label>
+                                            </div>
+
+                                            <div id="phoneNotice" class="small text-muted mb-2 pb-lg-2 d-none" style="font-size: 0.69rem">
+                                                <span class="text-danger me-1"><i class="bi bi-exclamation-circle"></i></span>
+                                                Phone number must be 10 to 14 digits long
+                                            </div>
+
+                                            <!-- Email -->
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text"><i class="bi bi-envelope-at"></i></span>
                                                 <div class="form-outline flex-fill mb-0">
                                                     <input
                                                         type="email"
                                                         id="registerEmail"
                                                         class="form-control rounded-start-0"
                                                         placeholder="Your Email"
+                                                        autocomplete="email"
                                                         required
                                                     />
                                                     <label class="form-label" for="registerEmail" hidden>Your Email</label>
                                                 </div>
                                             </div>
 
-                                            <div class="input-group mb-4">
-                                                <span class="input-group-text" id="registerPassword"><i class="bi bi-person-lock"></i></span>
+                                            <!-- Password -->
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text"><i class="bi bi-person-lock"></i></span>
                                                 <div class="form-outline flex-fill mb-0">
                                                     <input
                                                         type="password"
                                                         id="registerPassword"
-                                                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+                                                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                                        mi
                                                         class="form-control rounded-start-0"
                                                         placeholder="Password"
+                                                        autocomplete="off"
                                                         required
                                                     />
-                                                    <label class="form-label" for="registerPassword" hidden>Password</label>
+                                                    <label class="form-label" hidden>Password</label>
                                                 </div>
                                             </div>
+                                            <div id="passwordNotice" class="small text-muted mb-2 pb-lg-2 d-none" style="font-size: 0.69rem">
+                                                <span class="text-danger me-1"><i class="bi bi-exclamation-circle"></i></span>
+                                                Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or
+                                                more characters
+                                            </div>
 
-                                            <div class="input-group mb-4">
-                                                <span class="input-group-text" id="registerPassword2"><i class="bi bi-lock-fill"></i></span>
+                                            <!-- Confirm Password -->
+                                            <div class="input-group mb-2">
+                                                <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
                                                 <div class="form-outline flex-fill mb-0">
                                                     <input
                                                         type="password"
-                                                        id="registerPassword2"
-                                                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+                                                        id="registerConfirmPassword"
                                                         class="form-control rounded-start-0"
                                                         placeholder="Repeat your password"
                                                         required
                                                     />
-                                                    <label class="form-label" for="registerPassword2" hidden>Repeat your password</label>
+                                                    <label class="form-label" for="registerConfirmPassword" hidden>Repeat your password</label>
+                                                </div>
+                                            </div>
+                                            <!-- Show Password -->
+                                            <div class="mb-3">
+                                                <div class="form-outline d-flex mb-0">
+                                                    <input type="checkbox" class="form-check-input me-2" value="Show Password" id="showPassword" />
+                                                    <label class="form-label small text-muted" for="showPassword">Show Password</label>
                                                 </div>
                                             </div>
 
                                             <!-- Terms & Condition checkbox -->
                                             <div class="form-check mb-4">
                                                 <input class="form-check-input me-2" type="checkbox" value="" id="registerCheck" required />
-                                                <label class="form-check-label" for="registerCheck">
-                                                    I agree all statements in
+                                                <label class="form-check-label small" for="registerCheck">
+                                                    I agree all statements in&nbsp;
                                                     <a
+                                                        class="text-decoration-none link-primary"
                                                         href="#TermsAndConditons"
                                                         data-bs-toggle="modal"
                                                         data-bs-target="#TermsAndConditons"
-                                                        style="color: #393f81"
+                                                        style="font-weight: 500"
                                                         >Terms & Conditions</a
                                                     >
                                                 </label>
                                             </div>
 
                                             <div class="pt-1 mb-4 text-center">
-                                                <button class="btn btn-dark btn-lg btn-block" type="button">Register</button>
+                                                <button class="btn btn-dark btn-lg btn-block" type="submit">Register</button>
                                             </div>
 
-                                            <p class="mt-3 text-center" style="color: #393f81">
+                                            <p class="mt-3 text-center" style="color: #1d1d1d">
                                                 Already have an account?
-                                                <a href="#signInModal" data-bs-toggle="modal" data-bs-target="#signInModal" style="color: #393f81"
+                                                <a
+                                                    href="#signInModal"
+                                                    class="text-decoration-none link-primary"
+                                                    data-bs-toggle="modal"
+                                                    data-bs-target="#signInModal"
+                                                    style="font-weight: 500"
                                                     >Login here</a
                                                 >
                                             </p>
@@ -432,6 +477,7 @@
         <!-- Ion icon script -->
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-        <script type="application/javascript" src="account-user.js"></script>
+
+        <script src="./account-user.js"></script>
     </body>
 </html>

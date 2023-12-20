@@ -19,23 +19,24 @@
     </head>
     <body class="m-0 p-0">
         <!--navigation section-->
-        <header w3-include-html="./navbar07301987.html"></header>
+        <div id="navbarSBH"></div>
         <!--end of navigation section-->
 
         <!--contact section-->
         <section id="contact">
             <div class="container-fluid">
                 <div class="row my-auto">
-                    <div class="col-12 display-4 fw-bold text-center pb-5">
-                        We'd Love to Hear From You
-                    </div>
+                    <div class="col-12 display-4 fw-bold text-center pb-5">We'd Love to Hear From You</div>
                     <div class="col-lg-6 col-md-6 col-12 mx-auto ps-lg-5 ps-md-4 ps-3 px-md-0 px-sm-5 px-3">
                         <div class="">Have a question, need clarification, or concerns? We're here to help.</div>
-                        <br>    
-                        <div class="">Check out these <a href="faqs.html">FAQs</a>: Many common concerns are addressed in our frequently asked questions. Find quick answers to common queries.</div>
-                        <br>
-                        <div class=""> For further assistance or personalized inquiries, feel free to:</div>
-                        <br>
+                        <br />
+                        <div class="">
+                            Check out these <a href="faqs.html">FAQs</a>: Many common concerns are addressed in our frequently asked questions. Find
+                            quick answers to common queries.
+                        </div>
+                        <br />
+                        <div class="">For further assistance or personalized inquiries, feel free to:</div>
+                        <br />
                         <ul>
                             <li><div class="">Email us at mail.@snapbookinghub.com</div></li>
                             <li><div class="">Call us at (046) 123-4567</div></li>
@@ -43,69 +44,82 @@
                         <div class="pt-3">You can also provide your information, and our team will contact you shortly.</div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-12 my-auto mx-auto pt-md-0 pt-4 px-md-0 px-sm-5 px-3">
-                        <form id="contactForm" class="row needs-validation px-lg-5 px-md-4 px-3" novalidate onsubmit="if(this.checkValidity()) submitForm(); return false;">
-
+                        <form
+                            id="contactForm"
+                            class="row needs-validation px-lg-5 px-md-4 px-3"
+                            novalidate
+                            onsubmit="if(this.checkValidity()) submitForm(); return false;"
+                        >
                             <div class="col-md-10 col-sm-11 col-12 mx-auto">
                                 <label class="form-label visually-hidden" for="name">Your Name:</label>
-                                <input class="form-control" type="text" id="name" name="name" required pattern=".{4,}" title="Please enter at least 4 characters" placeholder="Your Name">
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                                <div class="invalid-feedback">
-                                    Please enter your name (at least 4 characters).
-                                </div>
+                                <input
+                                    class="form-control"
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    required
+                                    pattern=".{4,}"
+                                    title="Please enter at least 4 characters"
+                                    placeholder="Your Name"
+                                />
+                                <div class="valid-feedback">Looks good!</div>
+                                <div class="invalid-feedback">Please enter your name (at least 4 characters).</div>
                             </div>
-                        
+
                             <div class="col-md-10 col-sm-11 col-12 my-3 mx-auto">
                                 <label class="form-label visually-hidden" for="email">Email:</label>
-                                <input class="form-control" type="email" id="email" name="email" required placeholder="Email">
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                                <div class="invalid-feedback">
-                                    Please enter a valid email address.
-                                </div>
+                                <input class="form-control" type="email" id="email" name="email" required placeholder="Email" />
+                                <div class="valid-feedback">Looks good!</div>
+                                <div class="invalid-feedback">Please enter a valid email address.</div>
                             </div>
-                        
+
                             <div class="col-md-10 col-sm-11 col-12 mb-3 mx-auto">
                                 <label class="form-label visually-hidden" for="phone">Phone number:</label>
-                                <input class="form-control" type="tel" id="phone" name="phone" required pattern="[0-9]{11}" title="Please enter a valid 11-digit phone number (09XXXXXXXXX)" placeholder="Phone Number">
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                                <div class="invalid-feedback">
-                                    Please enter a valid 11-digit phone number (09XXXXXXXXX).
-                                </div>
+                                <input
+                                    class="form-control"
+                                    type="tel"
+                                    id="phone"
+                                    name="phone"
+                                    required
+                                    pattern="[0-9]{11}"
+                                    title="Please enter a valid 11-digit phone number (09XXXXXXXXX)"
+                                    placeholder="Phone Number"
+                                />
+                                <div class="valid-feedback">Looks good!</div>
+                                <div class="invalid-feedback">Please enter a valid 11-digit phone number (09XXXXXXXXX).</div>
                             </div>
-                        
+
                             <div class="col-md-10 col-sm-11 col-12 mx-auto">
                                 <label for="message" class="form-label visually-hidden">Message:</label>
-                                <textarea class="form-control" id="message" rows="3" required minlength="10" placeholder="Write Your Message"></textarea>
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                                <div class="invalid-feedback">
-                                    Please enter a message with at least 10 characters.
-                                </div>
+                                <textarea
+                                    class="form-control"
+                                    id="message"
+                                    rows="3"
+                                    required
+                                    minlength="10"
+                                    placeholder="Write Your Message"
+                                ></textarea>
+                                <div class="valid-feedback">Looks good!</div>
+                                <div class="invalid-feedback">Please enter a message with at least 10 characters.</div>
                             </div>
-                        
+
                             <div class="btns col-10 mx-auto text-center mt-3">
                                 <button type="submit" class="button btn rounded-0 py-2 px-4 mt-4" id="submitButton">SUBMIT</button>
-                            </div>                  
-                        
+                            </div>
                         </form>
-
                     </div>
                 </div>
             </div>
         </section>
         <!--end of contact section-->
 
-
         <!--DELETE LATER-->
-        <center><button class="btn btn-warning btn-lg"><a href="contact-form.html" target="_blank" >See stored contact form data here</a></button></center>
-        <center><button class="btn btn-info btn-lg mt-3"><a href="newsletter.html" target="_blank">See stored newsletter email</a></button></center>
-
+        <center>
+            <button class="btn btn-warning btn-lg"><a href="contact-form.html" target="_blank">See stored contact form data here</a></button>
+        </center>
+        <center>
+            <button class="btn btn-info btn-lg mt-3"><a href="newsletter.html" target="_blank">See stored newsletter email</a></button>
+        </center>
 
         <!--footer section-->
         <section class="m-0 p-0">
@@ -185,15 +199,16 @@
         </footer>
         <!--end of footer section-->
 
+        <!--bootstrap js-->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+            crossorigin="anonymous"
+        ></script>
+        <script type="application/javascript" src="form.js"></script>
+        <script type="application/javascript" src="shared.js"></script>
 
-<!--bootstrap js-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    <script type="application/javascript" src="form.js"></script>
-    <script type="application/javascript" src="shared.js"></script>
-
-<!-- Navbar -->
-    <script type="application/javascript" src="navbar.js"></script>
-    
-</body>
+        <!-- Navbar -->
+        <script type="application/javascript" src="navbar.js"></script>
+    </body>
 </html>
-

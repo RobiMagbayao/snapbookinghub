@@ -1,389 +1,384 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta
-        name="viewport"
-        content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=320, height=device-height, target-densitydpi=medium-dpi"
-    />
-    <title>SnapBookingHub</title>
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-        crossorigin="anonymous"
-    />
-    <link rel="stylesheet" type="text/css" href="shared.css" />
-    <link rel="stylesheet" type="text/css" href="packages.css" />
-    <link rel="shortcut icon" type="image/jpg" href="images/favicon.png" />
-</head>
-<body class="m-0 p-0">
-    <!--navigation section-->
-    <header w3-include-html="./navbar07301987.html"></header>
-    <!--end of navigation section-->
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=320, height=device-height, target-densitydpi=medium-dpi"
+        />
+        <title>SnapBookingHub</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" type="text/css" href="shared.css" />
+        <link rel="stylesheet" type="text/css" href="packages.css" />
+        <link rel="shortcut icon" type="image/jpg" href="images/favicon.png" />
+    </head>
+    <body class="m-0 p-0">
+        <!--navigation section-->
+        <div id="navbarSBH"></div>
+        <!--end of navigation section-->
 
-    <!--photobooth package section-->
-    <section id="packages">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-10 mx-auto">
-                    <div class="display-6 fw-bold text-center">CHOOSE A PACKAGE</div>
-                </div>
-                <div class="col-xl-10 col-lg-11 col-md-10 mx-auto">
-                    <div class="row">
-                        <div class="col-lg-4 mt-md-5 mt-4">
-                            <div class="package-card card h-100  mx-auto" style="width: 18rem;">
-                                <div class="card-body">
-                                    <h5 class="card-title text-center h3">Basic</h5>
-                                    <h6 class="card-subtitle mb-2 text-muted text-center h5">&#8369;3,000</h6>
-                                    <p class="card-text">
-                                        <ul>
-                                            <li>Studio Quality Photo Equipment and Lighting</li>
-                                            <li>Photo Booth Attendant</li>
-                                            <li>Delivery, Set Up & Breakdown</li>
-                                            <li>Unlimited Digital Photo Sessions</li>
-                                            <li>Standard Prop Station</li>
-                                            <li>Standard Backdrop</li>
-                                            <li>Email, Text, and AirDrop Sharing</li>
-                                            <li>Digital Copies of the Gallery</li>
-                                            <li>Customize this package with our add-on options</li>
-                                        </ul>
-                                    </p>
-                                </div>
-                                <div class="btns col-10 mx-auto text-center" >
-                                    <a href="package-basic.html"><div class="button btn rounded-0 mb-3 w-100">SELECT</div></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 pt-lg-0 mt-md-5 mt-4">
-                            <div class="package-card card h-100 mx-auto" style="width: 18rem;">
-                                <div class="card-body">
-                                    <h5 class="card-title text-center h3">Classic</h5>
-                                    <h6 class="card-subtitle mb-2 text-muted text-center h5">&#8369;4,000</h6>
-                                    <p class="card-text">
-                                    <ul>
-                                        <li>Studio Quality Photo Equipment and Lighting</li>
-                                        <li>Photo Booth Attendant</li>
-                                        <li>Delivery, Set Up & Breakdown</li>
-                                        <li>Unlimited Digital Photo Sessions</li>
-                                        <li>Standard Prop Station</li>
-                                        <li>Standard Backdrop</li>
-                                        <li>Email, Text, and AirDrop Sharing</li>
-                                        <li>Digital Copies of the Gallery</li>
-                                        <li>Photo Filters</li>
-                                        <li>Unlimited Boomerangs</li>
-                                        <li>Video Message</li>
-                                        <li>Customize this package with our add-on options</li>
-                                    </ul>
-                                    </p>
-                                </div>
-                                <div class="btns col-10 mx-auto text-center" >
-                                    <a href="package-classic.html"><div class="button btn rounded-0 mb-3 w-100">SELECT</div></a>
+        <!--photobooth package section-->
+        <section id="packages">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-10 mx-auto">
+                        <div class="display-6 fw-bold text-center">CHOOSE A PACKAGE</div>
+                    </div>
+                    <div class="col-xl-10 col-lg-11 col-md-10 mx-auto">
+                        <div class="row">
+                            <div class="col-lg-4 mt-md-5 mt-4">
+                                <div class="package-card card h-100 mx-auto" style="width: 18rem">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-center h3">Basic</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted text-center h5">&#8369;3,000</h6>
+                                        <div class="card-text">
+                                            <ul>
+                                                <li>Studio Quality Photo Equipment and Lighting</li>
+                                                <li>Photo Booth Attendant</li>
+                                                <li>Delivery, Set Up & Breakdown</li>
+                                                <li>Unlimited Digital Photo Sessions</li>
+                                                <li>Standard Prop Station</li>
+                                                <li>Standard Backdrop</li>
+                                                <li>Email, Text, and AirDrop Sharing</li>
+                                                <li>Digital Copies of the Gallery</li>
+                                                <li>Customize this package with our add-on options</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="btns col-10 mx-auto text-center">
+                                        <a href="package-basic.html"><div class="button btn rounded-0 mb-3 w-100">SELECT</div></a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-4 pt-lg-0 mt-md-5 mt-4">
-                            <div class="package-card card h-100 mx-auto" style="width: 18rem;">
-                                <div class="card-body">
-                                    <h5 class="card-title text-center h3">Premium</h5>
-                                    <h6 class="card-subtitle mb-2 text-muted text-center h5">&#8369;5,000</h6>
-                                    <p class="card-text">
-                                    <ul>
-                                        <li>Studio Quality Photo Equipment and Lighting</li>
-                                        <li>Photo Booth Attendant</li>
-                                        <li>Delivery, Set Up & Breakdown</li>
-                                        <li>Unlimited Digital Photo Sessions</li>
-                                        <li>Standard Prop Station</li>
-                                        <li>Standard Backdrop</li>
-                                        <li>Email, Text, and AirDrop Sharing</li>
-                                        <li>Digital Copies of the Gallery</li>
-                                        <li>Photo Filters</li>
-                                        <li>Unlimited Boomerangs</li>
-                                        <li>Video Message</li>
-                                        <li>Phone Booth</li>
-                                        <li>Personalized Photobook</li>
-                                        <li>Customize this package with our add-on options</li>
-                                    </ul>
-                                    </p>
+                            <div class="col-lg-4 pt-lg-0 mt-md-5 mt-4">
+                                <div class="package-card card h-100 mx-auto" style="width: 18rem">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-center h3">Classic</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted text-center h5">&#8369;4,000</h6>
+                                        <div class="card-text">
+                                            <ul>
+                                                <li>Studio Quality Photo Equipment and Lighting</li>
+                                                <li>Photo Booth Attendant</li>
+                                                <li>Delivery, Set Up & Breakdown</li>
+                                                <li>Unlimited Digital Photo Sessions</li>
+                                                <li>Standard Prop Station</li>
+                                                <li>Standard Backdrop</li>
+                                                <li>Email, Text, and AirDrop Sharing</li>
+                                                <li>Digital Copies of the Gallery</li>
+                                                <li>Photo Filters</li>
+                                                <li>Unlimited Boomerangs</li>
+                                                <li>Video Message</li>
+                                                <li>Customize this package with our add-on options</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="btns col-10 mx-auto text-center">
+                                        <a href="package-classic.html"><div class="button btn rounded-0 mb-3 w-100">SELECT</div></a>
+                                    </div>
                                 </div>
-                                <div class="btns col-10 mx-auto text-center" >
-                                    <a href="package-premium.html"><div class="button btn rounded-0 mb-3 w-100">SELECT</div></a>
+                            </div>
+                            <div class="col-lg-4 pt-lg-0 mt-md-5 mt-4">
+                                <div class="package-card card h-100 mx-auto" style="width: 18rem">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-center h3">Premium</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted text-center h5">&#8369;5,000</h6>
+                                        <div class="card-text">
+                                            <ul>
+                                                <li>Studio Quality Photo Equipment and Lighting</li>
+                                                <li>Photo Booth Attendant</li>
+                                                <li>Delivery, Set Up & Breakdown</li>
+                                                <li>Unlimited Digital Photo Sessions</li>
+                                                <li>Standard Prop Station</li>
+                                                <li>Standard Backdrop</li>
+                                                <li>Email, Text, and AirDrop Sharing</li>
+                                                <li>Digital Copies of the Gallery</li>
+                                                <li>Photo Filters</li>
+                                                <li>Unlimited Boomerangs</li>
+                                                <li>Video Message</li>
+                                                <li>Phone Booth</li>
+                                                <li>Personalized Photobook</li>
+                                                <li>Customize this package with our add-on options</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="btns col-10 mx-auto text-center">
+                                        <a href="package-premium.html"><div class="button btn rounded-0 mb-3 w-100">SELECT</div></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!--end of photobooth package section-->
+        </section>
+        <!--end of photobooth package section-->
 
-    <!--add-on section-->
-    <section id="ad-ons" class="pt-5">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-10 mx-auto">
-                    <div class="h2 addOnHeading text-center text-uppercase">Available Ad-Ons</div>
-                    <p class="text-center lead">You can personalize your package by incorporating these optional add-ons to tailor your experience</p>
-                </div>
-                <div class="col-xl-9 col-lg-11 col-md-11 col-12 mx-auto">
-                    <div class="row">
-
-                        <div class="col-lg-4 col-md-4 col-sm-6 col mt-md-5 mt-4 mb-4 text-center d-flex justify-content-center">
-                            <div class="adOnCard">
-                                <div class="icon">
-                                    <img src="images/add-on1.jpg" alt="Printed Photos" class="card-img-top add-on mx-auto">
+        <!--add-on section-->
+        <section id="ad-ons" class="pt-5">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-10 mx-auto">
+                        <div class="h2 addOnHeading text-center text-uppercase">Available Ad-Ons</div>
+                        <p class="text-center lead">
+                            You can personalize your package by incorporating these optional add-ons to tailor your experience
+                        </p>
+                    </div>
+                    <div class="col-xl-9 col-lg-11 col-md-11 col-12 mx-auto">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-6 col mt-md-5 mt-4 mb-4 text-center d-flex justify-content-center">
+                                <div class="adOnCard">
+                                    <div class="icon">
+                                        <img src="images/add-on1.jpg" alt="Printed Photos" class="card-img-top add-on mx-auto" />
+                                    </div>
+                                    <strong class="pt-3"> Printed Photos</strong>
+                                    <div class="card__body">Price Varies</div>
+                                    <span
+                                        >Choose between 2x6 inches (₱8 per piece) or 4x6 inches (₱10 per piece). Minimum order: 100 pieces, maximum:
+                                        1,000 pieces.</span
+                                    >
                                 </div>
-                                <strong class="pt-3"> Printed Photos</strong>
-                                <div class="card__body">
-                                    Price Varies
-                                </div>
-                                <span>Choose between 2x6 inches (₱8 per piece) or 4x6 inches (₱10 per piece). Minimum order: 100 pieces, maximum: 1,000 pieces.</span>
                             </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col mt-md-5 mt-4 mb-4 text-center d-flex justify-content-center">
-                            <div class="adOnCard">
-                                <div class="icon">
-                                    <img src="images/add-on2.png" alt="Photo Filters" class="card-img-top add-on mx-auto">
+                            <div class="col-lg-4 col-md-4 col-sm-6 col mt-md-5 mt-4 mb-4 text-center d-flex justify-content-center">
+                                <div class="adOnCard">
+                                    <div class="icon">
+                                        <img src="images/add-on2.png" alt="Photo Filters" class="card-img-top add-on mx-auto" />
+                                    </div>
+                                    <strong class="pt-3"> Photo Filters</strong>
+                                    <div class="card__body">&#8369;500</div>
+                                    <span>Transform your photos effortlessly with a variety of beautiful filters</span>
                                 </div>
-                                <strong class="pt-3"> Photo Filters</strong>
-                                <div class="card__body">
-                                    &#8369;500
-                                </div>
-                                <span>Transform your photos effortlessly with a variety of beautiful filters</span>
                             </div>
-                        </div>
 
-                        <div class="col-lg-4 col-md-4 col-sm-6 col mt-md-5 mt-4 mb-4 text-center d-flex justify-content-center">
-                            <div class="adOnCard">
-                                <div class="icon">
-                                    <video src="images/add-on3.mp4" class="card-img-top add-on mx-auto" alt="..." autoplay muted loop></video>
+                            <div class="col-lg-4 col-md-4 col-sm-6 col mt-md-5 mt-4 mb-4 text-center d-flex justify-content-center">
+                                <div class="adOnCard">
+                                    <div class="icon">
+                                        <video src="images/add-on3.mp4" class="card-img-top add-on mx-auto" alt="..." autoplay muted loop></video>
+                                    </div>
+                                    <strong class="pt-3">Video Message</strong>
+                                    <div class="card__body">&#8369;700</div>
+                                    <span>Allow your guests to leave heartfelt messages with this add-on, or create memorable videos yourself</span>
                                 </div>
-                                <strong class="pt-3">Video Message</strong>
-                                <div class="card__body">
-                                    &#8369;700
-                                </div>
-                                <span>Allow your guests to leave heartfelt messages with this add-on, or create memorable videos yourself</span>
                             </div>
-                        </div>
 
-                        <div class="col-lg-4 col-md-4 col-sm-6 col mt-md-5 mt-4 mb-4 text-center d-flex justify-content-center">
-                            <div class="adOnCard">
-                                <div class="icon">
-                                    <img src="images/add-on5.jpg" alt="Phone Booth" class="card-img-top add-on mx-auto">
+                            <div class="col-lg-4 col-md-4 col-sm-6 col mt-md-5 mt-4 mb-4 text-center d-flex justify-content-center">
+                                <div class="adOnCard">
+                                    <div class="icon">
+                                        <img src="images/add-on5.jpg" alt="Phone Booth" class="card-img-top add-on mx-auto" />
+                                    </div>
+                                    <strong class="pt-3"> Phone Booth</strong>
+                                    <div class="card__body">&#8369;700</div>
+                                    <span>Ideal for guests who prefer leaving heartfelt messages without getting in front of the camera</span>
                                 </div>
-                                <strong class="pt-3"> Phone Booth</strong>
-                                <div class="card__body">
-                                    &#8369;700
-                                </div>
-                                <span>Ideal for guests who prefer leaving heartfelt messages without getting in front of the camera</span>
                             </div>
-                        </div>
 
-                        <div class="col-lg-4 col-md-4 col-sm-6 col mt-md-5 mt-4 mb-4 text-center d-flex justify-content-center">
-                            <div class="adOnCard">
-                                <div class="icon">
-                                    <video src="images/add-on4.mp4" class="card-img-top add-on mx-auto" alt="..." autoplay muted loop></video>
+                            <div class="col-lg-4 col-md-4 col-sm-6 col mt-md-5 mt-4 mb-4 text-center d-flex justify-content-center">
+                                <div class="adOnCard">
+                                    <div class="icon">
+                                        <video src="images/add-on4.mp4" class="card-img-top add-on mx-auto" alt="..." autoplay muted loop></video>
+                                    </div>
+                                    <strong class="pt-3">Boomerang</strong>
+                                    <div class="card__body">&#8369;500</div>
+                                    <span>Infuse a playful touch into your photobooth experience with animated photos—add a Boomerang!</span>
                                 </div>
-                                <strong class="pt-3">Boomerang</strong>
-                                <div class="card__body">
-                                    &#8369;500
-                                </div>
-                                <span>Infuse a playful touch into your photobooth experience with animated photos—add a Boomerang!</span>
                             </div>
-                        </div>
 
-                        
-
-                        <div class="col-lg-4 col-md-4 col-sm-6 col mt-md-5 mt-4 mb-4 text-center d-flex justify-content-center">
-                            <div class="adOnCard">
-                                <div class="icon">
-                                    <img src="images/add-on6.jpg" alt="Photobook" class="card-img-top add-on mx-auto">
+                            <div class="col-lg-4 col-md-4 col-sm-6 col mt-md-5 mt-4 mb-4 text-center d-flex justify-content-center">
+                                <div class="adOnCard">
+                                    <div class="icon">
+                                        <img src="images/add-on6.jpg" alt="Photobook" class="card-img-top add-on mx-auto" />
+                                    </div>
+                                    <strong class="pt-3"> Photobook</strong>
+                                    <div class="card__body">&#8369;700</div>
+                                    <span>Compile unforgettable memories in a 50-page photobook, preserving each moment beautifully</span>
                                 </div>
-                                <strong class="pt-3"> Photobook</strong>
-                                <div class="card__body">
-                                    &#8369;700
-                                </div>
-                                <span>Compile unforgettable memories in a 50-page photobook, preserving each moment beautifully</span>
                             </div>
-                        </div>
 
-                        <div class="col-lg-4 col-md-4 col-sm-6 col mt-md-5 mt-4 mb-4 text-center d-flex justify-content-center">
-                            <div class="adOnCard">
-                                <div class="icon">
-                                    <img src="images/add-on7.jpg" alt="Birthday Props" class="card-img-top add-on mx-auto">
+                            <div class="col-lg-4 col-md-4 col-sm-6 col mt-md-5 mt-4 mb-4 text-center d-flex justify-content-center">
+                                <div class="adOnCard">
+                                    <div class="icon">
+                                        <img src="images/add-on7.jpg" alt="Birthday Props" class="card-img-top add-on mx-auto" />
+                                    </div>
+                                    <strong class="pt-3">Birthday Props</strong>
+                                    <div class="card__body">&#8369;500</div>
+                                    <span>Elevate your birthday celebration with our themed birthday props, adding a touch of fun and festivity</span>
                                 </div>
-                                <strong class="pt-3">Birthday Props</strong>
-                                <div class="card__body">
-                                    &#8369;500
-                                </div>
-                                <span>Elevate your birthday celebration with our themed birthday props, adding a touch of fun and festivity</span>
                             </div>
-                        </div>
 
-                        <div class="col-lg-4 col-md-4 col-sm-6 col mt-md-5 mt-4 mb-4 text-center d-flex justify-content-center">
-                            <div class="adOnCard">
-                                <div class="icon">
-                                    <img src="images/add-on8.jpg" alt="Wedding Props" class="card-img-top add-on mx-auto">
+                            <div class="col-lg-4 col-md-4 col-sm-6 col mt-md-5 mt-4 mb-4 text-center d-flex justify-content-center">
+                                <div class="adOnCard">
+                                    <div class="icon">
+                                        <img src="images/add-on8.jpg" alt="Wedding Props" class="card-img-top add-on mx-auto" />
+                                    </div>
+                                    <strong class="pt-3">Wedding Props</strong>
+                                    <div class="card__body">&#8369;500</div>
+                                    <span
+                                        >Enhance your wedding moments with our exquisite wedding-themed props, adding elegance and charm to your
+                                        celebration</span
+                                    >
                                 </div>
-                                <strong class="pt-3">Wedding Props</strong>
-                                <div class="card__body">
-                                    &#8369;500
-                                </div>
-                                <span>Enhance your wedding moments with our exquisite wedding-themed props, adding elegance and charm to your celebration</span>
                             </div>
-                        </div>
 
-                        <div class="col-lg-4 col-md-4 col-sm-6 col mt-md-5 mt-4 mb-4 text-center d-flex justify-content-center">
-                            <div class="adOnCard">
-                                <div class="icon">
-                                    <img src="images/add-on9.jpg" alt="Graduation Props" class="card-img-top add-on mx-auto">
+                            <div class="col-lg-4 col-md-4 col-sm-6 col mt-md-5 mt-4 mb-4 text-center d-flex justify-content-center">
+                                <div class="adOnCard">
+                                    <div class="icon">
+                                        <img src="images/add-on9.jpg" alt="Graduation Props" class="card-img-top add-on mx-auto" />
+                                    </div>
+                                    <strong class="pt-3">Graduation Props</strong>
+                                    <div class="card__body">&#8369;500</div>
+                                    <span
+                                        >Level up your graduation celebration with our specialized props, bringing a touch of joy and accomplishment
+                                        to your photos</span
+                                    >
                                 </div>
-                                <strong class="pt-3">Graduation Props</strong>
-                                <div class="card__body">
-                                    &#8369;500
-                                </div>
-                                <span>Level up your graduation celebration with our specialized props, bringing a touch of joy and accomplishment to your photos</span>
                             </div>
-                        </div>
 
-                        <div class="col-lg-4 col-md-4 col-sm-6 col mt-md-5 mt-4 mb-4 text-center d-flex justify-content-center">
-                            <div class="adOnCard">
-                                <div class="icon">
-                                    <img src="images/add-on10.jpg" alt="Balloon Backdrop" class="card-img-top add-on mx-auto">
+                            <div class="col-lg-4 col-md-4 col-sm-6 col mt-md-5 mt-4 mb-4 text-center d-flex justify-content-center">
+                                <div class="adOnCard">
+                                    <div class="icon">
+                                        <img src="images/add-on10.jpg" alt="Balloon Backdrop" class="card-img-top add-on mx-auto" />
+                                    </div>
+                                    <strong class="pt-3">Balloon Backdrop</strong>
+                                    <div class="card__body">&#8369;500</div>
+                                    <span
+                                        >Elevate your photobooth experience with our enchanting Balloon Backdrop, adding a touch of whimsy and
+                                        celebration to your memories</span
+                                    >
                                 </div>
-                                <strong class="pt-3">Balloon Backdrop</strong>
-                                <div class="card__body">
-                                    &#8369;500
-                                </div>
-                                <span>Elevate your photobooth experience with our enchanting Balloon Backdrop, adding a touch of whimsy and celebration to your memories</span>
                             </div>
-                        </div>
 
-                        <div class="col-lg-4 col-md-4 col-sm-6 col mt-md-5 mt-4 mb-4 text-center d-flex justify-content-center">
-                            <div class="adOnCard">
-                                <div class="icon">
-                                    <img src="images/add-on11.jpg" alt="Sparkly Backdrop" class="card-img-top add-on mx-auto">
+                            <div class="col-lg-4 col-md-4 col-sm-6 col mt-md-5 mt-4 mb-4 text-center d-flex justify-content-center">
+                                <div class="adOnCard">
+                                    <div class="icon">
+                                        <img src="images/add-on11.jpg" alt="Sparkly Backdrop" class="card-img-top add-on mx-auto" />
+                                    </div>
+                                    <strong class="pt-3">Sparkly Backdrop</strong>
+                                    <div class="card__body">&#8369;500</div>
+                                    <span
+                                        >Transform your photobooth experience with our Sparkly Backdrop, perfect for those seeking a touch of sparkle
+                                        and glamour in their memories</span
+                                    >
                                 </div>
-                                <strong class="pt-3">Sparkly Backdrop</strong>
-                                <div class="card__body">
-                                    &#8369;500
-                                </div>
-                                <span>Transform your photobooth experience with our Sparkly Backdrop, perfect for those seeking a touch of sparkle and glamour in their memories</span>
                             </div>
-                        </div>
 
-                        <div class="col-lg-4 col-md-4 col-sm-6 col mt-md-5 mt-4 mb-4 text-center d-flex justify-content-center">
-                            <div class="adOnCard">
-                                <div class="icon">
-                                    <img src="images/add-on12.png" alt="Flower Backdrop" class="card-img-top add-on mx-auto">
+                            <div class="col-lg-4 col-md-4 col-sm-6 col mt-md-5 mt-4 mb-4 text-center d-flex justify-content-center">
+                                <div class="adOnCard">
+                                    <div class="icon">
+                                        <img src="images/add-on12.png" alt="Flower Backdrop" class="card-img-top add-on mx-auto" />
+                                    </div>
+                                    <strong class="pt-3">Flower Backdrop</strong>
+                                    <div class="card__body">&#8369;500</div>
+                                    <span
+                                        >Enhance your photobooth memories with our Flower Backdrop, adding a touch of natural beauty and elegance to
+                                        your celebration</span
+                                    >
                                 </div>
-                                <strong class="pt-3">Flower Backdrop</strong>
-                                <div class="card__body">
-                                    &#8369;500
-                                </div>
-                                <span>Enhance your photobooth memories with our Flower Backdrop, adding a touch of natural beauty and elegance to your celebration</span>
                             </div>
-                        </div>
 
-                        <div class="col-12">
-                            <div class="package-footer h2 text-center mt-5">Ready to elevate your event? Seal the deal and make memories!</div>
-                            <div class="btns col-10 mx-auto text-center mt-1" >
-                                <a href="packages.html#packages"><div class="button btn rounded-0 py-3 px-4 mt-4">BOOK NOW</div></a>
+                            <div class="col-12">
+                                <div class="package-footer h2 text-center mt-5">Ready to elevate your event? Seal the deal and make memories!</div>
+                                <div class="btns col-10 mx-auto text-center mt-1">
+                                    <a href="packages.html#packages"><div class="button btn rounded-0 py-3 px-4 mt-4">BOOK NOW</div></a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!--end of add-on section-->
+        </section>
+        <!--end of add-on section-->
 
-    <!--footer section-->
-    <section class="m-0 p-0">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12 p-0 m-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                        <path
-                            fill="#B99B84"
-                            fill-opacity="1"
-                            d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-                        ></path>
-                    </svg>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer id="footer" class="text-white">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-4 col-md-12 col-12 footer-img text-center my-auto mx-0">
-                    <img class="img-fluid" style="height: 100px" src="images/footer-logo.png" alt="logo" />
-                    <div class="h4 mb-1">SnapBookingHub</div>
-                    <p class="mb-2">Picture-Perfect Moments, Every Time</p>
-                    <div class="mb-3">
-                        <a href="https://www.facebook.com/" target="_blank"><i class="bi bi-facebook px-1"></i></a>
-                        <a href="https://www.instagram.com/" target="_blank"><i class="bi bi-instagram px-1"></i></a>
-                        <a href="https://twitter.com/" target="_blank"><i class="bi bi-twitter px-1"></i></a>
-                        <a href="https://www.tiktok.com/en/" target="_blank"><i class="bi bi-tiktok px-1"></i></a>
+        <!--footer section-->
+        <section class="m-0 p-0">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 p-0 m-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                            <path
+                                fill="#B99B84"
+                                fill-opacity="1"
+                                d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+                            ></path>
+                        </svg>
                     </div>
                 </div>
-                <div class="col-lg-8 col-md-12 col-12 text-center my-auto">
-                    <div class="row p-0 m-0">
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-12 mb-3">
-                            <div class="footer-header h5 mb-sm-2 m-0 pt-lg-0 pt-md-3 pt-2">COMPANY</div>
-                            <div><a href="about.html">About Us</a></div>
-                            <div><a href="packages.html">Packages</a></div>
+            </div>
+        </section>
+
+        <footer id="footer" class="text-white">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-4 col-md-12 col-12 footer-img text-center my-auto mx-0">
+                        <img class="img-fluid" style="height: 100px" src="images/footer-logo.png" alt="logo" />
+                        <div class="h4 mb-1">SnapBookingHub</div>
+                        <p class="mb-2">Picture-Perfect Moments, Every Time</p>
+                        <div class="mb-3">
+                            <a href="https://www.facebook.com/" target="_blank"><i class="bi bi-facebook px-1"></i></a>
+                            <a href="https://www.instagram.com/" target="_blank"><i class="bi bi-instagram px-1"></i></a>
+                            <a href="https://twitter.com/" target="_blank"><i class="bi bi-twitter px-1"></i></a>
+                            <a href="https://www.tiktok.com/en/" target="_blank"><i class="bi bi-tiktok px-1"></i></a>
                         </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-12 mb-3 p-0">
-                            <div class="footer-header h5 mb-sm-2 m-0 pt-lg-0 pt-md-3 pt-2">HELP</div>
-                            <div><a href="contact.html">Contact Us</a></div>
-                            <div><a href="faqs.html">FAQs</a></div>
-                            <div><a href="#PrivacyPolicy" data-bs-toggle="modal" data-bs-target="#PrivacyPolicy">Privacy Policy</a></div>
-                            <div>
-                                <a href="#TermsAndConditons" data-bs-toggle="modal" data-bs-target="#TermsAndConditons">Terms & Conditions</a>
+                    </div>
+                    <div class="col-lg-8 col-md-12 col-12 text-center my-auto">
+                        <div class="row p-0 m-0">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-12 mb-3">
+                                <div class="footer-header h5 mb-sm-2 m-0 pt-lg-0 pt-md-3 pt-2">COMPANY</div>
+                                <div><a href="about.html">About Us</a></div>
+                                <div><a href="packages.html">Packages</a></div>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-12 mb-3 p-0">
+                                <div class="footer-header h5 mb-sm-2 m-0 pt-lg-0 pt-md-3 pt-2">HELP</div>
+                                <div><a href="contact.html">Contact Us</a></div>
+                                <div><a href="faqs.html">FAQs</a></div>
+                                <div><a href="#PrivacyPolicy" data-bs-toggle="modal" data-bs-target="#PrivacyPolicy">Privacy Policy</a></div>
+                                <div>
+                                    <a href="#TermsAndConditons" data-bs-toggle="modal" data-bs-target="#TermsAndConditons">Terms & Conditions</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-3">
+                                <div class="footer-header h5 mb-sm-2 m-0 pt-lg-0 pt-md-3 pt-2">Sign Up for Newsletters</div>
+                                <p>Be the one to know what's new and get exclusive deals!</p>
+                                <form id="newsletterForm" class="input-group w-75 mx-auto" onsubmit="submitEmailForm(event)">
+                                    <input
+                                        id="newsletter-email"
+                                        type="email"
+                                        class="form-control"
+                                        placeholder="Email"
+                                        aria-label="email"
+                                        aria-describedby="button-addon"
+                                        required
+                                        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                                    />
+                                    <button id="newsletter-btn" class="btn text-light" type="submit"><i class="bi bi-arrow-right-circle"></i></button>
+                                </form>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-3">
-                            <div class="footer-header h5 mb-sm-2 m-0 pt-lg-0 pt-md-3 pt-2">Sign Up for Newsletters</div>
-                            <p>Be the one to know what's new and get exclusive deals!</p>
-                            <form id="newsletterForm" class="input-group w-75 mx-auto" onsubmit="submitEmailForm(event)">
-                                <input
-                                    id="newsletter-email"
-                                    type="email"
-                                    class="form-control"
-                                    placeholder="Email"
-                                    aria-label="email"
-                                    aria-describedby="button-addon"
-                                    required
-                                    pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
-                                />
-                                <button id="newsletter-btn" class="btn text-light" type="submit"><i class="bi bi-arrow-right-circle"></i></button>
-                            </form>
-                        </div>
+                    </div>
+                </div>
+                <div class="row m-0 p-0">
+                    <div class="col-12 m-0 p-0">
+                        <hr class="m-0 py-2" />
+                        <div class="col text-center pb-3">&copy; SnapBookingHub 2023 | All Rights Reserved</div>
+                        <div class="col text-center pb-3">Developed by: Magbayao & Bustamante</div>
                     </div>
                 </div>
             </div>
-            <div class="row m-0 p-0">
-                <div class="col-12 m-0 p-0">
-                    <hr class="m-0 py-2" />
-                    <div class="col text-center pb-3">&copy; SnapBookingHub 2023 | All Rights Reserved</div>
-                    <div class="col text-center pb-3">Developed by: Magbayao & Bustamante</div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!--end of footer section-->
+        </footer>
+        <!--end of footer section-->
 
-<!--Javascript-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    <script type="application/javascript" src="shared.js"></script>
+        <!--Javascript-->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+            crossorigin="anonymous"
+        ></script>
+        <script type="application/javascript" src="shared.js"></script>
 
-<!-- Navbar -->
-    <script type="application/javascript" src="navbar.js"></script>
-</body>
+        <!-- Navbar -->
+        <script type="application/javascript" src="navbar.js"></script>
+    </body>
 </html>
-
-

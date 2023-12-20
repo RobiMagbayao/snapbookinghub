@@ -9,3 +9,16 @@
 #registerPhone[type="number"] {
     -moz-appearance: textfield;
 }
+
+/* make all input of navbar07301987.html 0 border-radius at the left */
+#registerFirstName,
+#registerLastName,
+#registerEmail,
+#registerPassword,
+#registerPhone,
+#registerConfirmPassword,
+#loginEmail,
+#loginPassword {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}

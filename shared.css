@@ -151,3 +151,9 @@ footer a:hover {
 .site-color2 {
     color: #966640 !important;
 }
+
+#signInModal,
+#signUpModal .modal {
+    z-index: 5000 !important;
+    pointer-events: auto !important;
+}

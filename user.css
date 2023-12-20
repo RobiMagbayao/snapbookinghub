@@ -17,6 +17,7 @@ header {
 #user-page {
     max-width: 1440px;
     margin: 0 auto;
+    margin-top: 85px;
 }
 
 .side-menu-list {

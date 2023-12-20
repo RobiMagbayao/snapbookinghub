@@ -1,33 +1,26 @@
-function includeHTML() {
-    var z, i, elmnt, file, xhttp;
-    /* Loop through a collection of all HTML elements: */
-    z = document.getElementsByTagName("*");
-    for (i = 0; i < z.length; i++) {
-        elmnt = z[i];
-        /*search for elements with a certain atrribute:*/
-        file = elmnt.getAttribute("w3-include-html");
-        if (file) {
-            /* Make an HTTP request using the attribute value as the file name: */
-            xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function () {
-                if (this.readyState == 4) {
-                    if (this.status == 200) {
-                        elmnt.innerHTML = this.responseText;
-                    }
-                    if (this.status == 404) {
-                        elmnt.innerHTML = "Page not found.";
-                    }
-                    /* Remove the attribute, and call this function once more: */
-                    elmnt.removeAttribute("w3-include-html");
-                    includeHTML();
-                }
-            };
-            xhttp.open("GET", file, true);
-            xhttp.send();
-            /* Exit the function: */
-            return;
-        }
-    }
-}
+window.onload = function () {
+    fetch("./navbar07301987.html")
+        .then((response) => response.text())
+        .then((data) => {
+            var navbarDiv = document.getElementById("navbarSBH");
+            navbarDiv.innerHTML = data;
+
+            // Execute any scripts in the navbar HTML
+            Array.from(navbarDiv.getElementsByTagName("script")).forEach(function (oldScript) {
+                var newScript = document.createElement("script");
+                Array.from(oldScript.attributes).forEach(function (attr) {
+                    newScript.setAttribute(attr.name, attr.value);
+                });
+                newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                oldScript.parentNode.replaceChild(newScript, oldScript);
+            });
+
+            // Initialize any Bootstrap modals in the navbar
+            var modals = document.querySelectorAll(".modal");
+            for (var i = 0; i < modals.length; i++) {
+                new bootstrap.Modal(modals[i]);
+            }
+        });
+};
 
 includeHTML();
