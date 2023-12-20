@@ -7,6 +7,20 @@
             content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=320, height=device-height, target-densitydpi=medium-dpi"
         />
         <title>Navbar</title>
+
+        <style>
+            /* Chrome, Safari, Edge, Opera */
+            #registerPhone::-webkit-outer-spin-button,
+            #registerPhone::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+
+            /* Firefox */
+            #registerPhone[type="number"] {
+                -moz-appearance: textfield;
+            }
+        </style>
     </head>
     <body class="m-0 p-0 overflow-auto">
         <!--navigation section-->
@@ -14,7 +28,7 @@
             <div class="container-fluid p-0">
                 <div class="col-12">
                     <nav class="navbar nav-bar navbar-expand-lg pe-2">
-                        <a class="navbar-brand ps-lg-3 ps-1 py-2" href="index.html#home">
+                        <a class="navbar-brand ps-lg-3 ps-1 py-2" href="./">
                             <img src="images/logo.png" height="50" class="d-inline-block align-top" alt="logo" />
                             <span id="siteName">SnapBookingHub</span>
                         </a>
@@ -32,10 +46,10 @@
                         <div class="collapse navbar-collapse" id="nav-menu">
                             <ul class="navbar-nav d-flex align-items-center ms-auto mb-2 mb-lg-0 pe-lg-4 pe-0">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="index.html">Home</a>
+                                    <a class="nav-link" href="./">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="packages.html">Packages</a>
+                                    <a class="nav-link" href="./packages.html">Packages</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="about.html">About Us</a>
@@ -105,7 +119,12 @@
                                             <div class="input-group mb-4">
                                                 <span class="input-group-text" id="loginEmail"><i class="bi bi-envelope-at"></i></span>
                                                 <div class="form-outline flex-fill mb-0">
-                                                    <input type="email" id="loginEmail" class="form-control" placeholder="Your Email" />
+                                                    <input
+                                                        type="email"
+                                                        id="loginEmail"
+                                                        class="form-control rounded-start-0"
+                                                        placeholder="Your Email"
+                                                    />
                                                     <label class="form-label" for="loginEmail" hidden>Your Email</label>
                                                 </div>
                                             </div>
@@ -113,7 +132,12 @@
                                             <div class="input-group mb-4">
                                                 <span class="input-group-text" id="loginPassword"><i class="bi bi-person-lock"></i></span>
                                                 <div class="form-outline flex-fill mb-0">
-                                                    <input type="password" id="loginPassword" class="form-control" placeholder="Password" />
+                                                    <input
+                                                        type="password"
+                                                        id="loginPassword"
+                                                        class="form-control rounded-start-0"
+                                                        placeholder="Password"
+                                                    />
                                                     <label class="form-label" for="loginPassword" hidden>Password</label>
                                                 </div>
                                             </div>
@@ -186,50 +210,73 @@
                                             data-bs-dismiss="modal"
                                             aria-label="Close"
                                         ></button>
-                                        <form>
+
+                                        <form id="registerForm">
                                             <div class="mb-3 pb-1 text-center">
                                                 <div class="h1 mb-0" style="font-family: 'Fjalla One', sans-serif">Register</div>
                                             </div>
 
                                             <div class="input-group mb-4">
-                                                <span class="input-group-text"><i class="bi bi-person-circle"></i></span>
+                                                <span class="input-group-text" id="registerName"><i class="bi bi-person-circle"></i></span>
                                                 <div class="form-outline flex-fill mb-0">
-                                                    <input type="text" id="registerName" class="form-control" placeholder="Your Name" />
+                                                    <input
+                                                        type="text"
+                                                        id="registerName"
+                                                        class="form-control rounded-start-0"
+                                                        placeholder="Your Name"
+                                                        required
+                                                    />
                                                     <label class="form-label" for="registerName" hidden>Your Name</label>
                                                 </div>
                                             </div>
 
                                             <div class="input-group mb-4">
-                                                <span class="input-group-text"><i class="bi bi-envelope-at"></i></span>
+                                                <span class="input-group-text" id="registerEmail"><i class="bi bi-envelope-at"></i></span>
                                                 <div class="form-outline flex-fill mb-0">
-                                                    <input type="email" id="registerEmail" class="form-control" placeholder="Your Email" />
+                                                    <input
+                                                        type="email"
+                                                        id="registerEmail"
+                                                        class="form-control rounded-start-0"
+                                                        placeholder="Your Email"
+                                                        required
+                                                    />
                                                     <label class="form-label" for="registerEmail" hidden>Your Email</label>
                                                 </div>
                                             </div>
 
                                             <div class="input-group mb-4">
-                                                <span class="input-group-text"><i class="bi bi-person-lock"></i></span>
+                                                <span class="input-group-text" id="registerPassword"><i class="bi bi-person-lock"></i></span>
                                                 <div class="form-outline flex-fill mb-0">
-                                                    <input type="password" id="registerPassword" class="form-control" placeholder="Password" />
+                                                    <input
+                                                        type="password"
+                                                        id="registerPassword"
+                                                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+                                                        class="form-control rounded-start-0"
+                                                        placeholder="Password"
+                                                        required
+                                                    />
                                                     <label class="form-label" for="registerPassword" hidden>Password</label>
                                                 </div>
                                             </div>
 
                                             <div class="input-group mb-4">
-                                                <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+                                                <span class="input-group-text" id="registerPassword2"><i class="bi bi-lock-fill"></i></span>
                                                 <div class="form-outline flex-fill mb-0">
                                                     <input
                                                         type="password"
                                                         id="registerPassword2"
-                                                        class="form-control"
+                                                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+                                                        class="form-control rounded-start-0"
                                                         placeholder="Repeat your password"
+                                                        required
                                                     />
                                                     <label class="form-label" for="registerPassword2" hidden>Repeat your password</label>
                                                 </div>
                                             </div>
 
-                                            <div class="form-check mb-5">
-                                                <input class="form-check-input me-2" type="checkbox" value="" id="registerCheck" />
+                                            <!-- Terms & Condition checkbox -->
+                                            <div class="form-check mb-4">
+                                                <input class="form-check-input me-2" type="checkbox" value="" id="registerCheck" required />
                                                 <label class="form-check-label" for="registerCheck">
                                                     I agree all statements in
                                                     <a
@@ -243,7 +290,7 @@
                                             </div>
 
                                             <div class="pt-1 mb-4 text-center">
-                                                <button class="btn btn-dark btn-lg btn-block" type="submit" id="registerBtn">Register</button>
+                                                <button class="btn btn-dark btn-lg btn-block" type="button">Register</button>
                                             </div>
 
                                             <p class="mt-5 text-center" style="color: #393f81">

@@ -102,7 +102,7 @@ if (storedFormData) {
         let bookedDetails = `
         <td><span class="booking-id">${bookingNumber}</span></td>
         <td><span class="user-name-id">${userName}</span></td>
-        <td><span class= "package-id">${orderDetails.package}</span> <br> <span>${addOns}</span></td>
+        <td><span class= "package-id">${orderDetails.package}</span> <br> <span class="small">${addOns}</span></td>
         <td><span class="location-id">${orderDetails.eventAddress}</span>, <span>${orderDetails.municipality}</span>, <span>${orderDetails.province}</span></td>
         <td><span class="date-id">${formattedDate}</span> <br> <span>${formattedTime}</span></td>
         <td><span class="total-price-id">₱${orderDetails.totalPrice}<span></td>
