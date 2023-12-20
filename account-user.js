@@ -1,5 +1,8 @@
 let customerID = parseInt(localStorage.getItem("customerID")) || 1;
+
+//saves the value of current booking number
 let currentBookingNumber = parseInt(localStorage.getItem("bookingNumber")) || 1;
+
 // Create a new object to hold user details and booking details
 let userDetails = {};
 
