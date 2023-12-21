@@ -21,9 +21,7 @@
 
 
 //SAVE DATA TO LOCAL STORAGE
-
-let subscriberCount = parseInt(localStorage.getItem("subscriberCount")) || 0;
-
+        
 function submitEmailForm() {
     // Get form values
     const newsletterEmail = document.getElementById("newsletter-email").value;
@@ -36,7 +34,8 @@ function submitEmailForm() {
     // Create an object with form data
     const newsletterData = {
         newsletterEmail: newsletterEmail,
-        timestamp: formattedNewslatterDateTime
+        timestamp: formattedNewslatterDateTime,
+        subscriberCount: subscriberCount
     };
 
     // Retrieve existing form data from localStorage or initialize an empty array
@@ -50,11 +49,5 @@ function submitEmailForm() {
 
     // Clear the form fields
     document.getElementById("newsletterForm").reset();
-
-    // Increment subscriberCount for the next subscription
-    subscriberCount += 1;
-
-    // Update bookingNumber in local storage
-    localStorage.setItem("subscriberCount", subscriberCount.toString());
 }
 
