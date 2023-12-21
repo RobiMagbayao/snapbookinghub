@@ -56,8 +56,6 @@ function submitEmailForm() {
     // Increment subscriberCount for the next subscription
     subscriberCount += 1;
 
-    document.getElementById("subscriberCount").innerHTML = `Subscriber Count: ${getSubscriberCount}`
-
     // Update bookingNumber in local storage
     localStorage.setItem("subscriberCount", subscriberCount.toString());
 }

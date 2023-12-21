@@ -1,6 +1,6 @@
 //WRITE NEW FORM TO NEW HTML
 const storedNewsletterData = JSON.parse(localStorage.getItem('newsletterData'));
-
+const getSubscriberCount = JSON.parse(localStorage.getItem('subscriberCount'));
 
 if (storedNewsletterData) {
     // Iterate through stored form data and display entries
@@ -14,6 +14,7 @@ if (storedNewsletterData) {
         // Append the entry to the output div
         document.getElementById("newsletter-Emails").appendChild(newNewsletterEntry);
         
+        document.getElementById("subscriberCount").innerHTML = `Subscriber Count: ${getSubscriberCount}`;
     });
 }
 
