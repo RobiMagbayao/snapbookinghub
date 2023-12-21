@@ -18,10 +18,16 @@
     })
 })()
 
+
+
 //SAVE DATA TO LOCAL STORAGE
+
+let subscriberCount = parseInt(localStorage.getItem("subscriberCount")) || 0;
+
 function submitEmailForm() {
     // Get form values
     const newsletterEmail = document.getElementById("newsletter-email").value;
+
 
     // Get the current date and time
     const newsletterDateTime = new Date();
@@ -44,23 +50,11 @@ function submitEmailForm() {
 
     // Clear the form fields
     document.getElementById("newsletterForm").reset();
+
+    // Increment subscriberCount for the next subscription
+    subscriberCount += 1;
+
+    // Update bookingNumber in local storage
+    localStorage.setItem("subscriberCount", subscriberCount.toString());
 }
 
-
-
-//WRITE NEW FORM TO NEW HTML
-const storedNewsletterData = JSON.parse(localStorage.getItem('newsletterData'));
-
-if (storedNewsletterData) {
-    // Iterate through stored form data and display entries
-    storedNewsletterData.forEach(newsletterData => {
-        const newNewsletterEntry = document.createElement("div");
-
-        newNewsletterEntry.innerHTML = `<strong>Submitted at:</strong> ${newsletterData.timestamp}<br>
-                            <strong>Email:</strong> ${newsletterData.newsletterEmail}<br>
-                            <hr>`;
-
-        // Append the entry to the output div
-        document.getElementById("newsletter-Emails").appendChild(newNewsletterEntry);
-    });
-}
