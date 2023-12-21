@@ -179,5 +179,12 @@
                 return new bootstrap.Tooltip(tooltipTriggerEl);
             });
         </script>
+
+        <!-- restrict to view this html if not loggedIn -->
+        <script>
+            if (localStorage.getItem("loggedIn") != "true") {
+                window.location.href = "index.html";
+            }
+        </script>
     </body>
 </html>
