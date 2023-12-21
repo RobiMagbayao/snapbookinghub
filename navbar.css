@@ -22,3 +22,13 @@
     border-top-left-radius: 0 !important;
     border-bottom-left-radius: 0 !important;
 }
+
+#navbarLoader {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #faf4f0 url("../images/Loader.gif") no-repeat center;
+    z-index: 10;
+    background-size: 70px auto;
+    transition: all 0.5s ease;
+}

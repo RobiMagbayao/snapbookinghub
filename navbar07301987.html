@@ -45,19 +45,19 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="contact.html">Contact Us</a>
                                 </li>
-                                <li id="not-loggedin" class="nav-item">
+                                <li id="notLoggedIn" class="nav-item">
                                     <a class="nav-link" href="#signInModal" data-bs-toggle="modal" data-bs-target="#signInModal"
                                         ><i class="bi bi-person-circle"></i> Sign In</a
                                     >
                                 </li>
-                                <li class="nav-item" id="user-account">
+                                <li class="nav-item d-none" id="loggedIn">
                                     <div class="dropdown">
                                         <a class="nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                             <img class="img-fluid login-avatar" src="./avatars/avatar-uni.png" alt="avatar" />
                                         </a>
                                         <ul class="dropdown-menu dmenu dropdown-menu-lg-end align-content-end text-lg-end text-center">
                                             <li><a class="dropdown-item" href="./user.html">Profile</a></li>
-                                            <li><a class="dropdown-item" href="#">Log out</a></li>
+                                            <li><a id="logoutUser" class="dropdown-item" href="#">Log out</a></li>
                                         </ul>
                                     </div>
                                 </li>
@@ -71,7 +71,7 @@
 
         <!-- signIn Modal -->
         <div
-            class="modal modal-lg fade text-dark"
+            class="modal modal-lg fade text-dark hidden"
             id="signInModal"
             data-bs-backdrop="static"
             tabindex="-1"
@@ -94,16 +94,18 @@
                                 <div class="col-md-6 col-lg-7">
                                     <div class="card-body p-4 p-lg-5 text-black">
                                         <button
+                                            id="closeSignInModal"
                                             type="button"
                                             class="btn-close position-absolute top-0 end-0 mt-3 me-3"
                                             data-bs-dismiss="modal"
                                             aria-label="Close"
                                         ></button>
-                                        <form>
+                                        <form id="loginForm">
                                             <div class="mb-4 pb-1 text-center">
                                                 <div class="h1 mb-0" style="font-family: 'Fjalla One', sans-serif">SnapBookingHub</div>
                                             </div>
 
+                                            <!-- Login Email -->
                                             <div class="input-group mb-4">
                                                 <span class="input-group-text"><i class="bi bi-envelope-at"></i></span>
                                                 <div class="form-outline flex-fill mb-0">
@@ -117,6 +119,7 @@
                                                 </div>
                                             </div>
 
+                                            <!-- Login Password -->
                                             <div class="input-group mb-4">
                                                 <span class="input-group-text"><i class="bi bi-person-lock"></i></span>
                                                 <div class="form-outline flex-fill mb-0">
@@ -129,15 +132,25 @@
                                                     <label class="form-label" for="loginPassword" hidden>Password</label>
                                                 </div>
                                             </div>
-
-                                            <div class="pt-1 mb-4 text-center">
-                                                <button class="btn btn-dark btn-lg btn-block px-4" type="button">Login</button>
+                                            <div id="loginNotice" class="small text-muted mb-2 pb-lg-2 d-none" style="font-size: 0.69rem">
+                                                <span class="text-danger me-1"><i class="bi bi-exclamation-circle"></i></span>
+                                                Incorrect email or password
                                             </div>
 
-                                            <a class="small text-muted" href="#!">Forgot password?</a>
+                                            <!-- Login btn -->
+                                            <div class="pt-1 mb-4 text-center">
+                                                <button id="loginBtn" class="btn btn-dark btn-lg btn-block px-4" type="submit">Login</button>
+                                            </div>
+
+                                            <a class="small text-decoration-none text-muted" href="#!">Forgot password?</a>
                                             <p class="mb-5 pb-lg-2" style="color: #393f81">
                                                 Don't have an account?
-                                                <a href="#signUpModal" data-bs-toggle="modal" data-bs-target="#signUpModal" style="color: #393f81"
+                                                <a
+                                                    href="#signUpModal"
+                                                    data-bs-toggle="modal"
+                                                    class="text-decoration-none link-primary"
+                                                    data-bs-target="#signUpModal"
+                                                    style="font-weight: 500"
                                                     >Register here</a
                                                 >
                                             </p>
@@ -145,16 +158,16 @@
                                                 href="#PrivacyPolicy"
                                                 data-bs-toggle="modal"
                                                 data-bs-target="#PrivacyPolicy"
-                                                class="small"
-                                                style="color: #393f81"
+                                                class="small text-decoration-none link-primary"
+                                                style="font-weight: 500"
                                                 >Privacy Policy</a
                                             >
                                             <a
                                                 href="#TermsAndConditons"
                                                 data-bs-toggle="modal"
                                                 data-bs-target="#TermsAndConditons"
-                                                class="small"
-                                                style="color: #393f81"
+                                                class="small text-decoration-none link-primary"
+                                                style="font-weight: 500"
                                                 >Terms & Conditions</a
                                             >
                                         </form>
@@ -333,11 +346,12 @@
                                                 </label>
                                             </div>
 
+                                            <!-- Register btn -->
                                             <div class="pt-1 mb-4 text-center">
-                                                <button class="btn btn-dark btn-lg btn-block" type="submit">Register</button>
+                                                <button id="registerBtn" class="btn btn-dark btn-lg btn-block" type="submit">Register</button>
                                             </div>
 
-                                            <p class="mt-3 text-center" style="color: #1d1d1d">
+                                            <p id="loginNow" class="mt-3 text-center" style="color: #1d1d1d">
                                                 Already have an account?
                                                 <a
                                                     href="#signInModal"
@@ -478,6 +492,6 @@
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-        <script src="./account-user.js"></script>
+        <script src="./account-user-2.js"></script>
     </body>
 </html>

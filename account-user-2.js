@@ -102,6 +102,9 @@ function saveUserDetails(event) {
         return;
     }
 
+    // Make orderDetails an array of objects for multiple orders
+    let orderDetails = {};
+
     // Continue saving user details to localStorage if no same email is found
 
     userDetails.firstName = document.getElementById("registerFirstName").value;
@@ -110,19 +113,7 @@ function saveUserDetails(event) {
     userDetails.email = document.getElementById("registerEmail").value;
     userDetails.password = document.getElementById("registerPassword").value;
     userDetails.bookingNo = currentBookingNumber;
-
-    // ------------- Above Edited by Jaybe -------------- //
-
-    //START OF FILTERING USER - ANOTHER FUNCTION
-    // Retrieve the array of order details from local storage
-    const allOrderDetails = JSON.parse(localStorage.getItem("orderDetails")) || [];
-
-    // Filter the array to get details with bookingNumber equal to 1
-    const bookingNumberDetails = allOrderDetails.filter((order) => order.bookingNumber == 1);
-
-    userDetails.order = bookingNumberDetails[1 - 1];
-
-    //END OF FILTERING USER
+    userDetails.orders = orderDetails;
 
     const existingUserData = JSON.parse(localStorage.getItem("userDetails")) || [];
 
@@ -137,40 +128,112 @@ function saveUserDetails(event) {
 
     // Update bookingNumber in local storage
     localStorage.setItem("customerID", customerID.toString());
+
+    // 4sec Spinner on the button
+    document.getElementById(
+        "registerBtn"
+    ).innerHTML = `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Registering...`;
+    function offSpinner() {
+        //Clear the form
+        document.getElementById("registerForm").reset();
+        // Reset button text
+        document.getElementById("registerBtn").innerHTML = "Register";
+        // Show registered successfully
+        document.getElementById("loginNow").innerHTML = `<strong>REGISTERED SUCCESSFULLY!</strong><br />
+        <h5><a
+            href="#signInModal"
+            class="text-decoration-none fw-bold link-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#signInModal"
+            >LOGIN NOW</a
+        ></h5>`;
+    }
+    setTimeout(offSpinner, 4000);
 }
 
 // Add event listener to the button that triggers the saveUserDetails function
 document.getElementById("registerForm").addEventListener("submit", saveUserDetails); // Made it as submit instead of click
 
-//not yet working
-// WRITE NEW FORM TO NEW HTML
-const showUserData = JSON.parse(localStorage.getItem("userDetails"));
-
-if (showUserData) {
-    // Iterate through stored form data and display entries
-    showUserData.forEach((userDetails) => {
-        const newEntry = document.createElement("div");
-
-        // Start building the inner HTML
-        let innerHTML = `
-        <strong>Name:</strong> ${userDetails.name}<br>
-        <strong>Email:</strong> ${userDetails.email}<br>
-        <strong>Password:</strong> ${userDetails.password}`;
-
-        // Check if there are booking details
-        if (userDetails.bookingDetails) {
-            innerHTML += `<br><strong>Order:</strong> ${userDetails.bookingDetails}`;
-        }
-
-        // Add a horizontal line to separate add-ons from other details
-        innerHTML += `<hr>`;
-
-        // Set the innerHTML for the newEntry
-        newEntry.innerHTML = innerHTML;
-
-        // Append the entry to the output div
-        document.getElementById("userOutput").appendChild(newEntry);
-    });
-}
+// ---------------------------------------------- //
+// ------------Registration Ends here------------ //
+// ---------------------------------------------- //
 
 // ---------------------------------------------- //
+// --------------Login Starts here--------------- //
+
+// Function to check if user is registered
+function checkUser(event) {
+    event.preventDefault();
+
+    // Set accountRegistered to as bolean false
+    let accountRegistered = false;
+
+    // Retrieve the email and password inputted by the user
+    const emailInput = document.getElementById("loginEmail").value;
+    const passwordInput = document.getElementById("loginPassword").value;
+
+    // Retrieve the object of user details from local storage created in registration
+    for (let i = 1; i < customerID; i++) {
+        let storedUserDetails = JSON.parse(localStorage.getItem(`User_No${i}`));
+
+        if (storedUserDetails && storedUserDetails.email === emailInput && storedUserDetails && storedUserDetails.password === passwordInput) {
+            accountRegistered = true;
+        }
+    }
+
+    // Check if the user is registered
+    if (!accountRegistered) {
+        // Show email or password not match
+        document.getElementById("loginNotice").classList.remove("d-none");
+    } else {
+        // Hide email or password not match
+        document.getElementById("loginNotice").classList.add("d-none");
+
+        // 4sec Spinner on the button
+        document.getElementById(
+            "loginBtn"
+        ).innerHTML = `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Logging in...`;
+
+        function loginSuccess() {
+            // Reset button text
+            document.getElementById("loginBtn").innerHTML = "Login";
+
+            // close the modal
+            document.getElementById("closeSignInModal").click();
+
+            // Hide SignIn in the navbar
+            document.getElementById("notLoggedIn").classList.add("d-none");
+
+            // Show avatar option in the navbar
+            document.getElementById("loggedIn").classList.remove("d-none");
+        }
+        // Spinner and modal off after 4sec
+        setTimeout(loginSuccess, 4000);
+    }
+
+    // keep the user logged in to the website
+    localStorage.setItem("loggedIn", accountRegistered);
+}
+document.getElementById("loginForm").addEventListener("submit", checkUser);
+
+// ---------------------------------------------- //
+
+// if the user is logged in, hide the sign in button and show the avatar
+checkLoggedin = localStorage.getItem("loggedIn");
+
+// if user is logged in, show avatar option in the navbar
+if (checkLoggedin == "true") {
+    document.getElementById("notLoggedIn").classList.add("d-none");
+    document.getElementById("loggedIn").classList.remove("d-none");
+} else {
+    document.getElementById("notLoggedIn").classList.remove("d-none");
+    document.getElementById("loggedIn").classList.add("d-none");
+}
+
+// Logout function
+function logout() {
+    localStorage.setItem("loggedIn", false);
+    document.getElementById("notLoggedIn").classList.remove("d-none");
+    document.getElementById("loggedIn").classList.add("d-none");
+}
+document.getElementById("logoutUser").addEventListener("click", logout);
