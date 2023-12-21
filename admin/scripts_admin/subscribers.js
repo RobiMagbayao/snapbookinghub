@@ -17,7 +17,7 @@ if (storedNewsletterData) {
 }
 
 function sendEmail() {
-    const selectedEmails = document.querySelectorAll('input[type="checkbox"]:checked');
+    const selectedEmails = document.querySelectorAll('input[type="checkbox"]:checked:not(#selectAll)');
   
     if (selectedEmails.length === 0) {
       // If no checkboxes are selected, show an alert and return
@@ -38,4 +38,18 @@ function sendEmail() {
   
   // Assuming you have a button with id="sendEmailButton"
   document.getElementById("sendEmailButton").addEventListener("click", sendEmail);
+  
+
+  function selectAll() {
+    const selectAllCheckbox = document.getElementById("selectAll");
+    const subscriberCheckboxes = document.querySelectorAll('input[type="checkbox"]');
+  
+    // Loop through all subscriber checkboxes and set their checked state
+    subscriberCheckboxes.forEach((checkbox) => {
+      checkbox.checked = selectAllCheckbox.checked;
+    });
+  }
+  
+  // Add event listener to the "Select All Subscribers" checkbox
+  document.getElementById("selectAll").addEventListener("change", selectAll);
   
