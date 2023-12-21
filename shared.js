@@ -21,9 +21,6 @@
 
 
 //SAVE DATA TO LOCAL STORAGE
-
-let subscriberCount = parseInt(localStorage.getItem("subscriberCount")) || 0;
-const getSubscriberCount = JSON.parse(localStorage.getItem('subscriberCount'));
         
 function submitEmailForm() {
     // Get form values
@@ -52,11 +49,5 @@ function submitEmailForm() {
 
     // Clear the form fields
     document.getElementById("newsletterForm").reset();
-
-    // Increment subscriberCount for the next subscription
-    subscriberCount += 1;
-
-    // Update bookingNumber in local storage
-    localStorage.setItem("subscriberCount", subscriberCount.toString());
 }
 
