@@ -344,16 +344,59 @@ let bookingNumber = parseInt(localStorage.getItem("bookingNumber")) || 1;
 // Function to save order details to local storage
 function saveOrderDetails2() {
     // Check if user is loggedIn from sessionStorage
-    if (sessionStorage.getItem("loggedIn") === "false") {
+    if (sessionStorage.getItem("loggedIn") === "false" || !sessionStorage.getItem("loggedIn")) {
         // If user is not logged in, open the signInModal modal
 
-        let myModal = document.getElementById("signInModal");
-        let bsModal = new bootstrap.Modal(myModal);
+        var myModal = document.getElementById("signInModal");
+        var bsModal = new bootstrap.Modal(myModal);
 
         // Show the modal
         bsModal.show();
     } else {
-        alert("Order details saved.");
+        // Get values from the form
+        const dateValue = document.getElementById("date").value;
+        const timeValue = document.getElementById("time").value;
+        const provinceValue = document.getElementById("province").value;
+        const municipalityValue = document.getElementById("municipality").value;
+        const eventAddressValue = document.getElementById("eventAddress").value;
+
+        // Check if required details are empty
+        if (!dateValue || !timeValue || !municipalityValue || !eventAddressValue) {
+            alert("Please input all required details (Date, Time, Municipality, and Event Address) before saving the order.");
+            return;
+        }
+
+        orderDetails.bookingNumber = bookingNumber;
+        orderDetails.date = document.getElementById("date").value;
+        orderDetails.time = document.getElementById("time").value;
+        orderDetails.province = document.getElementById("province").value;
+        orderDetails.municipality = document.getElementById("municipality").value;
+        orderDetails.eventAddress = document.getElementById("eventAddress").value;
+        orderDetails.package = "Basic Package";
+        orderDetails.totalPrice = totalPrice;
+
+        // Get the logged in user's key
+        const currentUserKey = sessionStorage.getItem("currentUser");
+
+        // Get the existing user data
+        const existingUserData = JSON.parse(localStorage.getItem(currentUserKey)) || {};
+
+        // If the user has no previous orders, initialize an empty array
+        if (!existingUserData.orderDetails) {
+            existingUserData.orderDetails = [];
+        }
+
+        // Add the new order details to the user's data
+        existingUserData.orderDetails.push(orderDetails);
+
+        // Store updated user data in localStorage
+        localStorage.setItem(currentUserKey, JSON.stringify(existingUserData));
+
+        // Increment bookingNumber for the next order
+        bookingNumber += 1;
+
+        // Update bookingNumber in local storage
+        localStorage.setItem("bookingNumber", bookingNumber.toString());
     }
 }
 

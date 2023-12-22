@@ -99,16 +99,12 @@ function saveUserDetails(event) {
         return;
     }
 
-    // Make orderDetails an array of objects for multiple orders
-    let orderDetails = {}; // Fill this with actual order data
-
     // Continue saving user details to localStorage if no same email is found
     userDetails.firstName = document.getElementById("registerFirstName").value;
     userDetails.lastName = document.getElementById("registerLastName").value;
     userDetails.phone = document.getElementById("registerPhone").value;
     userDetails.email = document.getElementById("registerEmail").value;
     userDetails.password = document.getElementById("registerPassword").value;
-    userDetails.orders = orderDetails;
 
     // Store updated form data in localStorage
     localStorage.setItem(`User_${emailToCheck}`, JSON.stringify(userDetails));
@@ -201,6 +197,9 @@ function checkUser(event) {
 
     // keep the user logged in to the website
     sessionStorage.setItem("loggedIn", accountRegistered);
+
+    // save the key of the current logged in user in sessionStorage
+    sessionStorage.setItem("currentUser", `User_${emailInput}`);
 }
 document.getElementById("loginForm").addEventListener("submit", checkUser);
 
@@ -221,6 +220,7 @@ if (checkLoggedin == "true") {
 // Logout function
 function logout() {
     sessionStorage.setItem("loggedIn", false);
+    sessionStorage.removeItem("currentUser");
     document.getElementById("notLoggedIn").classList.remove("d-none");
     document.getElementById("loggedIn").classList.add("d-none");
 }
