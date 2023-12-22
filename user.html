@@ -172,19 +172,19 @@
         <!-- Navbar -->
         <script type="application/javascript" src="navbar.js"></script>
 
+        <!-- restrict to view this html if not loggedIn -->
+        <script>
+            if (localStorage.getItem("loggedIn") != "true") {
+                window.location.href = "index.html";
+            }
+        </script>
+
         <!-- BS tooltip -->
         <script>
             var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
             var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
                 return new bootstrap.Tooltip(tooltipTriggerEl);
             });
-        </script>
-
-        <!-- restrict to view this html if not loggedIn -->
-        <script>
-            if (localStorage.getItem("loggedIn") != "true") {
-                window.location.href = "index.html";
-            }
         </script>
     </body>
 </html>
