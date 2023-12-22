@@ -71,17 +71,14 @@ document.getElementById("registerConfirmPassword").addEventListener("input", rep
 // -----------Registration Starts here----------- //
 // ---------------------------------------------- //
 
-let customerID = parseInt(localStorage.getItem("customerID")) || 1;
-
-//saves the value of current booking number
-let currentBookingNumber = parseInt(localStorage.getItem("bookingNumber")) || 1;
-
 // Create a new object to hold user details and booking details
 let userDetails = {};
 
+// Initialize customerID
+let customerID = localStorage.getItem("customerID") ? parseInt(localStorage.getItem("customerID")) : 1;
+
 // Function to save user details to local storage
 function saveUserDetails(event) {
-    // ------------- Below Edited by Jaybe -------------- //
     event.preventDefault();
 
     // Check if email is already existing in localStorage
@@ -90,7 +87,7 @@ function saveUserDetails(event) {
 
     // Loop through all the users in localStorage
     for (let i = 1; i < customerID; i++) {
-        let storedUserDetails = JSON.parse(localStorage.getItem(`User_No${i}`));
+        let storedUserDetails = JSON.parse(localStorage.getItem(`User_${i}`));
 
         if (storedUserDetails && storedUserDetails.email === emailToCheck) {
             existingEmail = true;
@@ -103,30 +100,23 @@ function saveUserDetails(event) {
     }
 
     // Make orderDetails an array of objects for multiple orders
-    let orderDetails = {};
+    let orderDetails = {}; // Fill this with actual order data
 
     // Continue saving user details to localStorage if no same email is found
-
     userDetails.firstName = document.getElementById("registerFirstName").value;
     userDetails.lastName = document.getElementById("registerLastName").value;
     userDetails.phone = document.getElementById("registerPhone").value;
     userDetails.email = document.getElementById("registerEmail").value;
     userDetails.password = document.getElementById("registerPassword").value;
-    userDetails.bookingNo = currentBookingNumber;
     userDetails.orders = orderDetails;
 
-    const existingUserData = JSON.parse(localStorage.getItem("userDetails")) || [];
-
-    // Add the new form data
-    existingUserData.push(userDetails);
-
     // Store updated form data in localStorage
-    localStorage.setItem(`User_No${customerID}`, JSON.stringify(userDetails));
+    localStorage.setItem(`User_${emailToCheck}`, JSON.stringify(userDetails));
 
-    // Increment customerID for the next order
+    // Increment customerID for the next user
     customerID += 1;
 
-    // Update bookingNumber in local storage
+    // Update customerID in local storage
     localStorage.setItem("customerID", customerID.toString());
 
     // 4sec Spinner on the button
@@ -165,7 +155,7 @@ document.getElementById("registerForm").addEventListener("submit", saveUserDetai
 function checkUser(event) {
     event.preventDefault();
 
-    // Set accountRegistered to as bolean false
+    // Set accountRegistered to as boolean false
     let accountRegistered = false;
 
     // Retrieve the email and password inputted by the user
@@ -173,12 +163,10 @@ function checkUser(event) {
     const passwordInput = document.getElementById("loginPassword").value;
 
     // Retrieve the object of user details from local storage created in registration
-    for (let i = 1; i < customerID; i++) {
-        let storedUserDetails = JSON.parse(localStorage.getItem(`User_No${i}`));
+    let storedUserDetails = JSON.parse(localStorage.getItem(`User_${emailInput}`));
 
-        if (storedUserDetails && storedUserDetails.email === emailInput && storedUserDetails && storedUserDetails.password === passwordInput) {
-            accountRegistered = true;
-        }
+    if (storedUserDetails && storedUserDetails.password === passwordInput) {
+        accountRegistered = true;
     }
 
     // Check if the user is registered
@@ -212,14 +200,14 @@ function checkUser(event) {
     }
 
     // keep the user logged in to the website
-    localStorage.setItem("loggedIn", accountRegistered);
+    sessionStorage.setItem("loggedIn", accountRegistered);
 }
 document.getElementById("loginForm").addEventListener("submit", checkUser);
 
 // ---------------------------------------------- //
 
 // if the user is logged in, hide the sign in button and show the avatar
-checkLoggedin = localStorage.getItem("loggedIn");
+checkLoggedin = sessionStorage.getItem("loggedIn");
 
 // if user is logged in, show avatar option in the navbar
 if (checkLoggedin == "true") {
@@ -232,7 +220,7 @@ if (checkLoggedin == "true") {
 
 // Logout function
 function logout() {
-    localStorage.setItem("loggedIn", false);
+    sessionStorage.setItem("loggedIn", false);
     document.getElementById("notLoggedIn").classList.remove("d-none");
     document.getElementById("loggedIn").classList.add("d-none");
 }

@@ -157,3 +157,28 @@ footer a:hover {
     z-index: 5000 !important;
     pointer-events: auto !important;
 }
+
+/* Chrome, Safari, Edge, Opera */
+#registerPhone::-webkit-outer-spin-button,
+#registerPhone::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+#registerPhone[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* make all input of navbar07301987.html 0 border-radius at the left */
+#registerFirstName,
+#registerLastName,
+#registerEmail,
+#registerPassword,
+#registerPhone,
+#registerConfirmPassword,
+#loginEmail,
+#loginPassword {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}

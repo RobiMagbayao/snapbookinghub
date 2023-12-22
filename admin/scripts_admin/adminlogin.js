@@ -6,9 +6,9 @@ let regAdminId = "admin";
 let regAdminPwd = "password";
 
 // When submitted the Form executes the function
-loginForm.addEventListener("submit", function (x) {
+loginForm.addEventListener("submit", function (event) {
     // Prevents refresh of the page when submitted
-    x.preventDefault();
+    event.preventDefault();
     // Compare inputted ID and Password to the stored regstred account
     if (adminLoginId.value == regAdminId && adminLoginPwd.value == regAdminPwd) {
         document.getElementById("error1").innerHTML = "";
@@ -16,7 +16,7 @@ loginForm.addEventListener("submit", function (x) {
         setTimeout(() => {
             document.getElementById("logindiv").style.display = "none";
             document.getElementById("logindiv").style.zIndex = "-100";
-        }, 4000);
+        }, 2000);
     } else {
         document.getElementById("error1").innerHTML = "ID and Password did not Match.";
     }

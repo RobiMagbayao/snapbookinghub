@@ -1,33 +1,22 @@
-// Display the number of upcoming bookings
-function displayBookingsStats() {
-    // Get the data from localStorage
-    const storedFormData = JSON.parse(localStorage.getItem("orderDetails"));
-
-    // Get the current date
-    const currentDate = new Date();
+// Display number of registered users
+function displayUserStats() {
+    // Get all keys from localStorage
+    const keys = Object.keys(localStorage);
 
     // Initialize the counter
-    let upcomingBookings = "00";
+    let registeredUsers = 0;
 
-    // Iterate through stored form data and display entries
-    storedFormData.forEach((orderDetails) => {
-        // Get the date of the event
-        const eventDate = new Date(orderDetails.date);
-
-        // Check if the event date is greater than the current date
-        if (eventDate > currentDate) {
-            upcomingBookings++;
+    // Iterate through keys and count those that represent users
+    keys.forEach((key) => {
+        // Check if the key includes an email address
+        if (key.includes("User_")) {
+            registeredUsers++;
         }
     });
 
-    // Display the number of upcoming bookings
-    document.getElementById("upcoming").innerHTML = upcomingBookings;
-
-    // Display the number of total bookings
-    document.getElementById("all-booking").innerHTML = storedFormData.length;
-
-    // Display the number of finished/completed bookings
-    document.getElementById("event-completed").innerHTML = storedFormData.length - upcomingBookings;
+    // Display the number of registered users
+    document.getElementById("totalUsers").innerText = registeredUsers;
 }
 
-displayBookingsStats();
+// on load run the function
+displayUserStats();

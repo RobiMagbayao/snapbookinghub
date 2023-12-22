@@ -282,7 +282,7 @@ table {
     margin: 0;
 }
 
-#edit-password,
+#reset-password,
 #delete-user,
 #show-password,
 #sort-bookingNum,
@@ -291,7 +291,7 @@ table {
     cursor: pointer;
 }
 
-#edit-password:hover,
+#reset-password:hover,
 #delete-user:hover,
 #show-password:hover,
 #sort-bookingNum:hover,

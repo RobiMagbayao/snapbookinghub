@@ -28,18 +28,16 @@
                     <div class="d-flex small flex-wrap p-0 mb-2">
                         <p><span id="check-counter">0</span> Selected</p>
                         <div>&nbsp; | &nbsp;</div>
-                        <a id="show-password">Show Password</a>
-                        <div>&nbsp; | &nbsp;</div>
-                        <a id="edit-password">Edit Password</a>
+                        <a id="reset-password">Reset Password</a>
                         <div>&nbsp; | &nbsp;</div>
                         <a id="delete-user">Delete User</a>
                     </div>
                 </div>
                 <div class="table-responsive">
-                    <table id="user-table" class="table users-table border-5 border-black border-opacity-25 table-hover">
-                        <thead>
+                    <table id="user-table" class="table border-bottom users-table border-black border-opacity-25 table-hover">
+                        <thead class="">
                             <tr class="bg-info bg-opacity-10">
-                                <th class="col"><i class="bi bi-check-circle-fill"></i></th>
+                                <th class="col text-center"><i class="bi bi-check-circle-fill"></i></th>
                                 <th class="col-3">Name</th>
                                 <th class="col-3">Phone</th>
                                 <th class="col-3">Email</th>
@@ -47,37 +45,7 @@
                             </tr>
                         </thead>
 
-                        <tbody>
-                            <form id="user-table">
-                                <tr id="user-register" class="">
-                                    <td><input id="user-check" class="form-check-input" type="checkbox" /></td>
-                                    <td><span id="username-id">Juana Dela Cruz</span></td>
-                                    <td><span id="phone-num">12345678901</span></td>
-                                    <td><span id="email-id">juanadelacruz@gmail.com</span></td>
-                                    <td>
-                                        <input id="password-id" class="form-control form-control-sm small" type="password" value="default" readonly />
-                                    </td>
-                                </tr>
-
-                                <tr id="user-register" class="">
-                                    <td><input id="user-check" class="form-check-input" type="checkbox" /></td>
-                                    <td><span id="username-id">Juana Dela Cruz</span></td>
-                                    <td><span id="phone-num">12345678901</span></td>
-                                    <td><span id="email-id">juanadelacruz@gmail.com</span></td>
-                                    <td>
-                                        <input id="password-id" class="form-control form-control-sm small" type="password" value="default" readonly />
-                                    </td>
-                                </tr>
-
-                                <tr id="user-register" class="">
-                                    <td><input id="user-check" class="form-check-input" type="checkbox" /></td>
-                                    <td>---</td>
-                                    <td>---</td>
-                                    <td>---</td>
-                                    <td>---</td>
-                                </tr>
-                            </form>
-                        </tbody>
+                        <tbody class="" id="user-table"></tbody>
                     </table>
                 </div>
             </div>
@@ -94,7 +62,7 @@
             crossorigin="anonymous"
         ></script>
 
-        <script src="../scripts_admin/user-mngt.js"></script>
+        <script src="../scripts_admin/user-mngt-2.js"></script>
 
         <!-- loader script -->
         <script type="module" src="../scripts_admin/loader.js"></script>
