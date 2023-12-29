@@ -230,12 +230,15 @@
                                                 <div class="input-group mb-3 me-2">
                                                     <span class="input-group-text"><i class="bi bi-person-vcard"></i></span>
 
+                                                    <!-- input pattern a to z and dash -->
                                                     <input
                                                         type="text"
                                                         id="registerFirstName"
+                                                        pattern="[-a-zA-Z]"
                                                         class="form-control rounded-2 rounded-start-0"
                                                         placeholder="First Name"
                                                         required
+                                                        oninvalid="this.setCustomValidity('First name must contain only letters')"
                                                     />
                                                     <label class="form-label" for="registerFirstName" hidden>First Name</label>
                                                 </div>
@@ -247,9 +250,11 @@
                                                     <input
                                                         type="text"
                                                         id="registerLastName"
+                                                        pattern="[-a-zA-Z]"
                                                         class="form-control rounded-start-0 rounded-2"
                                                         placeholder="Last Name"
                                                         required
+                                                        oninvalid="this.setCustomValidity('Last name must contain only letters')"
                                                     />
                                                     <label class="form-label" for="registerLastName" hidden>Last Name</label>
                                                 </div>
@@ -264,7 +269,7 @@
                                                     id="registerPhone"
                                                     class="form-control rounded-start-0 rounded-2"
                                                     placeholder="Phone Number"
-                                                    minlength="10"
+                                                    minlength="11"
                                                     maxlength="14"
                                                     pattern="[0-9]"
                                                     required
@@ -272,9 +277,9 @@
                                                 <label class="form-label" for="registerPhone" hidden>Phone Number</label>
                                             </div>
 
-                                            <div id="phoneNotice" class="small text-muted mb-2 pb-lg-2 d-none" style="font-size: 0.69rem">
+                                            <div id="phoneNotice" class="small text-muted mb-2 pb-lg-2 d-none" style="font-size: 0.65rem">
                                                 <span class="text-danger me-1"><i class="bi bi-exclamation-circle"></i></span>
-                                                Phone number must be 10 to 14 digits long
+                                                Phone number must have 11 to 14 digits long
                                             </div>
 
                                             <!-- Email -->
@@ -288,6 +293,7 @@
                                                         placeholder="Your Email"
                                                         autocomplete="email"
                                                         required
+                                                        oninvalid="this.setCustomValidity('Please enter a valid email address')"
                                                     />
                                                     <label class="form-label" for="registerEmail" hidden>Your Email</label>
                                                 </div>
@@ -306,15 +312,12 @@
                                                         placeholder="Password"
                                                         autocomplete="off"
                                                         required
+                                                        oninvalid="this.setCustomValidity('Password must contain at least 8 characters, 1 uppercase, 1 lowercase and 1 number')"
                                                     />
                                                     <label class="form-label" hidden>Password</label>
                                                 </div>
                                             </div>
-                                            <div id="passwordNotice" class="small text-muted mb-2 pb-lg-2 d-none" style="font-size: 0.69rem">
-                                                <span class="text-danger me-1"><i class="bi bi-exclamation-circle"></i></span>
-                                                Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or
-                                                more characters
-                                            </div>
+                                            <div id="passwordNotice" class="small text-muted mb-2 pb-lg-2 d-none" style="font-size: 0.69rem"></div>
 
                                             <!-- Confirm Password -->
                                             <div class="input-group mb-2">
@@ -326,6 +329,7 @@
                                                         class="form-control rounded-start-0"
                                                         placeholder="Repeat your password"
                                                         required
+                                                        oninvalid="this.setCustomValidity('Password does not match')"
                                                     />
                                                     <label class="form-label" for="registerConfirmPassword" hidden>Repeat your password</label>
                                                 </div>

@@ -1,4 +1,4 @@
-let totalPrice = 3000;
+let totalPrice = 4000;
 let printtotal = 0;
 let backdropPriceAdded = false;
 let orderDetails = {};
@@ -7,9 +7,6 @@ let orderDetails = {};
 const birthdayProps = document.getElementById("birthdayProps");
 const weddingProps = document.getElementById("weddingProps");
 const graduationProps = document.getElementById("graduationProps");
-const photoFilter = document.getElementById("photoFilter");
-const videoMessage = document.getElementById("videoMessage");
-const boomerang = document.getElementById("boomerang");
 const phoneBooth = document.getElementById("phoneBooth");
 const photoBook = document.getElementById("photoBook");
 const balloonBackdrop = document.getElementById("balloonBackdrop");
@@ -20,9 +17,6 @@ const flowerBackdrop = document.getElementById("flowerBackdrop");
 const birthdayPropsTable = document.getElementById("birthdayPropsTable");
 const weddingPropsTable = document.getElementById("weddingPropsTable");
 const graduationPropsTable = document.getElementById("graduationPropsTable");
-const photoFilterTable = document.getElementById("photoFilterTable");
-const videoMessageTable = document.getElementById("videoMessageTable");
-const boomerangTable = document.getElementById("boomerangTable");
 const phoneBoothTable = document.getElementById("phoneBoothTable");
 const photoBookTable = document.getElementById("photoBookTable");
 const radioTable = document.getElementById("radioTable");
@@ -63,45 +57,6 @@ graduationProps.addEventListener("change", function () {
         totalPrice -= 500;
         graduationPropsTable.style.display = "none";
         delete orderDetails.userAddOnGraduationProps;
-    }
-    document.getElementById("totalPrice").innerHTML = `₱${totalPrice}`;
-});
-
-photoFilter.addEventListener("change", function () {
-    if (photoFilter.checked) {
-        totalPrice += 500;
-        photoFilterTable.style.display = "table-row";
-        orderDetails.userAddOnPhotoFilter = "Photo Filter, Qty: 1, Price: 500";
-    } else {
-        totalPrice -= 500;
-        photoFilterTable.style.display = "none";
-        delete orderDetails.userAddOnPhotoFilter;
-    }
-    document.getElementById("totalPrice").innerHTML = `₱${totalPrice}`;
-});
-
-videoMessage.addEventListener("change", function () {
-    if (videoMessage.checked) {
-        totalPrice += 700;
-        videoMessageTable.style.display = "table-row";
-        orderDetails.userAddOnVideoMessage = "Video Message, Qty: 1, Price: 700";
-    } else {
-        totalPrice -= 700;
-        videoMessageTable.style.display = "none";
-        delete orderDetails.userAddOnVideoMessage;
-    }
-    document.getElementById("totalPrice").innerHTML = `₱${totalPrice}`;
-});
-
-boomerang.addEventListener("change", function () {
-    if (boomerang.checked) {
-        totalPrice += 500;
-        boomerangTable.style.display = "table-row";
-        orderDetails.userAddOnBoomerang = "Boomerang, Qty: 1, Price: 500";
-    } else {
-        totalPrice -= 500;
-        boomerangTable.style.display = "none";
-        delete orderDetails.userAddOnBoomerang;
     }
     document.getElementById("totalPrice").innerHTML = `₱${totalPrice}`;
 });
@@ -372,7 +327,7 @@ function saveOrderDetails2() {
         orderDetails.province = document.getElementById("province").value;
         orderDetails.municipality = document.getElementById("municipality").value;
         orderDetails.eventAddress = document.getElementById("eventAddress").value;
-        orderDetails.package = "Basic Package";
+        orderDetails.package = "Classic Package";
         orderDetails.totalPrice = totalPrice;
 
         // Get the logged in user's key

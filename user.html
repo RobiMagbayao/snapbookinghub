@@ -174,7 +174,7 @@
 
         <!-- restrict to view this html if not loggedIn -->
         <script>
-            if (localStorage.getItem("loggedIn") != "true") {
+            if (sessionStorage.getItem("loggedIn") != "true") {
                 window.location.href = "index.html";
             }
         </script>

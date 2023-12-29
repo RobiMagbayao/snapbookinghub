@@ -222,13 +222,16 @@
                                                 <div class="input-group mb-3 me-2">
                                                     <span class="input-group-text"><i class="bi bi-person-vcard"></i></span>
 
+                                                    <!-- input pattern a to z and dash -->
                                                     <input
                                                         type="text"
                                                         id="registerFirstName"
+                                                        pattern="[^0-9]*"
                                                         class="form-control rounded-2 rounded-start-0"
                                                         placeholder="First Name"
                                                         required
                                                     />
+
                                                     <label class="form-label" for="registerFirstName" hidden>First Name</label>
                                                 </div>
 
@@ -239,10 +242,12 @@
                                                     <input
                                                         type="text"
                                                         id="registerLastName"
+                                                        pattern="[^0-9]*"
                                                         class="form-control rounded-start-0 rounded-2"
                                                         placeholder="Last Name"
                                                         required
                                                     />
+
                                                     <label class="form-label" for="registerLastName" hidden>Last Name</label>
                                                 </div>
                                             </div>
@@ -256,17 +261,14 @@
                                                     id="registerPhone"
                                                     class="form-control rounded-start-0 rounded-2"
                                                     placeholder="Phone Number"
-                                                    minlength="10"
-                                                    maxlength="14"
-                                                    pattern="[0-9]"
                                                     required
                                                 />
                                                 <label class="form-label" for="registerPhone" hidden>Phone Number</label>
                                             </div>
 
-                                            <div id="phoneNotice" class="small text-muted mb-2 pb-lg-2 d-none" style="font-size: 0.69rem">
+                                            <div id="phoneNotice" class="small text-muted mb-2 pb-lg-2 d-none" style="font-size: 0.65rem">
                                                 <span class="text-danger me-1"><i class="bi bi-exclamation-circle"></i></span>
-                                                Phone number must be 10 to 14 digits long
+                                                Phone number must have 11 to 14 digits long
                                             </div>
 
                                             <!-- Email -->
@@ -278,7 +280,6 @@
                                                         id="registerEmail"
                                                         class="form-control rounded-start-0"
                                                         placeholder="Your Email"
-                                                        autocomplete="email"
                                                         required
                                                     />
                                                     <label class="form-label" for="registerEmail" hidden>Your Email</label>
@@ -299,14 +300,11 @@
                                                         autocomplete="off"
                                                         required
                                                     />
+
                                                     <label class="form-label" hidden>Password</label>
                                                 </div>
                                             </div>
-                                            <div id="passwordNotice" class="small text-muted mb-2 pb-lg-2 d-none" style="font-size: 0.69rem">
-                                                <span class="text-danger me-1"><i class="bi bi-exclamation-circle"></i></span>
-                                                Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or
-                                                more characters
-                                            </div>
+                                            <div id="passwordNotice" class="small text-muted mb-2 pb-lg-2 d-none" style="font-size: 0.69rem"></div>
 
                                             <!-- Confirm Password -->
                                             <div class="input-group mb-2">
@@ -491,6 +489,33 @@
         <!-- Ion icon script -->
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+        <!-- Form validation BS script -->
+        <script>
+            // Example starter JavaScript for disabling form submissions if there are invalid fields
+            (() => {
+                "use strict";
+
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                const forms = document.querySelectorAll(".needs-validation");
+
+                // Loop over them and prevent submission
+                Array.from(forms).forEach((form) => {
+                    form.addEventListener(
+                        "submit",
+                        (event) => {
+                            if (!form.checkValidity()) {
+                                event.preventDefault();
+                                event.stopPropagation();
+                            }
+
+                            form.classList.add("was-validated");
+                        },
+                        false
+                    );
+                });
+            })();
+        </script>
 
         <script src="./account-user-3.js"></script>
     </body>

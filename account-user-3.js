@@ -4,8 +4,13 @@ function validatePhone() {
     let phone = document.getElementById("registerPhone");
     notif.classList.remove("d-none");
 
+    // Auto input 09 when user starts typing
+    if (phone.value.length == 1) {
+        phone.value = "09" + phone.value;
+    }
+
     //Hide notice if conditions are met
-    if (phone.value.length >= 10 && phone.value.match(/[0-9]/)) {
+    if (phone.value.length >= 11 && phone.value.match(/[0-9]/)) {
         notif.classList.add("d-none");
     }
 }
@@ -17,7 +22,10 @@ document.getElementById("registerPhone").addEventListener("input", validatePhone
 function passwordFormat() {
     let notif = document.getElementById("passwordNotice");
     let password = document.getElementById("registerPassword");
+    notif.innerHTML =
+        '<span class="text-danger me-1"><i class="bi bi-exclamation-circle"></i></span> Password must be 8-16 characters long, with at least 1 uppercase letter, 1 lowercase letter, and 1 number';
     notif.classList.remove("d-none");
+    document.getElementById("registerConfirmPassword").disabled = true;
 
     //Hide notice if conditions are met
     if (
@@ -28,6 +36,7 @@ function passwordFormat() {
         password.value.match(/[0-9]/)
     ) {
         notif.classList.add("d-none");
+        document.getElementById("registerConfirmPassword").disabled = false;
     }
 }
 document.getElementById("registerPassword").addEventListener("input", passwordFormat);
@@ -75,22 +84,51 @@ document.getElementById("registerConfirmPassword").addEventListener("input", rep
 let userDetails = {};
 
 // Initialize customerID
-let customerID = localStorage.getItem("customerID") ? parseInt(localStorage.getItem("customerID")) : 1;
+let customerID = localStorage.getItem("customerID") ? parseInt(localStorage.getItem("customerID")) : 0;
 
 // Function to save user details to local storage
 function saveUserDetails(event) {
     event.preventDefault();
 
+    let inputPhone = document.getElementById("registerPhone");
+    if (inputPhone.value.length < 11) {
+        inputPhone.classList.add("is-invalid");
+        inputPhone.target.setCustomValidity("Please enter your phone number");
+        return;
+    }
+
+    // Check if password and confirm password match
+
+    let password = document.getElementById("registerPassword");
+    let confirmPassword = document.getElementById("registerConfirmPassword");
+    let notif = document.getElementById("passwordNotice");
+
+    if (password.value != confirmPassword.value) {
+        notif.innerHTML = '<span class="text-danger me-1"><i class="bi bi-exclamation-circle"></i></span> Password does not match';
+        notif.classList.remove("d-none");
+        confirmPassword.classList.add("is-invalid");
+        return;
+    }
+
     // Check if email is already existing in localStorage
     const emailToCheck = document.getElementById("registerEmail").value;
     let existingEmail = false;
 
-    // Loop through all the users in localStorage
-    for (let i = 1; i < customerID; i++) {
-        let storedUserDetails = JSON.parse(localStorage.getItem(`User_${i}`));
+    // Loop over all keys in localStorage
+    for (let i = 0; i < localStorage.length; i++) {
+        // Get the current key
+        const key = localStorage.key(i);
 
-        if (storedUserDetails && storedUserDetails.email === emailToCheck) {
-            existingEmail = true;
+        // Check if the key matches the pattern 'User_(email)'
+        if (key.startsWith("User_")) {
+            // remove 'User_' from the start of the key
+            const emailInKey = key.slice(5);
+
+            // Compare the email in the key with the email to check
+            if (emailInKey === emailToCheck) {
+                existingEmail = true;
+                break;
+            }
         }
     }
 
@@ -133,6 +171,9 @@ function saveUserDetails(event) {
             data-bs-target="#signInModal"
             >LOGIN NOW</a
         ></h5>`;
+        // bring back the password and confirm password input to password type
+        document.getElementById("registerPassword").type = "password";
+        document.getElementById("registerConfirmPassword").type = "password";
     }
     setTimeout(offSpinner, 4000);
 }
@@ -225,3 +266,88 @@ function logout() {
     document.getElementById("loggedIn").classList.add("d-none");
 }
 document.getElementById("logoutUser").addEventListener("click", logout);
+
+// ---------------------------------------------- //
+// ---------------------------------------------- //
+// --------------Input Validations--------------- //
+
+let inputFname = document.getElementById("registerFirstName");
+let inputLname = document.getElementById("registerLastName");
+let inputPhone = document.getElementById("registerPhone");
+let inputEmail = document.getElementById("registerEmail");
+let inputPassword = document.getElementById("registerPassword");
+let inputConfirmPassword = document.getElementById("registerConfirmPassword");
+let inputCheckbox = document.getElementById("registerCheck");
+
+// oninvalid and oninput event for First Name
+inputFname.oninvalid = function (event) {
+    event.target.setCustomValidity("Please enter your first name");
+    event.target.classList.add("is-invalid");
+};
+inputFname.oninput = function (event) {
+    event.target.setCustomValidity("");
+    event.target.classList.remove("is-invalid");
+};
+
+// for Last Name
+inputLname.oninvalid = function (event) {
+    event.target.setCustomValidity("Please enter your last name");
+    event.target.classList.add("is-invalid");
+};
+inputLname.oninput = function (event) {
+    event.target.setCustomValidity("");
+    event.target.classList.remove("is-invalid");
+};
+
+// for Phone
+
+inputPhone.oninvalid = function (event) {
+    event.target.setCustomValidity("Please enter your phone number");
+    event.target.classList.add("is-invalid");
+};
+inputPhone.oninput = function (event) {
+    event.target.setCustomValidity("");
+    event.target.classList.remove("is-invalid");
+};
+
+// for Email
+inputEmail.oninvalid = function (event) {
+    event.target.setCustomValidity("Please enter your email");
+    event.target.classList.add("is-invalid");
+};
+inputEmail.oninput = function (event) {
+    event.target.setCustomValidity("");
+    event.target.classList.remove("is-invalid");
+};
+
+// for Password
+inputPassword.oninvalid = function (event) {
+    event.target.setCustomValidity("Password must be 8-16 characters long, with at least 1 uppercase letter, 1 lowercase letter, and 1 number");
+    event.target.classList.add("is-invalid");
+};
+inputPassword.oninput = function (event) {
+    event.target.setCustomValidity("");
+    event.target.classList.remove("is-invalid");
+};
+
+// for Confirm Password
+inputConfirmPassword.oninvalid = function (event) {
+    event.target.setCustomValidity("Please repeat your password");
+    event.target.classList.add("is-invalid");
+};
+inputConfirmPassword.oninput = function (event) {
+    event.target.setCustomValidity("");
+    event.target.classList.remove("is-invalid");
+};
+
+// for Checkbox
+inputCheckbox.oninvalid = function (event) {
+    event.target.setCustomValidity("Please read and agree to the Terms and Conditions");
+    event.target.classList.add("is-invalid");
+};
+inputCheckbox.oninput = function (event) {
+    event.target.setCustomValidity("");
+    event.target.classList.remove("is-invalid");
+};
+// ---------------------------------------------- //
+// -----------End of Input Validations---------- //
