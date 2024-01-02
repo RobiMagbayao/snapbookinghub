@@ -28,7 +28,6 @@ function submitEmailForm() {
     // Get form values
     const newsletterEmail = document.getElementById("newsletter-email").value;
 
-
     // Get the current date and time
     const newsletterDateTime = new Date();
     const formattedNewslatterDateTime = newsletterDateTime.toLocaleString();
@@ -56,4 +55,7 @@ function submitEmailForm() {
 
     // Update bookingNumber in local storage
     localStorage.setItem("subscriberCount", subscriberCount.toString());
+
+    // Alert that the email was added to the newsletter
+    alert(`Email ${newsletterEmail} has been added to the newsletter mailing list.`);
 }
