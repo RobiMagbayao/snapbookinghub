@@ -4,18 +4,17 @@
         <meta charset="UTF-8" />
         <meta
             name="viewport"
-            content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=320, height=device-height, target-densitydpi=medium-dpi"
+            content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=320, height=device-height, target-density, dpi=medium-dpi"
         />
         <title>SnapBookingHub</title>
         <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
             rel="stylesheet"
-            integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
             crossorigin="anonymous"
         />
         <link rel="stylesheet" type="text/css" href="shared.css" />
-        <link rel="stylesheet" type="text/css" href="package-premium.css" />
-        <link rel="stylesheet" type="text/css" href="packages.css" />
+        <link rel="stylesheet" type="text/css" href="ordersummary.css" />
         <link rel="shortcut icon" type="image/jpg" href="images/favicon.png" />
     </head>
     <body class="m-0 p-0">
@@ -499,378 +498,69 @@
         </div>
         <!-- end of Terms & Conditions Modal -->
 
-        <!--photobooth package section-->
-        <section id="packages">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12 mx-auto">
-                        <div class="display-6 text-center text-uppercase mb-5">Premium Package Booking Guide</div>
-                        <div class="h6 text-center">STEP 1</div>
-                        <div class="h4 text-center text-uppercase">Explore Inclusions and Add-ons</div>
-                        <div class="text-center lead mb-4">
-                            Discover our photobooth packages and add-ons. Choose the ones that suit your event and preferences.
-                        </div>
-                    </div>
-                    <div class="col-lg-5 col-md-6 col-sm-8 col-12 px-md-4 px-0 ms-lg-auto mx-auto mt-0">
-                        <p class="card-title text-center h5 pb-2">PACKAGE INCLUSION</p>
-                        <div class="card inclusion ps-4 pe-3 pt-3 h-100">
-                            <div class="card-body mx-auto p-0">
-                                <div class="card-text">
-                                    <ul class="features text-start ps-3">
-                                        <li>&nbspStudio Quality Photo Equipment and Lighting</li>
-                                        <li>&nbspPhoto Booth Attendant</li>
-                                        <li>&nbspDelivery, Set Up & Breakdown</li>
-                                        <li>&nbspUnlimited Digital Photo Sessions</li>
-                                        <li>&nbspStandard Prop Station</li>
-                                        <li>&nbsp&nbspStandard Backdrop</li>
-                                        <li>&nbspEmail, Text, and AirDrop Sharing</li>
-                                        <li>&nbspDigital Copies of the Gallery</li>
-                                        <li>&nbspCustomize this package with our add-on options</li>
-                                    </ul>
-                                </div>
-                            </div>
+        <!-- order summary section -->
+        <div id="order-summary" class="mx-auto">
+            <h2 class="h2 text-center fw-bold my-4">Booking Summary</h2>
+            <div class="d-flex justify-content-center">
+                <div class="col-6 mx-auto">
+                    <div class="row mt-3 py-3">
+                        <div class="col-5 ps-5">Booking ID:</div>
+                        <div class="col">
+                            <span id="bookingNum"></span>
                         </div>
                     </div>
 
-                    <div class="col-lg-5 col-md-6 col-sm-8 col-12 px-md-4 px-0 me-lg-auto mx-auto mt-0">
-                        <p class="card-title text-center h5 pt-md-0 pb-2 pt-sm-5 pt-5">ADD-ON OPTIONS</p>
-                        <div class="card adOnOptions ps-4 pe-3 pt-3 h-100">
-                            <div class="card-body mx-auto p-0">
-                                <form action="#" method="post" id="optionsForm">
-                                    <table class="table">
-                                        <tbody>
-                                            <!-- Props Section -->
-                                            <tr>
-                                                <th>Props</th>
-                                                <th>Price</th>
-                                            </tr>
+                    <div class="row py-3">
+                        <div class="col-5 ps-5">Package Name:</div>
+                        <div class="col">
+                            <span id="packageName"></span>
+                        </div>
+                    </div>
 
-                                            <tr>
-                                                <td>
-                                                    <label class="form-check-label">
-                                                        <input
-                                                            id="birthdayProps"
-                                                            class="form-check-input"
-                                                            type="checkbox"
-                                                            name="options[]"
-                                                            value="Birthday Props"
-                                                        />
-                                                        Birthday Props
-                                                    </label>
-                                                </td>
-                                                <td class="text-center">500</td>
-                                            </tr>
+                    <div class="row py-3">
+                        <div class="col-5 ps-5">Add-ons:</div>
+                        <div class="col">
+                            <span class="small" id="addOns"></span>
+                        </div>
+                    </div>
 
-                                            <tr>
-                                                <td>
-                                                    <label class="form-check-label">
-                                                        <input
-                                                            id="weddingProps"
-                                                            class="form-check-input"
-                                                            type="checkbox"
-                                                            name="options[]"
-                                                            value="Wedding Props"
-                                                        />
-                                                        Wedding Props
-                                                    </label>
-                                                </td>
-                                                <td class="text-center">500</td>
-                                            </tr>
+                    <div class="row py-3">
+                        <div class="col-5 ps-5">Date and Time:</div>
+                        <div class="col">
+                            <span id="dateTime"></span>
+                        </div>
+                    </div>
 
-                                            <tr>
-                                                <td>
-                                                    <label class="form-check-label">
-                                                        <input
-                                                            id="graduationProps"
-                                                            class="form-check-input"
-                                                            type="checkbox"
-                                                            name="options[]"
-                                                            value="Graduation Props"
-                                                        />
-                                                        Graduation Props
-                                                    </label>
-                                                </td>
-                                                <td class="text-center">500</td>
-                                            </tr>
+                    <div class="row py-3">
+                        <div class="col-5 ps-5">Location:</div>
+                        <div class="col">
+                            <span id="location"></span>
+                        </div>
+                    </div>
 
-                                            <!-- Backdrop Options Section -->
-                                            <tr>
-                                                <th>Backdrop Options</th>
-                                                <th>Price</th>
-                                            </tr>
+                    <div class="row py-3">
+                        <div class="col-5 ps-5">Total Price:</div>
+                        <div class="col">
+                            <span id="totalPrice"></span>
+                        </div>
+                    </div>
 
-                                            <tr>
-                                                <td>
-                                                    <label class="form-check-label">
-                                                        <input
-                                                            id="balloonBackdrop"
-                                                            class="form-check-input"
-                                                            type="radio"
-                                                            name="backdrop"
-                                                            value="Balloon Backdrop"
-                                                        />
-                                                        Balloon Backdrop
-                                                    </label>
-                                                </td>
-                                                <td class="text-center">500</td>
-                                            </tr>
+                    <div class="row border-bottom mb-4"></div>
 
-                                            <tr>
-                                                <td>
-                                                    <label class="form-check-label">
-                                                        <input
-                                                            id="sparklyBackdrop"
-                                                            class="form-check-input"
-                                                            type="radio"
-                                                            name="backdrop"
-                                                            value="Sparkly Backdrop"
-                                                        />
-                                                        Sparkly Backdrop
-                                                    </label>
-                                                </td>
-                                                <td class="text-center">500</td>
-                                            </tr>
+                    <div class="row">
+                        <div class="d-flex">
+                            <div class="mx-auto" id="googlePayButtonContainer"></div>
+                        </div>
+                    </div>
 
-                                            <tr>
-                                                <td>
-                                                    <label class="form-check-label">
-                                                        <input
-                                                            id="flowerBackdrop"
-                                                            class="form-check-input"
-                                                            type="radio"
-                                                            name="backdrop"
-                                                            value="Flower Backdrop"
-                                                        />
-                                                        Flower Backdrop
-                                                    </label>
-                                                </td>
-                                                <td class="text-center">500</td>
-                                            </tr>
-
-                                            <!-- Printed Photos Section -->
-                                            <tr>
-                                                <th>Printed Photo Size</th>
-                                                <th>Quantity</th>
-                                            </tr>
-                                            <tr>
-                                                <td class="pe-4">
-                                                    <label for="photoSize" hidden>Photo Size:</label>
-                                                    <select class="form-select" id="photoSize" name="photoSize" data-price="0">
-                                                        <option value="2x6">2 x 6 inches (&#8369;8 per/pc)</option>
-                                                        <option value="4x6">4 x 6 inches (&#8369;10 per/pc)</option>
-                                                    </select>
-                                                </td>
-                                                <td>
-                                                    <label for="photoQuantity" hidden>Quantity:</label>
-                                                    <input
-                                                        type="number"
-                                                        class="form-control mx-auto"
-                                                        id="photoQuantity"
-                                                        name="photoQuantity"
-                                                        min="100"
-                                                        max="1000"
-                                                        data-price="0"
-                                                    />
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2" class="text-end">
-                                                    <div id="warning" class="small text-danger mt-2"></div>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </form>
-                            </div>
+                    <div class="row">
+                        <div class="d-flex justify-content-center mt-4">
+                            <button id="bookNowBtn" class="btn button" type="button">Booking Success</button>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <!--end of photobooth package section-->
-
-        <!--location section-->
-        <section class="subhead">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12 mx-auto">
-                        <div class="h6 text-center mt-5">STEP 2</div>
-                        <div class="h4 text-center text-uppercase">Enter Event Date and Location</div>
-                        <div class="text-center lead mb-4">
-                            Specify the date of your event and its location to check availability and customize your experience.
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-8 col-11 mx-auto">
-                        <div class="row">
-                            <div class="d-flex col-lg-6 col-md-6 col-sm-6 col-12 mx-auto py-3">
-                                <label for="date" class="fw-bold me-2">Date: </label>
-                                <input type="date" style="width: 100%" id="date" name="date" required />
-                            </div>
-                            <div class="d-flex col-lg-6 col-md-6 col-sm-6 col-12 mx-auto py-3">
-                                <label for="time" class="fw-bold me-2">Time:</label>
-                                <input type="time" style="width: 100%" id="time" name="time" required />
-                            </div>
-                            <div class="d-flex col-lg-6 col-md-6 col-12 mx-auto py-2">
-                                <label class="form-label fw-bold me-2" for="province">Province:</label>
-                                <select class="form-select" id="province" name="province" required>
-                                    <option disabled value="">Province</option>
-                                    <option selected value="Cavite">Cavite</option>
-                                </select>
-                                <div class="invalid-feedback">Please select a valid province.</div>
-                                <div class="valid-feedback">Looks good!</div>
-                            </div>
-                            <div class="d-flex col-lg-6 col-md-6 col-12 mx-auto py-2">
-                                <label class="form-label fw-bold me-2" for="municipality">Municipality:</label>
-                                <select class="form-select" id="municipality" name="municipality" required>
-                                    <option selected disabled value="">Choose Municipality</option>
-                                    <option value="Amadeo">Amadeo</option>
-                                    <option value="Bacoor">Bacoor</option>
-                                    <option value="Carmona">Carmona</option>
-                                    <option value="Cavite City">Cavite City</option>
-                                    <option value="Dasmariñas">Dasmarinas</option>
-                                    <option value="General Emilio Aguinaldo">General Emilio Aguinaldo</option>
-                                    <option value="General Mariano Alvarez">General Mariano Alvarez</option>
-                                    <option value="General Trias">General Trias</option>
-                                    <option value="Imus">Imus</option>
-                                    <option value="Indang">Indang</option>
-                                    <option value="Kawit">Kawit</option>
-                                    <option value="Magallanes">Magallanes</option>
-                                    <option value="Maragondon">Maragondon</option>
-                                    <option value="Mendez">Mendez</option>
-                                    <option value="Naic">Naic</option>
-                                    <option value="Noveleta">Noveleta</option>
-                                    <option value="Rosario">Rosario</option>
-                                    <option value="Silang">Silang</option>
-                                    <option value="Tagaytay">Tagaytay</option>
-                                    <option value="Tanza">Tanza</option>
-                                    <option value="Ternate">Ternate</option>
-                                    <option value="Trece Martires">Trece Martires</option>
-                                </select>
-                                <div class="invalid-feedback">Please select a valid municipality.</div>
-                                <div class="valid-feedback">Looks good!</div>
-                            </div>
-                            <div class="d-flex col-12 mx-auto py-2">
-                                <label class="form-label fw-bold me-2 flex-shrink-0">Event Address:</label>
-                                <input id="eventAddress" type="text" class="w-100 py-1 px-2" placeholder="Enter Event Address" required />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--end of location section-->
-
-        <!-- Order Summary Table -->
-        <section id="orderSummary">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12 mx-auto">
-                        <div class="h6text-center mt-5">STEP 3</div>
-                        <div class="h4 text-center text-uppercase">Review Order Summary</div>
-                        <div class="text-center lead mb-4">
-                            Check your order summary to ensure everything aligns with your preferences and requirements.
-                        </div>
-                    </div>
-                    <div class="col-md-10 col-11 mx-auto">
-                        <table class="table mt-2">
-                            <thead>
-                                <tr>
-                                    <th>Item Name</th>
-                                    <th>Quantity</th>
-                                    <th>Price</th>
-                                </tr>
-                            </thead>
-                            <tbody id="orderSummaryTable">
-                                <tr>
-                                    <td class="py-2">Premium Package</td>
-                                    <td class="py-2">1</td>
-                                    <td class="py-2">₱5000</td>
-                                </tr>
-                                <tr id="birthdayPropsTable" style="display: none">
-                                    <td class="py-2" id="birthdayPropsItem">Birthday Props</td>
-                                    <td class="py-2" id="birthdayPropsQuantity">1</td>
-                                    <td class="py-2" id="birthdayPropsPrice">₱500</td>
-                                </tr>
-                                <tr id="weddingPropsTable" style="display: none">
-                                    <td class="py-2" id="weddingPropsItem">Wedding Props</td>
-                                    <td class="py-2" id="weddingPropsQuantity">1</td>
-                                    <td class="py-2" id="weddingPropsPrice">₱500</td>
-                                </tr>
-                                <tr id="graduationPropsTable" style="display: none">
-                                    <td class="py-2" id="graduationPropsItem">Graduation Props</td>
-                                    <td class="py-2" id="graduationPropsQuantity">1</td>
-                                    <td class="py-2" id="graduationPropsPrice">₱500</td>
-                                </tr>
-                                <tr id="radioTable" style="display: none">
-                                    <td class="py-2" id="radioItem"></td>
-                                    <td class="py-2" id="radioQuantity">1</td>
-                                    <td class="py-2" id="radioPrice">₱500</td>
-                                </tr>
-                                <tr id="printPhotoTable" style="display: none">
-                                    <td class="py-2" id="printItem"></td>
-                                    <td class="py-2" id="printQuantity"></td>
-                                    <td class="py-2" id="printPrice"></td>
-                                </tr>
-                            </tbody>
-
-                            <tfoot>
-                                <tr>
-                                    <td colspan="2" class="text-end fw-bold lead">Total Price</td>
-                                    <td id="totalPrice" class="text-center fw-bold lead">₱5000</td>
-                                </tr>
-                            </tfoot>
-                        </table>
-                    </div>
-                    <div class="col-12 text-s">
-                        <div id="dateSummary"></div>
-                        <div id="timeSummary"></div>
-                        <div id="addressSummary"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Order Summary Table -->
-
-        <!--Book Now section-->
-        <section>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12 mx-auto">
-                        <div class="h6 text-center mt-5">STEP 4</div>
-                        <div class="h4 text-center text-uppercase">Ready to Book?</div>
-                        <div class="text-center lead mb-4">
-                            If everything looks perfect, click the button below to secure your photobooth experience.
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="btns mx-auto text-center">
-                            <button id="newSaveOrder" type="button" class="button btn rounded-2 py-3 my-2 px-4">BOOK NOW</button>
-                        </div>
-                    </div>
-                    <!-- <div class="col-12">
-                        <div class="btns mx-auto text-center">
-                            <a href="" id="saveOrderButton"
-                                ><div id="saveOrderButton" class="button btn rounded-0 py-3 my-2 px-4">1 key, multiple objects</div></a
-                            >
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="btns mx-auto text-center">
-                            <a href="" id="orderDetailsButton"
-                                ><div id="orderDetailsButton" class="button btn rounded-0 py-3 px-4">different key</div></a
-                            >
-                        </div>
-                    </div>
-                    <a href="newOrder.html" target="_blank" class="text-danger text-center py-2"
-                        ><div class="btn btn-warning">storage test (1 key, multiple objects)</div></a
-                    >
-                    <a href="" id="clearLocalStorageButton" class="text-danger text-center py-2"
-                        ><div class="btn btn-info" id="clearLocalStorageButton">Clear Local Storage</div></a
-                    > -->
-                </div>
-            </div>
-        </section>
-        <!--end of Book Now section-->
+        </div>
 
         <!--footer section-->
         <section class="m-0 p-0">
@@ -950,16 +640,20 @@
         </footer>
         <!--end of footer section-->
 
-        <!--Javascript-->
+        <!--bootstrap js-->
         <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
             crossorigin="anonymous"
         ></script>
-        <script type="application/javascript" src="package-premium-2.js"></script>
 
         <script type="application/javascript" src="shared.js"></script>
 
+        <!-- Book via Gpay and order sumary -->
+        <script type="application/javascript" src="order-summary.js"></script>
+
+        <!-- Google Pay -->
+        <script async src="https://pay.google.com/gp/p/js/pay.js" onload="onGooglePayLoaded()"></script>
         <!-- Navbar -->
         <script src="./account-user-3.js"></script>
     </body>

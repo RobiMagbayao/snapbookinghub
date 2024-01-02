@@ -352,11 +352,23 @@ function saveOrderDetails2() {
 
         // Update bookingNumber in local storage
         localStorage.setItem("bookingNumber", bookingNumber.toString());
+
+        savebooking();
     }
 }
 
 // Add event listener to the button that triggers the saveOrderDetails function
 document.getElementById("newSaveOrder").addEventListener("click", saveOrderDetails2);
 
+function savebooking() {
+    bookBtn = document.getElementById("newSaveOrder");
+
+    // spinner
+    bookBtn.innerHTML = `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Booking...`;
+    setTimeout(() => {
+        // redirect to order summary page
+        window.location.href = "order-summary.html";
+    }, 4000);
+}
 // -------------------------------------------- //
 // -------------------------------------------- //

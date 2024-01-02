@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Antonio&family=Bilbo+Swash+Caps&family=Days+One&family=Fjalla+One&family=Josefin+Sans&family=Limelight&family=Poppins&family=Tangerine:wght@700&display=swap");
+
+*,
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+body,
+header {
+    width: auto;
+}
+
+#order-summary {
+    margin-top: 130px;
+}
+
+.ps-5 {
+    color: #755843;
+    font-size: 1.1rem;
+}
+
+#bookingID,
+#packageName,
+#dateTime,
+#location,
+#totalPrice {
+    color: #21201f;
+    font-size: 1rem;
+}
+
+#addOns {
+    color: #21201f;
+}
+.py-3:hover {
+    background-color: rgb(239, 226, 214);
+}

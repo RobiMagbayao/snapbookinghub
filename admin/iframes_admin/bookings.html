@@ -55,6 +55,34 @@
             </div>
         </section>
 
+        <!-- Reschedule Modal -->
+        <div class="modal" tabindex="-1" id="reschedModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Choose a Date and Time</h5>
+                        <button type="button" id="closeReschedModal" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="date">Date</label>
+                                <input type="date" id="reschedDate" name="date" class="form-control" />
+                            </div>
+                            <div class="col-6">
+                                <label for="time">Time</label>
+                                <input type="time" id="reschedTime" name="time" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="reschedBtn" class="btn">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="p-3 m-3" id="test-output"></div>
 
         <!-- Ion icon script -->

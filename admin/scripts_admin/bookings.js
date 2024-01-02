@@ -102,21 +102,22 @@ for (let i = 0; i < localStorage.length; i++) {
 
                 // Set status of the booking
                 let currentDate = new Date();
-                let formattedCurrentDate = currentDate.toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "short",
-                    day: "numeric",
-                });
+                currentDate.setHours(0, 0, 0, 0); // date format for comparison
                 let status = "";
 
                 if (!orderDetails.date) {
                     status = `<span class="text-danger fw-medium">Cancelled</span>`;
-                } else if (formattedDate > formattedCurrentDate) {
-                    status = `<span class="text-success fw-medium">Upcoming</span>`;
-                } else if (formattedDate === formattedCurrentDate) {
-                    status = `<span class="text-warning fw-medium">Ongoing</span>`;
-                } else if (formattedDate < formattedCurrentDate) {
-                    status = `<span class="text-primary fw-medium">Completed</span>`;
+                } else {
+                    let orderDate = new Date(orderDetails.date);
+                    orderDate.setHours(0, 0, 0, 0);
+
+                    if (orderDate.getTime() > currentDate.getTime()) {
+                        status = `<span class="text-success fw-medium">Upcoming</span>`;
+                    } else if (orderDate.getTime() === currentDate.getTime()) {
+                        status = `<span class="text-warning fw-medium">Ongoing</span>`;
+                    } else if (orderDate.getTime() < currentDate.getTime()) {
+                        status = `<span class="text-primary fw-medium">Completed</span>`;
+                    }
                 }
 
                 // SET THE CONTENT OF THE ROW WITH THE ORDER DETAILS
@@ -169,9 +170,6 @@ selectElements.forEach((selectElement) => {
             // Show a confirmation prompt
             let confirmCancel = confirm("Are you sure you want to cancel this booking?");
             if (confirmCancel) {
-                // Change status to Cancelled
-                statusElement.innerHTML = '<span class="text-danger fw-medium">Cancelled</span>';
-
                 // Permanent cancel of the booking
                 for (let i = 0; i < localStorage.length; i++) {
                     // Get key at index i
@@ -199,31 +197,32 @@ selectElements.forEach((selectElement) => {
                         }
                     }
                 }
+                // Change status to Cancelled
+                statusElement.innerHTML = '<span class="text-danger fw-medium">Cancelled</span>';
+
+                // refresh the page
+                location.reload();
             }
         }
 
         // Check if 'Reschedule' is selected
         else if (selectedOption === "2") {
-            // Show a prompt to enter the new date and time
-            let newDate = prompt("Please enter the new date for this booking (YYYY-MM-DD):");
-            let newTime = prompt("Please enter the new time for this booking (HH:MM):");
+            // open the reschedule modal
+            var myModal = document.getElementById("reschedModal");
+            var bsModal = new bootstrap.Modal(myModal);
 
-            // Regexp to check the date and time format
-            let dateRegex = /^\d{4}-\d{2}-\d{2}$/;
-            let timeRegex = /^\d{2}:\d{2}$/;
+            // Show the modal
+            bsModal.show();
 
-            // Check if the entered date and time follow the correct format
-            if (!dateRegex.test(newDate) || !timeRegex.test(newTime)) {
-                alert("Invalid date or time format. Please enter the date in the format YYYY-MM-DD and the time in the format HH:MM.");
-                return;
-            }
+            // Get the reschedule button
+            let schedBtn = document.getElementById("reschedBtn");
 
-            if (newDate && newTime) {
-                // Change the booking date and time
-                dateElement.textContent = newDate;
-                timeElement.textContent = newTime;
+            // Add event listener for the click event
+            schedBtn.addEventListener("click", function () {
+                // Get the selected date and time from the modal
+                let newDate = document.getElementById("reschedDate").value;
+                let newTime = document.getElementById("reschedTime").value;
 
-                // Iterate over all keys in localStorage
                 for (let i = 0; i < localStorage.length; i++) {
                     // Get key at index i
                     let key = localStorage.key(i);
@@ -236,21 +235,26 @@ selectElements.forEach((selectElement) => {
                         // Check if orderDetails exist in the stored data
                         if (storedData.orderDetails) {
                             // Find the orderDetail with the matching booking id
-                            let orderDetailIndex = storedData.orderDetails.findIndex((od) => od.bookingNumber == bookingId);
+                            let orderDetail = storedData.orderDetails.find((od) => od.bookingNumber == bookingId);
 
                             // Check if a matching orderDetail was found
-                            if (orderDetailIndex != -1) {
-                                // Update the date and time
-                                storedData.orderDetails[orderDetailIndex].date = newDate;
-                                storedData.orderDetails[orderDetailIndex].time = newTime;
+                            if (orderDetail) {
+                                // Remove the date and time
+                                orderDetail.date = newDate;
+                                orderDetail.time = newTime;
 
                                 // Stringify and save the updated data back to localStorage
                                 localStorage.setItem(key, JSON.stringify(storedData));
+
+                                // hide the modal
+                                document.getElementById("closeReschedModal").click();
                             }
                         }
                     }
                 }
-            }
+                // refresh the page
+                location.reload();
+            });
         }
     });
 });
