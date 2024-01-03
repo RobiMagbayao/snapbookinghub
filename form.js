@@ -1,4 +1,5 @@
 function submitForm() {
+
     // Get form values
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
@@ -27,30 +28,7 @@ function submitForm() {
     // Store updated form data in localStorage
     localStorage.setItem('formData', JSON.stringify(existingFormData));
 
-    // Reset the form's validation state
-    form.classList.remove('was-validated');
+    alert("Your message has been submitted. We will get back to you as soon as we can.");
+    window.location.href = "index.html";
 
-    // Clear the form fields
-    form.reset();
-}
-
-
-//WRITE NEW FORM TO NEW HTML
-const storedFormData = JSON.parse(localStorage.getItem('formData'));
-
-if (storedFormData) {
-    // Iterate through stored form data and display entries
-    storedFormData.forEach(formData => {
-        const newEntry = document.createElement("div");
-
-        newEntry.innerHTML = `<strong>Submitted at:</strong> ${formData.timestamp}<br>
-                            <strong>Name:</strong> ${formData.name}<br>
-                            <strong>Email:</strong> ${formData.email}<br>
-                            <strong>Phone:</strong> ${formData.phone}<br>
-                            <strong>Message:</strong> ${formData.message}<br>
-                            <hr>`;
-
-        // Append the entry to the output div
-        document.getElementById("output").appendChild(newEntry);
-    });
 }
