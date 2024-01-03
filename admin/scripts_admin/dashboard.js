@@ -136,11 +136,22 @@ for (let { email, orderDetail } of recentOrderDetails) {
     let date = new Date(orderDetail.date);
     let formattedDate = date.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" });
 
+    let bookingNumber = orderDetail.bookingNumber;
+    if (bookingNumber < 10) {
+        bookingNumber = "000" + bookingNumber;
+    } else if (bookingNumber < 100) {
+        bookingNumber = "00" + bookingNumber;
+    } else if (bookingNumber < 1000) {
+        bookingNumber = "0" + bookingNumber;
+    } else {
+        bookingNumber = bookingNumber;
+    }
+
     row.innerHTML = `
-        <td>${orderDetail.bookingNumber}</td>
+        <td>${bookingNumber}</td>
         <td>${email}</td>
         <td>${orderDetail.package}</td>
-        <td>${orderDetail.municipality}</td>
+        <td>${orderDetail.municipality} ${orderDetail.province}</td>
         <td>${formattedDate}</td>
         <td>${orderDetail.totalPrice}</td>
         
