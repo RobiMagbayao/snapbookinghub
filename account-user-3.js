@@ -1,3 +1,16 @@
+// Auto capitalization first letter for first name and last name when user starts typing
+function capitalizeFirstLetter() {
+    let inputFname = document.getElementById("registerFirstName");
+    let inputLname = document.getElementById("registerLastName");
+
+    inputFname.value = inputFname.value.charAt(0).toUpperCase() + inputFname.value.slice(1);
+    inputLname.value = inputLname.value.charAt(0).toUpperCase() + inputLname.value.slice(1);
+}
+document.getElementById("registerFirstName").addEventListener("input", capitalizeFirstLetter);
+document.getElementById("registerLastName").addEventListener("input", capitalizeFirstLetter);
+
+// ---------------------------------------------- //
+
 // Validate phone number
 function validatePhone() {
     let notif = document.getElementById("phoneNotice");

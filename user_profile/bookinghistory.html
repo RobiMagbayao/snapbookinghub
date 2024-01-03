@@ -33,54 +33,17 @@
                     <div class="card-body mx-auto">
                         <!-- Booking History table -->
                         <div class="table-responsive mx-3 mb-4 overflow-auto">
-                            <table class="table table2 table-hover mx-auto px-2">
+                            <table id="bookingHistory" class="table table2 table-hover mx-auto px-2">
                                 <thead class="fw-medium">
                                     <tr class="">
-                                        <td class="book-td site-color2">Booking No.</td>
-                                        <td class="site-color2">Package and Add-on</td>
-                                        <td class="site-color2">Date</td>
-                                        <td class="time-td site-color2">Time</td>
-                                        <td class="site-color2">Status</td>
+                                        <td class="col-2 book-td site-color2">Booking No.</td>
+                                        <td class="col-5 site-color2">Package and Add-on</td>
+                                        <td class="col-2 site-color2">Date</td>
+                                        <td class="col-2 time-td site-color2">Time</td>
+                                        <td class="col-1 site-color2">Status</td>
                                     </tr>
                                 </thead>
-                                <tbody class="small thover">
-                                    <tr>
-                                        <td id="book-num">0003</td>
-                                        <td><span id="package-id">Basic - 3000 </span><span id="addon-id">| No Add-ons </span></td>
-                                        <td><span id="book-date"> December 20, 2023 - Monday</span></td>
-                                        <td><span id="book-time">1:00 PM</span></td>
-                                        <td><span class="text-primary">Coming Soon</span></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td id="book-num">0002</td>
-                                        <td>
-                                            <span id="package-id"
-                                                >Classic - 4000
-                                                <span id="addon-id">| No Printed Photos, Photobook, Birthday Props, Balloon Backdrop </span></span
-                                            >
-                                        </td>
-                                        <td><span id="book-date"> December 9, 2023 - Saturday</span></td>
-                                        <td><span id="book-time">11:00 PM</span></td>
-                                        <td><span class="text-success">Ongoing</span></td>
-                                    </tr>
-
-                                    <tr class="disabled">
-                                        <td id="book-num">0001</td>
-                                        <td><span id="package-id">Basic - 3000 </span><span id="addon-id">| No Add-ons </span></td>
-                                        <td><span id="book-date"> December 5, 2023 - Tuesday</span></td>
-                                        <td><span id="book-time">8:00 AM</span></td>
-                                        <td><span class="text-secondary">Finished</span></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td id="book-num">~</td>
-                                        <td><span id="package-id">~</span></td>
-                                        <td><span id="addon-id">~</span></td>
-                                        <td><span id="book-date">~</span></td>
-                                        <td><span id="book-time">~</span></td>
-                                    </tr>
-                                </tbody>
+                                <tbody class="small thover"></tbody>
                             </table>
                         </div>
 
@@ -226,6 +189,6 @@
         ></script>
 
         <!-- loader script -->
-        <script type="module" src="./scripts/user-profile.js"></script>
+        <script type="module" src="./scripts/user-book-history.js"></script>
     </body>
 </html>

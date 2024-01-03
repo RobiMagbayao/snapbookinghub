@@ -31,13 +31,13 @@
                         <img class="card-img-top mx-auto pt-4 p-2" src="../avatars/avatar-uni.png" alt="Card image" style="max-width: 200px" />
                         <div class="card-body px-0 mx-auto">
                             <h5 class="mb-3 card-title site-color2 fs-5 fw-bold text-center">
-                                <span id="Greet">Hello</span><br />
-                                <span id="userName">User Name</span>,
+                                <span id="Greet"></span><br />
+                                <span id="fName">User</span> <span id="lName"></span>,
                             </h5>
                             <div class="text-center">
                                 <div class="d-flex justify-content-center mb-1 flex-wrap align-items-center">
                                     <ion-icon class="d-flex fs-2 site-color2" name="at-circle"></ion-icon>
-                                    <span class="d-flex ps-2 small text-break small">username@gmail.com</span>
+                                    <span id="userEmail" class="d-flex ps-2 small text-break small">username@email.com</span>
                                 </div>
                                 <a href="../packages.html" target="_parent"
                                     ><button class="small my-2 p-2 border-0 rounded-2 btn-sm btn-user" type="button">Book New Package</button></a
@@ -65,15 +65,9 @@
                                 </thead>
                                 <tbody class="small thover">
                                     <tr>
-                                        <td id="book-num">0001</td>
-                                        <td><span id="package-id">Basic - 3000</span></td>
-                                        <td><span id="book-date"> December 20, 2023 - Monday</span></td>
-                                        <td><span id="book-time">1:00 PM</span></td>
-                                    </tr>
-                                    <tr>
                                         <td id="book-num">~</td>
                                         <td><span id="package-id">~</span></td>
-                                        <td><span id="book-date"> ~</span></td>
+                                        <td><span id="book-date">~</span></td>
                                         <td><span id="book-time">~</span></td>
                                     </tr>
                                 </tbody>
@@ -86,7 +80,7 @@
 
                             <div class="d-sm-flex d-block flex-wrap gap-3 justify-content-center">
                                 <!-- Add-on graphic here -->
-                                <div id="profile-addon01" class="card img-addon not-added added">
+                                <div id="printedPhoto" class="card img-addon not-added">
                                     <div class="addon-holder position-relative overflow-hidden">
                                         <img class="img-thumbnail img-addon" src="../images/1x1-addons/1x1_add-on1.jpg" alt="addOn" />
                                         <div class="addon-hover card-img-overlay d-flex align-items-center justify-content-center">
@@ -95,7 +89,7 @@
                                     </div>
                                 </div>
 
-                                <div id="profile-addon02" class="card img-addon not-added added">
+                                <div id="photoFilter" class="card img-addon not-added">
                                     <div class="addon-holder position-relative overflow-hidden">
                                         <img class="img-thumbnail img-addon" src="../images/1x1-addons/1x1_add-on2.png" alt="addOn" />
                                         <div class="addon-hover card-img-overlay d-flex align-items-center justify-content-center">
@@ -104,16 +98,16 @@
                                     </div>
                                 </div>
 
-                                <div id="profile-addon03" class="card img-addon not-added added">
+                                <div id="vidMessage" class="card img-addon not-added">
                                     <div class="addon-holder position-relative overflow-hidden">
-                                        <img class="img-thumbnail img-addon" src="../images/1x1-addons/1x1_add-on3.jpg" alt="addOn" />
+                                        <img class="img-thumbnail img-addon" src="../images/1x1-addons/vidmsg.png" alt="addOn" />
                                         <div class="addon-hover card-img-overlay d-flex align-items-center justify-content-center">
-                                            <h6 class="text-white text-center">Photo Layout</h6>
+                                            <h6 class="text-white text-center">Video Message</h6>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div id="profile-addon04" class="card img-addon not-added added">
+                                <div id="boomerang" class="card img-addon not-added">
                                     <div class="addon-holder position-relative overflow-hidden">
                                         <img class="img-thumbnail img-addon" src="../images/1x1-addons/1x1_add-on4.gif" alt="addOn" />
                                         <div class="addon-hover card-img-overlay d-flex align-items-center justify-content-center">
@@ -122,16 +116,16 @@
                                     </div>
                                 </div>
 
-                                <div id="profile-addon05" class="card img-addon not-added added">
+                                <div id="phoneBooth" class="card img-addon not-added">
                                     <div class="addon-holder position-relative overflow-hidden">
-                                        <img class="img-thumbnail img-addon" src="../images/1x1-addons/1x1_add-on5.png" alt="addOn" />
+                                        <img class="img-thumbnail img-addon" src="../images/1x1-addons/phonebooth.png" alt="addOn" />
                                         <div class="addon-hover card-img-overlay d-flex align-items-center justify-content-center">
-                                            <h6 class="text-white text-center">Online Gallery</h6>
+                                            <h6 class="text-white text-center">Phone Booth</h6>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div id="profile-addon06" class="card img-addon not-added added">
+                                <div id="photoBook" class="card img-addon not-added">
                                     <div class="addon-holder position-relative overflow-hidden">
                                         <img class="img-thumbnail img-addon" src="../images/1x1-addons/1x1_add-on6.jpg" alt="addOn" />
                                         <div class="addon-hover card-img-overlay d-flex align-items-center justify-content-center">
@@ -140,7 +134,7 @@
                                     </div>
                                 </div>
 
-                                <div id="profile-addon07" class="card img-addon not-added added">
+                                <div id="birthdayProps" class="card img-addon not-added">
                                     <div class="addon-holder position-relative overflow-hidden">
                                         <img class="img-thumbnail img-addon" src="../images/1x1-addons/1x1_add-on7.jpg" alt="addOn" />
                                         <div class="addon-hover card-img-overlay d-flex align-items-center justify-content-center">
@@ -149,7 +143,7 @@
                                     </div>
                                 </div>
 
-                                <div id="profile-addon08" class="card img-addon not-added added">
+                                <div id="weddingProps" class="card img-addon not-added">
                                     <div class="addon-holder position-relative overflow-hidden">
                                         <img class="img-thumbnail img-addon" src="../images/1x1-addons/1x1_add-on8.jpg" alt="addOn" />
                                         <div class="addon-hover card-img-overlay d-flex align-items-center justify-content-center">
@@ -158,7 +152,7 @@
                                     </div>
                                 </div>
 
-                                <div id="profile-addon09" class="card img-addon not-added added">
+                                <div id="gradProps" class="card img-addon not-added">
                                     <div class="addon-holder position-relative overflow-hidden">
                                         <img class="img-thumbnail img-addon" src="../images/1x1-addons/1x1_add-on9.jpg" alt="addOn" />
                                         <div class="addon-hover card-img-overlay d-flex align-items-center justify-content-center">
@@ -167,7 +161,7 @@
                                     </div>
                                 </div>
 
-                                <div id="profile-addon10" class="card img-addon not-added added">
+                                <div id="ballonBack" class="card img-addon not-added">
                                     <div class="addon-holder position-relative overflow-hidden">
                                         <img class="img-thumbnail img-addon" src="../images/1x1-addons/1x1_add-on10.jpg" alt="addOn" />
                                         <div class="addon-hover card-img-overlay d-flex align-items-center justify-content-center">
@@ -176,7 +170,7 @@
                                     </div>
                                 </div>
 
-                                <div id="profile-addon11" class="card img-addon not-added added">
+                                <div id="sparklyBack" class="card img-addon not-added">
                                     <div class="addon-holder position-relative overflow-hidden">
                                         <img class="img-thumbnail img-addon" src="../images/1x1-addons/1x1_add-on11.jpg" alt="addOn" />
                                         <div class="addon-hover card-img-overlay d-flex align-items-center justify-content-center">
@@ -185,18 +179,18 @@
                                     </div>
                                 </div>
 
-                                <div id="profile-addon12" class="card img-addon not-added added">
+                                <div id="flowerBack" class="card img-addon not-added">
                                     <div class="addon-holder position-relative overflow-hidden">
-                                        <img class="img-thumbnail img-addon" src="../images/1x1-addons/1x1_add-on8.jpg" alt="addOn" />
+                                        <img class="img-thumbnail img-addon" src="../images/1x1-addons/flowerback.png" alt="addOn" />
                                         <div class="addon-hover card-img-overlay d-flex align-items-center justify-content-center">
                                             <h6 class="text-white text-center">Flower Backdrop</h6>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div id="profile-addon00" class="col-12 mb-2 card not-added added" style="height: 140px; max-width: 700px">
+                                <div id="noAddon" class="col-12 mb-2 card not-added" style="height: 140px; max-width: 700px">
                                     <div class="card-img-overlay d-flex align-items-center justify-content-center">
-                                        <h6 class="site-color h4 text-center">No Add-On was selected</h6>
+                                        <h6 class="site-color h5 text-center">No Add-On was added on this Package</h6>
                                     </div>
                                 </div>
                             </div>
@@ -217,7 +211,7 @@
             crossorigin="anonymous"
         ></script>
 
-        <!-- loader script -->
+        <!-- loader and Profile script -->
         <script type="module" src="./scripts/user-profile.js"></script>
     </body>
 </html>
