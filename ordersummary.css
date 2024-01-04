@@ -34,3 +34,15 @@ header {
 .py-3:hover {
     background-color: rgb(239, 226, 214);
 }
+
+@media print {
+    .navbar-toggler,
+    .footer2,
+    .developers,
+    #printBtn {
+        visibility: hidden;
+    }
+    #order-summary {
+        margin-left: 100px;
+    }
+}

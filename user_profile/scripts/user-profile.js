@@ -26,8 +26,19 @@ if (currentTime >= 0 && currentTime <= 10) {
 }
 
 // Add User Data to HTML
+let loggedIn = sessionStorage.getItem("loggedIn");
 let currentUser = sessionStorage.getItem("currentUser");
 let userData = JSON.parse(localStorage.getItem(currentUser));
+
+if (loggedIn === "true") {
+    const currentUser2 = sessionStorage.getItem("currentUser");
+    const userData2 = JSON.parse(localStorage.getItem(currentUser2));
+
+    document.getElementById("fName").innerHTML = userData2.firstName;
+    document.getElementById("lName").innerHTML = userData2.lastName;
+    document.getElementById("userEmail").innerHTML = userData2.email;
+}
+
 let latestOrder = userData.orderDetails[userData.orderDetails.length - 1];
 
 // Add 000 to booking number
@@ -43,7 +54,6 @@ if (bookingNumber < 10) {
 }
 
 // Format Date and Time
-
 var date = new Date(latestOrder.date);
 latestOrder.date = date.toLocaleDateString("en-US", { weekday: "long", year: "numeric", month: "long", day: "numeric" });
 
@@ -61,9 +71,6 @@ var strTime = hours + ":" + minutes + " " + ampm;
 latestOrder.time = strTime;
 
 window.addEventListener("load", () => {
-    document.getElementById("fName").innerHTML = userData.firstName;
-    document.getElementById("lName").innerHTML = userData.lastName;
-    document.getElementById("userEmail").innerHTML = userData.email;
     document.getElementById("book-num").innerHTML = bookingNumber;
     document.getElementById("package-id").innerHTML = latestOrder.package;
     document.getElementById("book-date").innerHTML = latestOrder.date;
